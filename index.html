@@ -1,0 +1,1582 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Cleaner Hero · Jeu gratuit : devenez le héros de la propreté en aéroport</title>
+<meta name="description" content="Cleaner Hero, le serious game gratuit de TaqtOne : agent d’entretien dans un aéroport, gardez les sanitaires propres et les usagers satisfaits pendant une semaine. Sur mobile et ordinateur, sans inscription.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Taqt">
+<meta name="theme-color" content="#1b1446">
+<link rel="canonical" id="canon" href="https://agoraopinion.github.io/CleanerHero/">
+<link rel="alternate" hreflang="fr" href="https://agoraopinion.github.io/CleanerHero/?lang=fr">
+<link rel="alternate" hreflang="en" href="https://agoraopinion.github.io/CleanerHero/?lang=en">
+<link rel="alternate" hreflang="de" href="https://agoraopinion.github.io/CleanerHero/?lang=de">
+<link rel="alternate" hreflang="es" href="https://agoraopinion.github.io/CleanerHero/?lang=es">
+<link rel="alternate" hreflang="x-default" href="https://agoraopinion.github.io/CleanerHero/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cleaner Hero · TaqtOne">
+<meta property="og:title" content="Cleaner Hero · Tiendrez-vous une semaine comme agent d’entretien en aéroport ?">
+<meta property="og:description" content="Le serious game gratuit de TaqtOne : trouvez le bon sanitaire, réglez le problème, badgez la borne. Jouable en quelques minutes, sur mobile ou ordinateur.">
+<meta property="og:url" content="https://agoraopinion.github.io/CleanerHero/">
+<meta property="og:image" content="https://agoraopinion.github.io/CleanerHero/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Écran-titre du jeu Cleaner Hero dans un aéroport">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cleaner Hero · le serious game TaqtOne">
+<meta name="twitter:description" content="Agent d’entretien en aéroport : gardez les sanitaires propres une semaine entière. Gratuit, sans inscription.">
+<meta name="twitter:image" content="https://agoraopinion.github.io/CleanerHero/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Cleaner Hero",
+  "alternateName": "Cleaner Hero TaqtOne",
+  "url": "https://agoraopinion.github.io/CleanerHero/",
+  "image": "https://agoraopinion.github.io/CleanerHero/og-image.png",
+  "description": "Serious game gratuit : agent d’entretien dans un aéroport, gardez les sanitaires propres et la satisfaction des usagers au plus haut pendant une semaine.",
+  "genre": ["Serious game", "Simulation", "Jeu de gestion"],
+  "gamePlatform": ["Navigateur web", "Mobile", "Ordinateur"],
+  "applicationCategory": "Game",
+  "operatingSystem": "Tous (navigateur web)",
+  "inLanguage": ["fr", "en", "de", "es"],
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "author": { "@type": "Organization", "name": "Taqt", "url": "https://www.taqt.com" },
+  "publisher": { "@type": "Organization", "name": "Taqt", "url": "https://www.taqt.com" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#141032; --panel:#ffffff; --ink:#15182a; --muted:#5b6078; --line:#dedbe6;
+  --magenta:#ec006e; --pink:#ff4fae; --indigo:#3f00b3; --night:#1b1446;
+  --ok:#2c9a43; --warn:#d99a12; --bad:#d53636;
+  --grad:linear-gradient(115deg,#ff0066,#880096 48%,#3f00b3 80%,#1100c5);
+  --shadow:0 6px 22px rgba(15,10,50,.28);
+  --font:"Outfit","Avenir Next","Avenir","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){color-scheme:dark;--panel:#211d42;--ink:#f3f2fa;--muted:#aaa7c6;--line:#39345f;--shadow:0 6px 22px rgba(0,0,0,.55)}
+}
+:root[data-theme="dark"]{color-scheme:dark;--panel:#211d42;--ink:#f3f2fa;--muted:#aaa7c6;--line:#39345f;--shadow:0 6px 22px rgba(0,0,0,.55)}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{height:100%;margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;overscroll-behavior:none;overflow:hidden}
+button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+button:focus-visible,a:focus-visible{outline:3px solid var(--pink);outline-offset:2px}
+#app{position:relative;height:100%;overflow:hidden;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+#cv{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none}
+
+/* ---------- HUD ---------- */
+#hud{position:absolute;inset:0;pointer-events:none;display:none}
+#hud.on{display:block}
+#top{position:absolute;left:10px;right:10px;top:10px;display:flex;gap:8px;align-items:stretch;pointer-events:none}
+#top>*{pointer-events:auto}
+.chip{background:var(--panel);border-radius:16px;box-shadow:var(--shadow);padding:6px 14px;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.chip small{font-size:11px;color:var(--muted);line-height:1.1;white-space:nowrap}
+.chip b{font-size:19px;font-weight:800;line-height:1.15;font-variant-numeric:tabular-nums;white-space:nowrap}
+#satchip{flex-direction:row;align-items:center;gap:9px;padding-left:8px}
+#satchip>div{display:flex;flex-direction:column}
+#satface{width:36px;height:36px;flex:none;transition:transform .2s}
+#satface.bump{transform:scale(1.25)}
+#satbar{height:6px;border-radius:3px;background:var(--line);margin-top:3px;width:96px}
+#satbar i{display:block;height:100%;width:100%;background:var(--ok);transition:width .35s,background .35s}
+#satbar{position:relative}
+#satbar::after{content:"";position:absolute;left:35%;top:-2px;bottom:-2px;width:2.5px;background:var(--bad);border-radius:2px}
+#satchip.danger{animation:alarm .7s ease-in-out infinite}
+@keyframes alarm{50%{box-shadow:0 0 0 5px rgba(213,54,54,.55)}}
+#scorechip{background:var(--grad);color:#fff}
+#scorechip small{color:rgba(255,255,255,.8)}
+.sp{flex:1}
+.ibtn{background:var(--panel);border:0;border-radius:16px;box-shadow:var(--shadow);min-width:48px;height:48px;padding:0 13px;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;gap:6px}
+.ibtn svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+#missions{position:absolute;right:10px;top:70px;width:262px;max-height:calc(100% - 150px);overflow:auto;list-style:none;margin:0;padding:0 0 6px;display:flex;flex-direction:column;gap:7px;pointer-events:auto;scrollbar-width:none}
+#missions::-webkit-scrollbar{display:none}
+#missions li{background:var(--panel);border-radius:16px;box-shadow:var(--shadow);padding:8px 11px 10px 8px;display:grid;grid-template-columns:40px 1fr auto;gap:2px 9px;align-items:center;position:relative;cursor:pointer;border:2px solid transparent}
+#missions li.trk{border-color:var(--magenta)}
+#missions li.empty{display:block;color:var(--muted);font-size:13.5px;line-height:1.35;padding:10px 13px;cursor:default}
+.mi{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:#3f00b3;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#ec006e,#3f00b3) border-box;border:2.5px solid transparent}
+.mi svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#missions .tt{font-weight:700;font-size:14.5px;line-height:1.15;display:block}
+#missions .loc{font-size:13px;color:var(--muted);display:block}
+#missions .loc b{color:var(--magenta);font-weight:800}
+#missions .pts{font-weight:800;font-size:16px;font-variant-numeric:tabular-nums;text-align:right}
+#missions .pts small{display:block;font-size:10.5px;font-weight:700;color:var(--muted)}
+#missions .bar{grid-column:1/-1;height:5px;border-radius:3px;background:var(--line);margin-top:5px;overflow:hidden}
+#missions .bar i{display:block;height:100%;background:var(--grad)}
+#missions li.late .bar i,#missions li.u3 .bar i{background:var(--bad)}
+#missions li.late .pts small{color:var(--bad)}
+#missions li.u3 .mi{background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,#ff3b3b,#ec006e) border-box;color:#d53636}
+#missions li.fixed .pts small{color:var(--magenta)}
+#missions li.done{opacity:.8}
+#missions li.done .pts{color:var(--ok)}
+
+#hint{position:absolute;left:50%;transform:translateX(-50%);bottom:22px;max-width:min(560px,calc(100% - 24px));width:max-content;background:rgba(27,20,70,.92);color:#fff;border-radius:14px;padding:9px 16px;font-size:15px;font-weight:500;line-height:1.3;text-align:center;box-shadow:var(--shadow);display:none}
+#toast{position:absolute;left:50%;transform:translateX(-50%) translateY(-8px);top:74px;background:var(--ink);color:var(--panel);border-radius:14px;padding:9px 16px;font-size:14.5px;font-weight:600;max-width:min(92%,440px);width:max-content;text-align:center;box-shadow:var(--shadow);opacity:0;transition:opacity .2s,transform .2s}
+#toast.on{opacity:1;transform:translateX(-50%)}
+#mgrcard{position:absolute;left:10px;bottom:16px;width:min(380px,calc(100% - 20px));background:var(--panel);color:var(--ink);border-radius:18px;box-shadow:var(--shadow);padding:11px 14px 12px 11px;display:none;grid-template-columns:46px 1fr;gap:10px;border:0;text-align:left;pointer-events:auto}
+#mgrcard.on{display:grid;animation:pop .25s}
+#mgrcard .av{width:46px;height:46px;border-radius:50%;background:#20315c;display:grid;place-items:center}
+#mgrcard .av svg{width:30px;height:30px}
+#mgrcard strong{font-size:12.5px;color:var(--muted);font-weight:700}
+#mgrcard ul{margin:2px 0 0;padding:0;list-style:none;font-size:14.5px;line-height:1.3}
+#mgrcard li{margin-top:4px}
+#brandtag{position:absolute;right:12px;bottom:10px;height:26px;opacity:.95;filter:drop-shadow(0 1px 3px rgba(0,0,0,.6))}
+@keyframes pop{from{transform:scale(.9);opacity:0}}
+
+/* ---------- Carte borne TaqtOne ---------- */
+#tcard{position:absolute;left:18px;top:50%;transform:translateY(-50%);display:none;pointer-events:auto;z-index:3}
+#tcard.on{display:block;animation:pop .2s}
+.t1{width:292px;background:#fff;border-radius:30px;box-shadow:0 0 0 4px #ececec,0 22px 50px rgba(0,0,0,.55);overflow:hidden;color:#111;font-family:var(--font)}
+.t1 .blk{background:linear-gradient(112deg,#17171c 0%,#2a2a33 46%,#000 46.2%,#000 100%);padding:24px 26px 10px}
+.eink{background:#cfcfcc;border-radius:8px;overflow:hidden;font-size:13px;color:#3c3c3c;box-shadow:inset 0 0 0 1px rgba(0,0,0,.25);min-height:150px;display:flex;flex-direction:column}
+.eink h4{margin:0;background:#3a3a37;color:#e9e9e6;font-size:10.5px;letter-spacing:.22em;text-align:center;padding:4px;font-weight:600}
+.eink .r{display:flex;justify-content:space-between;padding:2px 12px;font-variant-numeric:tabular-nums}
+.eink .r.none{justify-content:center;opacity:.6}
+.eink .r.new{background:#2c2c2a;color:#fff;font-weight:700;animation:blink .5s 3}
+@keyframes blink{50%{background:#cfcfcc;color:#222}}
+.eink .ft{margin-top:auto;display:flex;justify-content:flex-end;gap:7px;padding:2px 9px 4px;align-items:flex-end}
+.eink .sig{display:flex;gap:1.5px;align-items:flex-end}.eink .sig i{width:3px;background:#777;display:block}
+.eink .bat{width:18px;height:8px;border:1.5px solid #777;border-radius:2px;position:relative}.eink .bat::before{content:"";position:absolute;inset:1px 4px 1px 1px;background:#777}
+.t1 .anti{font-size:8.5px;color:#b3b3b3;letter-spacing:.04em;padding:5px 12px 0}
+.t1 .q{text-align:center;font-size:15.5px;padding:6px 14px 0;line-height:1.2}
+.t1 .sm{display:flex;justify-content:center;gap:16px;padding:8px 0 10px}
+.t1 .sm div{text-align:center;font-weight:800;font-size:14px;font-variant-numeric:tabular-nums}
+.t1 .sm svg{width:46px;height:46px;display:block;margin-bottom:1px}
+.t1 .foot{border-top:1.5px solid #111;display:grid;grid-template-columns:1fr auto;align-items:center;padding:9px 16px 13px 10px;gap:8px}
+#tagbtn{border:0;background:#f4f4f4;border-radius:16px;display:grid;grid-template-columns:42px 1fr;align-items:center;gap:8px;padding:7px 10px 7px 7px;text-align:left;color:#111;font-size:11px;font-weight:700;letter-spacing:.03em;line-height:1.2;min-height:60px}
+#tagbtn img{width:42px;height:38px;object-fit:contain;mix-blend-mode:multiply}
+#tagbtn.need{background:var(--grad);color:#fff;animation:pulse 1s ease-in-out infinite}
+#tagbtn.need img{filter:invert(1);mix-blend-mode:screen}
+#tagbtn.okk{background:#e3f5e7;box-shadow:0 0 0 2px var(--ok);animation:none;color:#14522a}
+#tagbtn small{display:block;font-weight:600;letter-spacing:0;font-size:11.5px;margin-top:2px;opacity:.85}
+#tagbtn kbd{font:inherit;font-size:10px;background:rgba(255,255,255,.25);border-radius:5px;padding:1px 6px;margin-left:6px}
+.t1 .foot>img{height:30px;width:auto}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(236,0,110,.25);transform:scale(1.03)}}
+
+#tx{position:absolute;right:-10px;top:-10px;width:44px;height:44px;border-radius:50%;border:0;background:#fff;color:#1b1446;box-shadow:0 4px 14px rgba(0,0,0,.45);display:grid;place-items:center;z-index:2}
+#tx svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round}
+#tbar{height:4px;background:var(--grad);width:100%;transform-origin:left;display:none}
+#tcard.closing #tbar{display:block;animation:shrink 1.8s linear forwards}
+@keyframes shrink{to{transform:scaleX(0)}}
+
+/* ---------- Écrans ---------- */
+.screen{position:absolute;inset:0;display:none;overflow:auto;-webkit-overflow-scrolling:touch;z-index:5}
+.screen.on{display:flex}
+#title{flex-direction:column;padding:0;color:#fff;text-align:center;scroll-behavior:smooth;
+  background:radial-gradient(ellipse at 50% 45%,rgba(27,20,70,.18) 0%,rgba(20,14,56,.5) 55%,rgba(14,10,40,.88) 100%)}
+.tfold{flex:none;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:14px 16px 16px}
+.more{color:#fff;font-weight:700;font-size:13.5px;text-decoration:none;border:1.5px solid rgba(255,255,255,.4);border-radius:14px;padding:4px 12px}
+.more::after{content:" ↓"}
+.about{flex:none;background:rgba(14,10,40,.94);backdrop-filter:blur(6px);text-align:left;padding:34px max(20px,calc(50% - 340px)) 48px;line-height:1.55;font-size:16px}
+.about h2{font-size:clamp(24px,3.6vw,32px);font-weight:900;line-height:1.15;margin:0 0 12px;letter-spacing:-.01em}
+.about h3{font-size:19px;font-weight:800;margin:26px 0 6px;color:#ff7ab8}
+.about p{margin:0 0 10px;color:rgba(255,255,255,.88)}
+.aboutcta{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:22px!important}
+.aboutcta a{color:#fff;font-weight:700}
+.playbtn.small{margin:0;height:58px;font-size:22px;padding:0 34px;animation:none}
+.trow{display:flex;gap:6px;align-self:stretch;justify-content:flex-end;align-items:center;flex-wrap:wrap}
+.trow button{background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.3);color:#fff;border-radius:20px;height:38px;min-width:46px;padding:0 12px;font-size:14px;font-weight:700;backdrop-filter:blur(6px)}
+.trow button[aria-pressed="true"]{background:#fff;color:var(--night);border-color:#fff}
+.trow svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;display:block}
+.tmid{display:flex;flex-direction:column;align-items:center;margin:auto 0}
+.logo{font-weight:900;font-style:italic;text-transform:uppercase;line-height:.84;letter-spacing:-.02em;transform:rotate(-5deg);font-size:clamp(58px,15vw,150px);margin:0;position:relative}
+.logo span{display:block}
+.logo .l1{color:#fff;text-shadow:0 .05em 0 #c9c4ee,0 .1em 0 #3f00b3,0 .15em 0 #1b1446,0 .22em .3em rgba(0,0,0,.6)}
+.logo .l2{color:#ff3fa4;margin-left:.35em;text-shadow:0 .05em 0 #ec006e,0 .1em 0 #8c0052,0 .15em 0 #1b1446,0 .22em .3em rgba(0,0,0,.6)}
+.logo::after{content:"";position:absolute;right:-.12em;top:-.16em;width:.42em;height:.42em;background:#ffd23f;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);animation:spin 6s linear infinite;filter:drop-shadow(0 .03em 0 #b98600)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.tagl{font-size:clamp(16px,2.6vw,22px);font-weight:600;margin:clamp(20px,4vh,38px) 0 0;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.playbtn{margin-top:clamp(16px,3.5vh,30px);border:0;border-radius:44px;height:clamp(64px,10vh,84px);padding:0 clamp(40px,8vw,70px);font-size:clamp(24px,4vw,34px);font-weight:900;letter-spacing:.04em;color:#fff;background:var(--grad);box-shadow:0 6px 0 #1b1446,0 16px 40px rgba(236,0,110,.6),inset 0 2px 0 rgba(255,255,255,.35);display:flex;align-items:center;gap:14px;animation:bob 1.6s ease-in-out infinite}
+.playbtn::before{content:"";border-left:.7em solid #fff;border-top:.45em solid transparent;border-bottom:.45em solid transparent}
+.playbtn:active{transform:translateY(4px);box-shadow:0 2px 0 #1b1446}
+@keyframes bob{50%{transform:translateY(-5px) scale(1.03)}}
+.howbtn{margin-top:14px;background:transparent;border:0;color:#fff;font-size:16px;font-weight:700;text-decoration:underline;text-underline-offset:4px;padding:8px 14px}
+.tfoot{display:flex;align-items:center;gap:12px;font-size:13.5px;font-weight:500;flex-wrap:wrap;justify-content:center}
+.tfoot img{height:40px;width:auto;display:block}
+.tfoot .best{background:rgba(255,255,255,.14);border-radius:14px;padding:4px 12px;font-weight:700}
+
+.modal{background:rgba(14,10,40,.78);align-items:center;justify-content:center;padding:16px}
+.card{background:var(--panel);color:var(--ink);border-radius:26px;box-shadow:var(--shadow);padding:24px 24px 22px;width:min(560px,100%);max-height:100%;overflow:auto;animation:pop .25s}
+.card h2{margin:0;font-size:30px;font-weight:900;letter-spacing:-.02em;line-height:1.05}
+.card .sub{color:var(--muted);margin:6px 0 0;font-size:15px}
+.stars{font-size:40px;letter-spacing:6px;margin:8px 0 0;line-height:1;color:var(--line)}
+.stars b{color:#ffc21a;text-shadow:0 2px 0 #b98600}
+.rows{margin:14px 0 0;display:grid;border-top:1px solid var(--line)}
+.rows div{display:flex;justify-content:space-between;gap:14px;padding:8px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.rows b{font-variant-numeric:tabular-nums;font-weight:800}
+.rows .tot{font-size:19px;border-bottom:0}
+.rows .tot b{color:var(--magenta)}
+.tip{margin:14px 0 0;padding:13px 15px;border-radius:16px;background:var(--night);color:#fff;font-size:15px;line-height:1.4;display:grid;grid-template-columns:1fr;gap:2px}
+.tip strong{color:#ff8cc8;font-size:13px;font-weight:700}
+.btnrow{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.btn{border:0;border-radius:28px;height:54px;padding:0 26px;font-size:17px;font-weight:800;background:var(--grad);color:#fff;text-decoration:none;display:inline-flex;align-items:center;box-shadow:0 4px 0 #1b1446}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 #1b1446}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--line)}
+.rank{display:inline-block;margin-top:12px;padding:6px 16px;border-radius:20px;background:var(--grad);color:#fff;font-weight:800;font-size:16px}
+.bigscore{font-size:66px;font-weight:900;letter-spacing:-.03em;line-height:1;margin:12px 0 0;font-variant-numeric:tabular-nums}
+.bigscore small{font-size:18px;font-weight:700;color:var(--muted);letter-spacing:0;margin-left:6px}
+.week{display:flex;gap:5px;margin-top:14px;align-items:flex-end;height:70px}
+.week div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px;font-size:11.5px;color:var(--muted);height:100%}
+.week i{display:block;width:100%;border-radius:6px 6px 2px 2px;background:var(--indigo);min-height:3px}
+.hsteps{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px}
+.hsteps li{display:grid;grid-template-columns:52px 1fr;gap:12px;align-items:center}
+.hsteps .mi{width:52px;height:52px}
+.hsteps .mi svg{width:27px;height:27px}
+.hsteps b{display:block;font-size:16px;font-weight:800}
+.hsteps span{font-size:14.5px;color:var(--muted);line-height:1.35}
+.ctrl{margin:14px 0 0;padding:11px 14px;border-radius:14px;background:color-mix(in srgb,var(--magenta) 10%,transparent);font-size:14.5px;line-height:1.4;font-weight:500}
+
+#mapov{background:rgba(14,10,40,.86);align-items:center;justify-content:center;padding:12px;flex-direction:column;gap:10px}
+#mapc{max-width:100%;max-height:calc(100% - 110px);border-radius:16px;background:#111;box-shadow:var(--shadow)}
+.legend{color:#fff;font-size:13px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;font-weight:500}
+.legend span{display:flex;align-items:center;gap:6px}
+.legend i{width:13px;height:13px;border-radius:4px;display:inline-block}
+.tclose{background:#fff;border:0;color:var(--night);font-size:15px;font-weight:800;padding:0 24px;height:46px;border-radius:24px}
+
+@media (max-width:760px){
+  #top{gap:5px;left:8px;right:8px;top:8px}
+  .chip{padding:5px 10px;border-radius:14px}.chip b{font-size:16px}.chip small{font-size:10px}
+  #satbar{width:54px}#satface{width:30px;height:30px}
+  #satchip{padding-left:6px;gap:6px}
+  #top .sp{display:none}
+  .ibtn{min-width:44px;height:44px;padding:0 10px;margin-left:auto;border-radius:14px}
+  #pausebtn{margin-left:0}
+  #mapbtn span{display:none}
+  #missions{left:8px;right:8px;top:60px;width:auto;flex-direction:row;overflow-x:auto;overflow-y:hidden;max-height:none;gap:6px}
+  #missions li{flex:none;grid-template-columns:32px auto auto;padding:5px 10px 7px 6px;gap:0 7px;border-radius:14px}
+  #missions li.empty{flex:1;font-size:12.5px;padding:8px 11px}
+  #missions .mi{width:32px;height:32px}.mi svg{width:17px;height:17px}
+  #missions .tt{font-size:12.5px;max-width:118px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #missions .loc{font-size:12px}
+  #missions .pts{font-size:13.5px}
+  #missions .pts small{font-size:9.5px}
+  #missions .bar{height:4px;margin-top:3px}
+  #toast{top:120px}
+  #mgrcard{top:118px;bottom:auto;left:8px;width:calc(100% - 16px)}
+  #hint{bottom:14px;font-size:13.5px;padding:7px 12px}
+  #brandtag{display:none}
+  #tcard{left:50%;top:112px;transform:translateX(-50%) scale(.8);transform-origin:top center}
+  .card{padding:20px 18px 18px}
+  .card h2{font-size:25px}
+}
+@media (max-height:520px){.logo{font-size:clamp(44px,17vh,90px)}.tagl{margin-top:10px}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="app">
+  <canvas id="cv" aria-label="Cleaner Hero"></canvas>
+
+  <div id="hud">
+    <div id="top">
+      <div class="chip"><small id="dayname"></small><b id="clock">06:00</b></div>
+      <div class="chip" id="satchip">
+        <svg id="satface" viewBox="0 0 32 32"></svg>
+        <div><small data-i="sat"></small><b id="satv">100 %</b><div id="satbar"><i></i></div></div>
+      </div>
+      <div class="chip" id="scorechip"><small data-i="score"></small><b id="scorev">0</b></div>
+      <span class="sp"></span>
+      <button class="ibtn" id="mapbtn" type="button"><svg viewBox="0 0 24 24"><path d="M9 4 3 6.5V20l6-2.5 6 2.5 6-2.5V4l-6 2.5z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span data-i="map"></span></button>
+      <button class="ibtn" id="pausebtn" type="button" aria-label="Pause"><svg viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg></button>
+    </div>
+    <ul id="missions"></ul>
+    <button id="mgrcard" type="button"><span class="av"><svg viewBox="0 0 32 32"><circle cx="16" cy="11" r="6" fill="#e9c9a8"/><path d="M5 30c0-7 5-11 11-11s11 4 11 11z" fill="#fff"/><path d="M16 19l-2.500 3 2.500 7 2.500-7z" fill="#ec006e"/></svg></span><span><strong data-i="mgr"></strong><ul id="mgrlist"></ul></span></button>
+    <div id="toast" role="status"></div>
+    <div id="hint"></div>
+    <img id="brandtag" alt="Taqt" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iQ2FscXVlXzIiIGRhdGEtbmFtZT0iQ2FscXVlIDIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAxMjIxIDU0Ny4zOSI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgfQoKICAgICAgLmNscy0xLCAuY2xzLTIsIC5jbHMtMyB7CiAgICAgICAgc3Ryb2tlLXdpZHRoOiAwcHg7CiAgICAgIH0KCiAgICAgIC5jbHMtMiB7CiAgICAgICAgZmlsbDogdXJsKCNEw6lncmFkw6lfc2Fuc19ub21fMi0yKTsKICAgICAgfQoKICAgICAgLmNscy0zIHsKICAgICAgICBmaWxsOiB1cmwoI0TDqWdyYWTDqV9zYW5zX25vbV8yKTsKICAgICAgfQogICAgPC9zdHlsZT4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iRMOpZ3JhZMOpX3NhbnNfbm9tXzIiIGRhdGEtbmFtZT0iRMOpZ3JhZMOpIHNhbnMgbm9tIDIiIHgxPSIxMDE0Ljc3IiB5MT0iNDQxLjY3IiB4Mj0iMTM2NS41NiIgeTI9IjQ0MS42NyIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSgwIDU0Ni45NCkgc2NhbGUoMSAtMSkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZjA2Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iLjA2IiBzdG9wLWNvbG9yPSIjZWMwMDZlIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iLjQyIiBzdG9wLWNvbG9yPSIjODgwMDk2Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iLjciIHN0b3AtY29sb3I9IiMzZjAwYjMiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1jb2xvcj0iIzExMDBjNSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwMGMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9IkTDqWdyYWTDqV9zYW5zX25vbV8yLTIiIGRhdGEtbmFtZT0iRMOpZ3JhZMOpIHNhbnMgbm9tIDIiIHkxPSIzOTkuNTYiIHgyPSIxMzY1LjU2IiB5Mj0iMzk5LjU2IiB4bGluazpocmVmPSIjRMOpZ3JhZMOpX3NhbnNfbm9tXzIiLz4KICA8L2RlZnM+CiAgPGcgaWQ9IkNhbHF1ZV8xLTIiIGRhdGEtbmFtZT0iQ2FscXVlIDEiPgogICAgPGcgaWQ9IlRhcXQiPgogICAgICA8cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iMzAzLjg2IDQyLjE3IDAgNDIuMTcgMCA4NC4yMiAxMjUuNDcgODQuMjIgMTI1LjQ3IDQyOC4zOCAxNzguMzkgNDI4LjM4IDE3OC4zOSA4NC4yMiAzMDMuODYgODQuMjIgMzAzLjg2IDQyLjE3Ii8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTQ3OS4yLDM4MS4wM3YtMTMzLjI0Yy4wMy0xMS4yMy0yLjEzLTIyLjM1LTYuMzQtMzIuNzYtNC4zNC0xMC42Mi0xMS4wMy0yMC4xMy0xOS41Ni0yNy44MS04LjgyLTguMDctMjAuMTItMTQuNDktMzMuODktMTkuMjZzLTMwLjIxLTcuMTUtNDkuMzItNy4xNmMtMTguNzguMDctMzcuNDEsMy4zMi01NS4xLDkuNi0xNy45OCw2LjE2LTM0LjUsMTUuOTYtNDguNTIsMjguNzlsMjkuNzksMzAuNzFjNC40MS0zLjI2LDkuMDEtNi43MSwxMy44LTEwLjM1LDQuOTctMy43NSwxMC4zNC02Ljk0LDE2LTkuNTIsNi4zLTIuODcsMTIuODYtNS4xNSwxOS41OS02LjgxLDguMjItMS45MywxNi42NS0yLjg1LDI1LjEtMi43MywxMC42NywwLDE5Ljg2LDEuNTYsMjcuNTksNC42OSw3LjI2LDIuODIsMTMuODMsNy4xNCwxOS4zLDEyLjY4LDUuMDMsNS4xMyw4Ljk3LDExLjIzLDExLjU5LDE3LjkyLDIuNTIsNi4zMiwzLjgzLDEzLjA1LDMuODcsMTkuODV2MTFoLTM2LjM4Yy0xOC43Ny0uMDktMzcuNTEsMS40Ny01Niw0LjY3LTE3LjQ3LDMuMTEtMzIuNzMsOC4yNC00NS43OCwxNS4zOHMtMjMuMzMsMTYuNC0zMC44NiwyNy43OWMtNy41NCwxMS4zMy0xMS4zMSwyNS40My0xMS4zLDQyLjMsMCwxMi44MiwyLjM5LDI0LjA4LDcuMTYsMzMuNzgsNC42Miw5LjUxLDExLjMxLDE3Ljg2LDE5LjU4LDI0LjQ1LDguNjIsNi43NywxOC40NywxMS44MSwyOSwxNC44NCwxMS4yOCwzLjMyLDIyLjk5LDQuOTksMzQuNzUsNC45NCwxOS44NSwwLDM3LjMyLTMuNDgsNTIuMzktMTAuNDQsMTUuMDctNi45NiwyOC4xMy0xOC44NiwzOS4xNi0zNS43MWgxLjFjMCwxMy4yNi41NSwyNi41MiwxLjY1LDM5Ljc3aDQzLjg3Yy0uNzMtNi45Ni0xLjI4LTE0LjI5LTEuNjUtMjJzLS41Ny0xNi4xNi0uNTktMjUuMzdabS00Ni4wNy02MS42NWMtLjA0LDktMS4zNCwxNy45NS0zLjg3LDI2LjU5LTIuNTUsOC45MS02Ljg3LDE3LjIyLTEyLjcsMjQuNDItNi4yOCw3LjYyLTE0LjIxLDEzLjcxLTIzLjE5LDE3LjgyLTkuNTcsNC41Ny0yMS4xNiw2Ljg1LTM0Ljc4LDYuODUtMTcuMywwLTMxLjAxLTMuMjktNDEuMTMtOS44N3MtMTUuMTgtMTcuMzctMTUuMTktMzIuMzZjMC0xMC4yMywzLjIyLTE4LjY0LDkuNjctMjUuMjNzMTQuNzMtMTEuNywyNC44NC0xNS4zNWMxMC44OS0zLjgzLDIyLjItNi4zMiwzMy42OS03LjQxLDEyLjAxLTEuMjYsMjQuMDgtMS45LDM2LjE2LTEuOTJoMjYuNTF2MTYuNDZaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTc1Ny44MywyMDQuODFoLTEuNTZjLTkuNTYtMTMuOTQtMjIuNy0yNC43Ni0zOS40My0zMi40NS0xNi4xMy03LjU4LTMzLjczLTExLjUyLTUxLjU1LTExLjU2LTIwLjIxLDAtMzguNSwzLjQ4LTU0Ljg2LDEwLjQ1LTE1Ljg3LDYuNjQtMzAuMTYsMTYuNTgtNDEuOSwyOS4xNi0xMS43MSwxMi42OC0yMC43OSwyNy41NC0yNi43NCw0My43NC02LjMyLDE3LjE3LTkuNDcsMzUuMzQtOS4zMiw1My42My0uMTcsMTguNDgsMy4wMSwzNi44Myw5LjM3LDU0LjE4LDUuODgsMTYuMTUsMTQuOTYsMzAuOTUsMjYuNjksNDMuNTEsMTEuODIsMTIuNDMsMjYuMTEsMjIuMjUsNDEuOTQsMjguODQsMTYuMzYsNi45NiwzNC42NSwxMC40NCw1NC44NiwxMC40NSwxOC4zMS4wOSwzNi40LTMuOTUsNTIuOTMtMTEuODMsMTYuNTQtNy44OCwyOS4yMS0xOC42MSwzOC0zMi4xOGgxLjU2djE1Ni42NGg0OVYxNjguNDdoLTQ5djM2LjM0Wm0tNi41MywxMjkuNjZjLTMuNjksMTAuNjEtOS41LDIwLjM2LTE3LjA5LDI4LjY1LTcuNTksOC4wNy0xNi43OSwxNC40NS0yNywxOC43NC0xMC42Nyw0LjU5LTIyLjYxLDYuODgtMzUuODMsNi44OHMtMjUuMTctMi4yOS0zNS44NC02Ljg4Yy0xMC4yMS00LjI5LTE5LjQxLTEwLjY3LTI3LTE4Ljc0LTcuNi04LjI5LTEzLjQyLTE4LjA0LTE3LjEzLTI4LjY1LTguMDgtMjMuNzYtOC4wOC00OS41MiwwLTczLjI4LDMuNjgtMTAuNjMsOS40OC0yMC40MSwxNy4wNi0yOC43Miw3LjU5LTguMDYsMTYuNzktMTQuNDQsMjctMTguNzMsMTAuNjctNC41OSwyMi42MS02Ljg5LDM1Ljg0LTYuODlzMjUuMTcsMi4zLDM1LjgzLDYuODljMTAuMjEsNC4yOSwxOS40MSwxMC42NywyNywxOC43Myw3LjU5LDguMjksMTMuNCwxOC4wNCwxNy4wOSwyOC42NSw4LjA5LDIzLjc2LDguMDksNDkuNTIsMCw3My4yOGwuMDcuMDdaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTEwMTAuNDcsMzgxLjg0Yy00LjgyLDIuNTEtMTAsNC4yNy0xNS4zNiw1LjItNS45OCwxLjA4LTEyLjA0LDEuNjMtMTguMTIsMS42NS05LjUzLDAtMTYuNzctMS43NC0yMS43MS01LjIzLTQuOTItMy40My04Ljc0LTguMjEtMTEtMTMuNzYtLjY4LTEuNjMtMS4yNy0zLjMtMS43Ni01LTEuMzUtNC42My0yLjE0LTkuNDEtMi4zNS0xNC4yMy0uMzctNy4xNi0uNTYtMTQuNDEtLjU1LTIxLjc1di0xMTguNDJoNzAuODV2LTQxLjgzaC03MC44NXYtODQuMjVoLTQ5LjV2OC40OGgwdjc1Ljc3aC00OC4wOHY0MS44N2g0OC4wOHYxMzUuODRjMCwxMC42Ny40NiwyMS4yMSwxLjM3LDMxLjY0LjIxLDIuNC41NSw0Ljc5LDEsNy4xNiwxLjM1LDcuNDYsMy45OSwxNC42Myw3LjgsMjEuMTgsNC45NCw4LjQ0LDEyLjYzLDE1LjMyLDIzLjA4LDIwLjYzLDEwLjQ1LDUuMzEsMjUuMiw3Ljk4LDQ0LjI2LDgsNy4yNy0uMTgsMTQuNTEtLjgzLDIxLjctMS45Miw4LjUxLTEuMTcsMTUuNTEtMy4yMSwyMS4xNC02LC41NS0uMjcsMS4xNi0uNTEsMS42OC0uODF2LTQ1Yy0uNTUuMjMtMS4xMi40OS0xLjY4Ljc4WiIvPgogICAgPC9nPgogICAgPGcgaWQ9Ik9uZGUiPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Im0xMDEwLjQ3LDB2NDIuMTFjOTAuMjksMCwxNjguNDMsNzEuNjYsMTY4LjQzLDE2OC40M2g0Mi4xYzAtMTE1LjcyLTkyLjg5LTIxMC4wMi0yMTAuNTMtMjEwLjU0WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Im0xMDEwLjQ3LDg0LjIydjQyLjFjNDYuNDYsMCw4NC40OCwzOCw4NC4yMSw4NC4yMmg0Mi4xMWMuMTQtNjkuNjMtNTYuMTktMTI2LjE4LTEyNS44Mi0xMjYuMzItLjE3LDAtLjMzLDAtLjUsMFoiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPg==">
+  </div>
+
+  <div id="tcard">
+    <button id="tx" type="button" aria-label="Fermer"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="t1">
+      <div id="tbar"></div>
+      <div class="blk"><div class="eink" id="eink"></div></div>
+      <div class="anti"><b>ANTI</b>BACTERIAL</div>
+      <div class="q" data-i="tq"></div>
+      <div class="sm" id="tsm"></div>
+      <div class="foot">
+        <button id="tagbtn" type="button"><img alt="" src="data:image/png;base64,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"><span><span id="tagl"></span><small id="taginfo"></small></span></button>
+        <img alt="Taqt" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iQ2FscXVlXzIiIGRhdGEtbmFtZT0iQ2FscXVlIDIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAxMjIxIDU0Ny4zOSI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogIzExMTsKICAgICAgfQoKICAgICAgLmNscy0xLCAuY2xzLTIsIC5jbHMtMyB7CiAgICAgICAgc3Ryb2tlLXdpZHRoOiAwcHg7CiAgICAgIH0KCiAgICAgIC5jbHMtMiB7CiAgICAgICAgZmlsbDogdXJsKCNEw6lncmFkw6lfc2Fuc19ub21fMi0yKTsKICAgICAgfQoKICAgICAgLmNscy0zIHsKICAgICAgICBmaWxsOiB1cmwoI0TDqWdyYWTDqV9zYW5zX25vbV8yKTsKICAgICAgfQogICAgPC9zdHlsZT4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iRMOpZ3JhZMOpX3NhbnNfbm9tXzIiIGRhdGEtbmFtZT0iRMOpZ3JhZMOpIHNhbnMgbm9tIDIiIHgxPSIxMDE0Ljc3IiB5MT0iNDQxLjY3IiB4Mj0iMTM2NS41NiIgeTI9IjQ0MS42NyIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSgwIDU0Ni45NCkgc2NhbGUoMSAtMSkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZjA2Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iLjA2IiBzdG9wLWNvbG9yPSIjZWMwMDZlIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iLjQyIiBzdG9wLWNvbG9yPSIjODgwMDk2Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iLjciIHN0b3AtY29sb3I9IiMzZjAwYjMiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1jb2xvcj0iIzExMDBjNSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwMGMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9IkTDqWdyYWTDqV9zYW5zX25vbV8yLTIiIGRhdGEtbmFtZT0iRMOpZ3JhZMOpIHNhbnMgbm9tIDIiIHkxPSIzOTkuNTYiIHgyPSIxMzY1LjU2IiB5Mj0iMzk5LjU2IiB4bGluazpocmVmPSIjRMOpZ3JhZMOpX3NhbnNfbm9tXzIiLz4KICA8L2RlZnM+CiAgPGcgaWQ9IkNhbHF1ZV8xLTIiIGRhdGEtbmFtZT0iQ2FscXVlIDEiPgogICAgPGcgaWQ9IlRhcXQiPgogICAgICA8cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iMzAzLjg2IDQyLjE3IDAgNDIuMTcgMCA4NC4yMiAxMjUuNDcgODQuMjIgMTI1LjQ3IDQyOC4zOCAxNzguMzkgNDI4LjM4IDE3OC4zOSA4NC4yMiAzMDMuODYgODQuMjIgMzAzLjg2IDQyLjE3Ii8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTQ3OS4yLDM4MS4wM3YtMTMzLjI0Yy4wMy0xMS4yMy0yLjEzLTIyLjM1LTYuMzQtMzIuNzYtNC4zNC0xMC42Mi0xMS4wMy0yMC4xMy0xOS41Ni0yNy44MS04LjgyLTguMDctMjAuMTItMTQuNDktMzMuODktMTkuMjZzLTMwLjIxLTcuMTUtNDkuMzItNy4xNmMtMTguNzguMDctMzcuNDEsMy4zMi01NS4xLDkuNi0xNy45OCw2LjE2LTM0LjUsMTUuOTYtNDguNTIsMjguNzlsMjkuNzksMzAuNzFjNC40MS0zLjI2LDkuMDEtNi43MSwxMy44LTEwLjM1LDQuOTctMy43NSwxMC4zNC02Ljk0LDE2LTkuNTIsNi4zLTIuODcsMTIuODYtNS4xNSwxOS41OS02LjgxLDguMjItMS45MywxNi42NS0yLjg1LDI1LjEtMi43MywxMC42NywwLDE5Ljg2LDEuNTYsMjcuNTksNC42OSw3LjI2LDIuODIsMTMuODMsNy4xNCwxOS4zLDEyLjY4LDUuMDMsNS4xMyw4Ljk3LDExLjIzLDExLjU5LDE3LjkyLDIuNTIsNi4zMiwzLjgzLDEzLjA1LDMuODcsMTkuODV2MTFoLTM2LjM4Yy0xOC43Ny0uMDktMzcuNTEsMS40Ny01Niw0LjY3LTE3LjQ3LDMuMTEtMzIuNzMsOC4yNC00NS43OCwxNS4zOHMtMjMuMzMsMTYuNC0zMC44NiwyNy43OWMtNy41NCwxMS4zMy0xMS4zMSwyNS40My0xMS4zLDQyLjMsMCwxMi44MiwyLjM5LDI0LjA4LDcuMTYsMzMuNzgsNC42Miw5LjUxLDExLjMxLDE3Ljg2LDE5LjU4LDI0LjQ1LDguNjIsNi43NywxOC40NywxMS44MSwyOSwxNC44NCwxMS4yOCwzLjMyLDIyLjk5LDQuOTksMzQuNzUsNC45NCwxOS44NSwwLDM3LjMyLTMuNDgsNTIuMzktMTAuNDQsMTUuMDctNi45NiwyOC4xMy0xOC44NiwzOS4xNi0zNS43MWgxLjFjMCwxMy4yNi41NSwyNi41MiwxLjY1LDM5Ljc3aDQzLjg3Yy0uNzMtNi45Ni0xLjI4LTE0LjI5LTEuNjUtMjJzLS41Ny0xNi4xNi0uNTktMjUuMzdabS00Ni4wNy02MS42NWMtLjA0LDktMS4zNCwxNy45NS0zLjg3LDI2LjU5LTIuNTUsOC45MS02Ljg3LDE3LjIyLTEyLjcsMjQuNDItNi4yOCw3LjYyLTE0LjIxLDEzLjcxLTIzLjE5LDE3LjgyLTkuNTcsNC41Ny0yMS4xNiw2Ljg1LTM0Ljc4LDYuODUtMTcuMywwLTMxLjAxLTMuMjktNDEuMTMtOS44N3MtMTUuMTgtMTcuMzctMTUuMTktMzIuMzZjMC0xMC4yMywzLjIyLTE4LjY0LDkuNjctMjUuMjNzMTQuNzMtMTEuNywyNC44NC0xNS4zNWMxMC44OS0zLjgzLDIyLjItNi4zMiwzMy42OS03LjQxLDEyLjAxLTEuMjYsMjQuMDgtMS45LDM2LjE2LTEuOTJoMjYuNTF2MTYuNDZaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTc1Ny44MywyMDQuODFoLTEuNTZjLTkuNTYtMTMuOTQtMjIuNy0yNC43Ni0zOS40My0zMi40NS0xNi4xMy03LjU4LTMzLjczLTExLjUyLTUxLjU1LTExLjU2LTIwLjIxLDAtMzguNSwzLjQ4LTU0Ljg2LDEwLjQ1LTE1Ljg3LDYuNjQtMzAuMTYsMTYuNTgtNDEuOSwyOS4xNi0xMS43MSwxMi42OC0yMC43OSwyNy41NC0yNi43NCw0My43NC02LjMyLDE3LjE3LTkuNDcsMzUuMzQtOS4zMiw1My42My0uMTcsMTguNDgsMy4wMSwzNi44Myw5LjM3LDU0LjE4LDUuODgsMTYuMTUsMTQuOTYsMzAuOTUsMjYuNjksNDMuNTEsMTEuODIsMTIuNDMsMjYuMTEsMjIuMjUsNDEuOTQsMjguODQsMTYuMzYsNi45NiwzNC42NSwxMC40NCw1NC44NiwxMC40NSwxOC4zMS4wOSwzNi40LTMuOTUsNTIuOTMtMTEuODMsMTYuNTQtNy44OCwyOS4yMS0xOC42MSwzOC0zMi4xOGgxLjU2djE1Ni42NGg0OVYxNjguNDdoLTQ5djM2LjM0Wm0tNi41MywxMjkuNjZjLTMuNjksMTAuNjEtOS41LDIwLjM2LTE3LjA5LDI4LjY1LTcuNTksOC4wNy0xNi43OSwxNC40NS0yNywxOC43NC0xMC42Nyw0LjU5LTIyLjYxLDYuODgtMzUuODMsNi44OHMtMjUuMTctMi4yOS0zNS44NC02Ljg4Yy0xMC4yMS00LjI5LTE5LjQxLTEwLjY3LTI3LTE4Ljc0LTcuNi04LjI5LTEzLjQyLTE4LjA0LTE3LjEzLTI4LjY1LTguMDgtMjMuNzYtOC4wOC00OS41MiwwLTczLjI4LDMuNjgtMTAuNjMsOS40OC0yMC40MSwxNy4wNi0yOC43Miw3LjU5LTguMDYsMTYuNzktMTQuNDQsMjctMTguNzMsMTAuNjctNC41OSwyMi42MS02Ljg5LDM1Ljg0LTYuODlzMjUuMTcsMi4zLDM1LjgzLDYuODljMTAuMjEsNC4yOSwxOS40MSwxMC42NywyNywxOC43Myw3LjU5LDguMjksMTMuNCwxOC4wNCwxNy4wOSwyOC42NSw4LjA5LDIzLjc2LDguMDksNDkuNTIsMCw3My4yOGwuMDcuMDdaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTEwMTAuNDcsMzgxLjg0Yy00LjgyLDIuNTEtMTAsNC4yNy0xNS4zNiw1LjItNS45OCwxLjA4LTEyLjA0LDEuNjMtMTguMTIsMS42NS05LjUzLDAtMTYuNzctMS43NC0yMS43MS01LjIzLTQuOTItMy40My04Ljc0LTguMjEtMTEtMTMuNzYtLjY4LTEuNjMtMS4yNy0zLjMtMS43Ni01LTEuMzUtNC42My0yLjE0LTkuNDEtMi4zNS0xNC4yMy0uMzctNy4xNi0uNTYtMTQuNDEtLjU1LTIxLjc1di0xMTguNDJoNzAuODV2LTQxLjgzaC03MC44NXYtODQuMjVoLTQ5LjV2OC40OGgwdjc1Ljc3aC00OC4wOHY0MS44N2g0OC4wOHYxMzUuODRjMCwxMC42Ny40NiwyMS4yMSwxLjM3LDMxLjY0LjIxLDIuNC41NSw0Ljc5LDEsNy4xNiwxLjM1LDcuNDYsMy45OSwxNC42Myw3LjgsMjEuMTgsNC45NCw4LjQ0LDEyLjYzLDE1LjMyLDIzLjA4LDIwLjYzLDEwLjQ1LDUuMzEsMjUuMiw3Ljk4LDQ0LjI2LDgsNy4yNy0uMTgsMTQuNTEtLjgzLDIxLjctMS45Miw4LjUxLTEuMTcsMTUuNTEtMy4yMSwyMS4xNC02LC41NS0uMjcsMS4xNi0uNTEsMS42OC0uODF2LTQ1Yy0uNTUuMjMtMS4xMi40OS0xLjY4Ljc4WiIvPgogICAgPC9nPgogICAgPGcgaWQ9Ik9uZGUiPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Im0xMDEwLjQ3LDB2NDIuMTFjOTAuMjksMCwxNjguNDMsNzEuNjYsMTY4LjQzLDE2OC40M2g0Mi4xYzAtMTE1LjcyLTkyLjg5LTIxMC4wMi0yMTAuNTMtMjEwLjU0WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Im0xMDEwLjQ3LDg0LjIydjQyLjFjNDYuNDYsMCw4NC40OCwzOCw4NC4yMSw4NC4yMmg0Mi4xMWMuMTQtNjkuNjMtNTYuMTktMTI2LjE4LTEyNS44Mi0xMjYuMzItLjE3LDAtLjMzLDAtLjUsMFoiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPg==">
+      </div>
+    </div>
+  </div>
+
+  <section class="screen on" id="title">
+   <div class="tfold">
+    <div class="trow" id="trow">
+      <button type="button" id="sndbtn" aria-label="Son"></button>
+    </div>
+    <div class="tmid">
+      <h1 class="logo"><span class="l1">Cleaner</span><span class="l2">Hero</span></h1>
+      <p class="tagl" data-i="tagline">Le bon sanitaire, au bon moment.</p>
+      <button class="playbtn" id="playbtn" type="button" data-i="play">JOUER</button>
+      <button class="howbtn" id="howbtn" type="button" data-i="howto">Comment jouer</button>
+    </div>
+    <div class="tfoot"><span data-i="byline">Un serious game</span><img alt="Taqt" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iQ2FscXVlXzIiIGRhdGEtbmFtZT0iQ2FscXVlIDIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHZpZXdCb3g9IjAgMCAxMjIxIDU0Ny4zOSI+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5jbHMtMSB7CiAgICAgICAgZmlsbDogI2ZmZjsKICAgICAgfQoKICAgICAgLmNscy0xLCAuY2xzLTIsIC5jbHMtMyB7CiAgICAgICAgc3Ryb2tlLXdpZHRoOiAwcHg7CiAgICAgIH0KCiAgICAgIC5jbHMtMiB7CiAgICAgICAgZmlsbDogdXJsKCNEw6lncmFkw6lfc2Fuc19ub21fMi0yKTsKICAgICAgfQoKICAgICAgLmNscy0zIHsKICAgICAgICBmaWxsOiB1cmwoI0TDqWdyYWTDqV9zYW5zX25vbV8yKTsKICAgICAgfQogICAgPC9zdHlsZT4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iRMOpZ3JhZMOpX3NhbnNfbm9tXzIiIGRhdGEtbmFtZT0iRMOpZ3JhZMOpIHNhbnMgbm9tIDIiIHgxPSIxMDE0Ljc3IiB5MT0iNDQxLjY3IiB4Mj0iMTM2NS41NiIgeTI9IjQ0MS42NyIgZ3JhZGllbnRUcmFuc2Zvcm09InRyYW5zbGF0ZSgwIDU0Ni45NCkgc2NhbGUoMSAtMSkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZjA2Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iLjA2IiBzdG9wLWNvbG9yPSIjZWMwMDZlIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iLjQyIiBzdG9wLWNvbG9yPSIjODgwMDk2Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iLjciIHN0b3AtY29sb3I9IiMzZjAwYjMiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIuOSIgc3RvcC1jb2xvcj0iIzExMDBjNSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwMGMiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9IkTDqWdyYWTDqV9zYW5zX25vbV8yLTIiIGRhdGEtbmFtZT0iRMOpZ3JhZMOpIHNhbnMgbm9tIDIiIHkxPSIzOTkuNTYiIHgyPSIxMzY1LjU2IiB5Mj0iMzk5LjU2IiB4bGluazpocmVmPSIjRMOpZ3JhZMOpX3NhbnNfbm9tXzIiLz4KICA8L2RlZnM+CiAgPGcgaWQ9IkNhbHF1ZV8xLTIiIGRhdGEtbmFtZT0iQ2FscXVlIDEiPgogICAgPGcgaWQ9IlRhcXQiPgogICAgICA8cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iMzAzLjg2IDQyLjE3IDAgNDIuMTcgMCA4NC4yMiAxMjUuNDcgODQuMjIgMTI1LjQ3IDQyOC4zOCAxNzguMzkgNDI4LjM4IDE3OC4zOSA4NC4yMiAzMDMuODYgODQuMjIgMzAzLjg2IDQyLjE3Ii8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTQ3OS4yLDM4MS4wM3YtMTMzLjI0Yy4wMy0xMS4yMy0yLjEzLTIyLjM1LTYuMzQtMzIuNzYtNC4zNC0xMC42Mi0xMS4wMy0yMC4xMy0xOS41Ni0yNy44MS04LjgyLTguMDctMjAuMTItMTQuNDktMzMuODktMTkuMjZzLTMwLjIxLTcuMTUtNDkuMzItNy4xNmMtMTguNzguMDctMzcuNDEsMy4zMi01NS4xLDkuNi0xNy45OCw2LjE2LTM0LjUsMTUuOTYtNDguNTIsMjguNzlsMjkuNzksMzAuNzFjNC40MS0zLjI2LDkuMDEtNi43MSwxMy44LTEwLjM1LDQuOTctMy43NSwxMC4zNC02Ljk0LDE2LTkuNTIsNi4zLTIuODcsMTIuODYtNS4xNSwxOS41OS02LjgxLDguMjItMS45MywxNi42NS0yLjg1LDI1LjEtMi43MywxMC42NywwLDE5Ljg2LDEuNTYsMjcuNTksNC42OSw3LjI2LDIuODIsMTMuODMsNy4xNCwxOS4zLDEyLjY4LDUuMDMsNS4xMyw4Ljk3LDExLjIzLDExLjU5LDE3LjkyLDIuNTIsNi4zMiwzLjgzLDEzLjA1LDMuODcsMTkuODV2MTFoLTM2LjM4Yy0xOC43Ny0uMDktMzcuNTEsMS40Ny01Niw0LjY3LTE3LjQ3LDMuMTEtMzIuNzMsOC4yNC00NS43OCwxNS4zOHMtMjMuMzMsMTYuNC0zMC44NiwyNy43OWMtNy41NCwxMS4zMy0xMS4zMSwyNS40My0xMS4zLDQyLjMsMCwxMi44MiwyLjM5LDI0LjA4LDcuMTYsMzMuNzgsNC42Miw5LjUxLDExLjMxLDE3Ljg2LDE5LjU4LDI0LjQ1LDguNjIsNi43NywxOC40NywxMS44MSwyOSwxNC44NCwxMS4yOCwzLjMyLDIyLjk5LDQuOTksMzQuNzUsNC45NCwxOS44NSwwLDM3LjMyLTMuNDgsNTIuMzktMTAuNDQsMTUuMDctNi45NiwyOC4xMy0xOC44NiwzOS4xNi0zNS43MWgxLjFjMCwxMy4yNi41NSwyNi41MiwxLjY1LDM5Ljc3aDQzLjg3Yy0uNzMtNi45Ni0xLjI4LTE0LjI5LTEuNjUtMjJzLS41Ny0xNi4xNi0uNTktMjUuMzdabS00Ni4wNy02MS42NWMtLjA0LDktMS4zNCwxNy45NS0zLjg3LDI2LjU5LTIuNTUsOC45MS02Ljg3LDE3LjIyLTEyLjcsMjQuNDItNi4yOCw3LjYyLTE0LjIxLDEzLjcxLTIzLjE5LDE3LjgyLTkuNTcsNC41Ny0yMS4xNiw2Ljg1LTM0Ljc4LDYuODUtMTcuMywwLTMxLjAxLTMuMjktNDEuMTMtOS44N3MtMTUuMTgtMTcuMzctMTUuMTktMzIuMzZjMC0xMC4yMywzLjIyLTE4LjY0LDkuNjctMjUuMjNzMTQuNzMtMTEuNywyNC44NC0xNS4zNWMxMC44OS0zLjgzLDIyLjItNi4zMiwzMy42OS03LjQxLDEyLjAxLTEuMjYsMjQuMDgtMS45LDM2LjE2LTEuOTJoMjYuNTF2MTYuNDZaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTc1Ny44MywyMDQuODFoLTEuNTZjLTkuNTYtMTMuOTQtMjIuNy0yNC43Ni0zOS40My0zMi40NS0xNi4xMy03LjU4LTMzLjczLTExLjUyLTUxLjU1LTExLjU2LTIwLjIxLDAtMzguNSwzLjQ4LTU0Ljg2LDEwLjQ1LTE1Ljg3LDYuNjQtMzAuMTYsMTYuNTgtNDEuOSwyOS4xNi0xMS43MSwxMi42OC0yMC43OSwyNy41NC0yNi43NCw0My43NC02LjMyLDE3LjE3LTkuNDcsMzUuMzQtOS4zMiw1My42My0uMTcsMTguNDgsMy4wMSwzNi44Myw5LjM3LDU0LjE4LDUuODgsMTYuMTUsMTQuOTYsMzAuOTUsMjYuNjksNDMuNTEsMTEuODIsMTIuNDMsMjYuMTEsMjIuMjUsNDEuOTQsMjguODQsMTYuMzYsNi45NiwzNC42NSwxMC40NCw1NC44NiwxMC40NSwxOC4zMS4wOSwzNi40LTMuOTUsNTIuOTMtMTEuODMsMTYuNTQtNy44OCwyOS4yMS0xOC42MSwzOC0zMi4xOGgxLjU2djE1Ni42NGg0OVYxNjguNDdoLTQ5djM2LjM0Wm0tNi41MywxMjkuNjZjLTMuNjksMTAuNjEtOS41LDIwLjM2LTE3LjA5LDI4LjY1LTcuNTksOC4wNy0xNi43OSwxNC40NS0yNywxOC43NC0xMC42Nyw0LjU5LTIyLjYxLDYuODgtMzUuODMsNi44OHMtMjUuMTctMi4yOS0zNS44NC02Ljg4Yy0xMC4yMS00LjI5LTE5LjQxLTEwLjY3LTI3LTE4Ljc0LTcuNi04LjI5LTEzLjQyLTE4LjA0LTE3LjEzLTI4LjY1LTguMDgtMjMuNzYtOC4wOC00OS41MiwwLTczLjI4LDMuNjgtMTAuNjMsOS40OC0yMC40MSwxNy4wNi0yOC43Miw3LjU5LTguMDYsMTYuNzktMTQuNDQsMjctMTguNzMsMTAuNjctNC41OSwyMi42MS02Ljg5LDM1Ljg0LTYuODlzMjUuMTcsMi4zLDM1LjgzLDYuODljMTAuMjEsNC4yOSwxOS40MSwxMC42NywyNywxOC43Myw3LjU5LDguMjksMTMuNCwxOC4wNCwxNy4wOSwyOC42NSw4LjA5LDIzLjc2LDguMDksNDkuNTIsMCw3My4yOGwuMDcuMDdaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTEwMTAuNDcsMzgxLjg0Yy00LjgyLDIuNTEtMTAsNC4yNy0xNS4zNiw1LjItNS45OCwxLjA4LTEyLjA0LDEuNjMtMTguMTIsMS42NS05LjUzLDAtMTYuNzctMS43NC0yMS43MS01LjIzLTQuOTItMy40My04Ljc0LTguMjEtMTEtMTMuNzYtLjY4LTEuNjMtMS4yNy0zLjMtMS43Ni01LTEuMzUtNC42My0yLjE0LTkuNDEtMi4zNS0xNC4yMy0uMzctNy4xNi0uNTYtMTQuNDEtLjU1LTIxLjc1di0xMTguNDJoNzAuODV2LTQxLjgzaC03MC44NXYtODQuMjVoLTQ5LjV2OC40OGgwdjc1Ljc3aC00OC4wOHY0MS44N2g0OC4wOHYxMzUuODRjMCwxMC42Ny40NiwyMS4yMSwxLjM3LDMxLjY0LjIxLDIuNC41NSw0Ljc5LDEsNy4xNiwxLjM1LDcuNDYsMy45OSwxNC42Myw3LjgsMjEuMTgsNC45NCw4LjQ0LDEyLjYzLDE1LjMyLDIzLjA4LDIwLjYzLDEwLjQ1LDUuMzEsMjUuMiw3Ljk4LDQ0LjI2LDgsNy4yNy0uMTgsMTQuNTEtLjgzLDIxLjctMS45Miw4LjUxLTEuMTcsMTUuNTEtMy4yMSwyMS4xNC02LC41NS0uMjcsMS4xNi0uNTEsMS42OC0uODF2LTQ1Yy0uNTUuMjMtMS4xMi40OS0xLjY4Ljc4WiIvPgogICAgPC9nPgogICAgPGcgaWQ9Ik9uZGUiPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Im0xMDEwLjQ3LDB2NDIuMTFjOTAuMjksMCwxNjguNDMsNzEuNjYsMTY4LjQzLDE2OC40M2g0Mi4xYzAtMTE1LjcyLTkyLjg5LTIxMC4wMi0yMTAuNTMtMjEwLjU0WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Im0xMDEwLjQ3LDg0LjIydjQyLjFjNDYuNDYsMCw4NC40OCwzOCw4NC4yMSw4NC4yMmg0Mi4xMWMuMTQtNjkuNjMtNTYuMTktMTI2LjE4LTEyNS44Mi0xMjYuMzItLjE3LDAtLjMzLDAtLjUsMFoiLz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPg=="><span class="best" id="best"></span><a class="more" href="#about" data-i="more">Le jeu en bref</a></div>
+   </div>
+    <article class="about" id="about">
+      <h2 data-i="about_h2">Cleaner Hero, le jeu gratuit du héros de la propreté</h2>
+      <p data-i="about_p1">Cleaner Hero est un serious game gratuit qui se joue directement dans le navigateur, sur mobile comme sur ordinateur, sans inscription ni installation. Vous êtes agent d’entretien dans un aéroport : les vols s’enchaînent, les passagers passent par les sanitaires, et votre mission est de les garder propres pendant toute une semaine.</p>
+      <h3 data-i="about_h3a">Le principe du jeu</h3>
+      <p data-i="about_p2">Votre manager vous transmet les signalements du terrain : papier toilette épuisé, savon vide, poubelle pleine, sol sale, sèche-mains en panne ou fuite d’eau. Trouvez le bon sanitaire, réglez le problème, puis badgez la borne TaqtOne pour valider votre passage. Plus vous êtes rapide, plus vous marquez de points. Mais si la satisfaction des usagers tombe trop bas, la partie est perdue.</p>
+      <h3 data-i="about_h3b">Pourquoi ce jeu ?</h3>
+      <p data-i="about_p3">Cleaner Hero a été créé par Taqt pour faire découvrir TaqtOne, la borne connectée qui recueille l’avis des usagers des sanitaires, fait remonter les demandes en temps réel et enregistre le passage des équipes d’entretien d’un simple badge. En quelques minutes, le jeu montre pourquoi un nettoyage guidé par le terrain fait la différence.</p>
+      <p data-i="about_langs">Disponible en français, anglais, allemand et espagnol.</p>
+      <p class="aboutcta"><button class="playbtn small" id="playbtn2" type="button" data-i="play">JOUER</button><a href="https://www.taqt.com/fr" id="aboutlink" target="_blank" rel="noopener" data-i="about_link">Découvrir TaqtOne sur taqt.com</a></p>
+    </article>
+  </section>
+  <noscript><div style="position:fixed;inset:0;z-index:9;background:#1b1446;color:#fff;display:grid;place-items:center;padding:24px;text-align:center;font-family:sans-serif"><p>Cleaner Hero est un jeu gratuit jouable dans le navigateur. Activez JavaScript pour jouer.</p></div></noscript>
+
+  <section class="screen modal" id="how">
+    <div class="card">
+      <h2 data-i="howto"></h2>
+      <ol class="hsteps" id="hsteps"></ol>
+      <p class="ctrl" id="ctrltxt"></p>
+      <p class="ctrl" id="ruletxt" style="margin-top:8px;background:color-mix(in srgb,var(--bad) 12%,transparent)"></p>
+      <div class="btnrow"><button class="btn" id="howgo" type="button"></button></div>
+    </div>
+  </section>
+
+  <section class="screen modal" id="sum">
+    <div class="card">
+      <h2 id="sumtitle"></h2>
+      <div class="stars" id="sumstars"></div>
+      <p class="sub" id="sumpeak"></p>
+      <div class="rows" id="sumrows"></div>
+      <div class="tip"><strong data-i="tiphead"></strong><span id="sumtip"></span></div>
+      <div class="btnrow"><button class="btn" id="nextbtn" type="button"></button></div>
+    </div>
+  </section>
+
+  <section class="screen modal" id="final">
+    <div class="card">
+      <h2 data-i="weekdone"></h2>
+      <div class="bigscore"><span id="finscore"></span><small data-i="ptsunit"></small></div>
+      <div class="rank" id="finrank"></div>
+      <p class="sub" id="finsat"></p>
+      <div class="week" id="finweek"></div>
+      <div class="tip"><strong data-i="pitchhead"></strong><span data-i="pitch"></span></div>
+      <div class="btnrow">
+        <a class="btn" id="ctalink" target="_blank" rel="noopener" data-i="cta"></a>
+        <button class="btn ghost" id="sharebtn" type="button" data-i="share"></button>
+        <button class="btn ghost" id="replaybtn" type="button" data-i="replay"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen modal" id="over">
+    <div class="card">
+      <h2 data-i="over_t"></h2>
+      <p class="sub" id="overday"></p>
+      <div class="tip" style="background:var(--bad)"><span id="overd"></span></div>
+      <div class="btnrow">
+        <button class="btn" id="retrybtn" type="button" data-i="retry"></button>
+        <button class="btn ghost" id="overquit" type="button" data-i="quit"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen modal" id="pause">
+    <div class="card">
+      <h2 data-i="paused"></h2>
+      <p class="ctrl" id="ctrltxt2"></p>
+      <div class="btnrow">
+        <button class="btn" id="resumebtn" type="button" data-i="resume"></button>
+        <button class="btn ghost" id="sndbtn2" type="button"></button>
+        <button class="btn ghost" id="quitbtn" type="button" data-i="quit"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen" id="mapov">
+    <canvas id="mapc"></canvas>
+    <div class="legend">
+      <span><i style="background:#ec006e"></i><span data-i="lg_you"></span></span>
+      <span><i style="background:#ffd23f"></i><span data-i="lg_mission"></span></span>
+      <span><i style="background:#e0a21b"></i><span data-i="lg_svc"></span></span>
+      <span><i style="background:#57b6c9"></i><span data-i="lg_wc"></span></span>
+    </div>
+    <button class="tclose" id="mapclose" type="button" data-i="close"></button>
+  </section>
+</div>
+
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id);
+const TOUCH=(window.matchMedia&&matchMedia('(pointer:coarse)').matches)||('ontouchstart' in window);
+
+/* =====================================================================
+   Textes
+   ===================================================================== */
+const I18N={
+fr:{
+ seo_title:"Cleaner Hero · Jeu gratuit : devenez le héros de la propreté en aéroport",seo_desc:"Cleaner Hero, le serious game gratuit de TaqtOne : agent d’entretien dans un aéroport, gardez les sanitaires propres et les usagers satisfaits pendant une semaine. Sur mobile et ordinateur, sans inscription.",more:"Le jeu en bref",about_h2:"Cleaner Hero, le jeu gratuit du héros de la propreté",about_p1:"Cleaner Hero est un serious game gratuit qui se joue directement dans le navigateur, sur mobile comme sur ordinateur, sans inscription ni installation. Vous êtes agent d’entretien dans un aéroport : les vols s’enchaînent, les passagers passent par les sanitaires, et votre mission est de les garder propres pendant toute une semaine.",about_h3a:"Le principe du jeu",about_p2:"Votre manager vous transmet les signalements du terrain : papier toilette épuisé, savon vide, poubelle pleine, sol sale, sèche-mains en panne ou fuite d’eau. Trouvez le bon sanitaire, réglez le problème, puis badgez la borne TaqtOne pour valider votre passage. Plus vous êtes rapide, plus vous marquez de points. Mais si la satisfaction des usagers tombe trop bas, la partie est perdue.",about_h3b:"Pourquoi ce jeu ?",about_p3:"Cleaner Hero a été créé par Taqt pour faire découvrir TaqtOne, la borne connectée qui recueille l’avis des usagers des sanitaires, fait remonter les demandes en temps réel et enregistre le passage des équipes d’entretien d’un simple badge. En quelques minutes, le jeu montre pourquoi un nettoyage guidé par le terrain fait la différence.",about_langs:"Disponible en français, anglais, allemand et espagnol.",about_link:"Découvrir TaqtOne sur taqt.com",
+ ty_round:'Ronde de contrôle',m_round:'Passe contrôler les sanitaires {wc} et badge la borne : le dernier passage affiché commence à dater.',brk_go:'Salle de pause · instructions',
+ w_paper:'Recharge du papier',w_soap:'Recharge du savon',w_bin:'Vidage de la poubelle',w_stain:'Nettoyage du sol',w_dryer:'Réparation',w_leak:'Réparation de la fuite',over_t:'Service interrompu',over_d:'La satisfaction des usagers est tombée sous {n} %. Votre manager reprend la main.',retry:'Recommencer la journée',warn:'Satisfaction critique ! Sous {n} %, la partie est perdue.',rule:'Attention : si la satisfaction tombe sous {n} %, la partie est perdue.',
+ name:'FR',tagline:'Le bon sanitaire, au bon moment.',play:'JOUER',howto:'Comment jouer',byline:'Un serious game',best:'Record : {n}',
+ h1t:'Recevez vos missions',h1d:'Votre manager vous les donne en salle de pause, ou vient à votre rencontre.',
+ h2t:'Foncez au bon sanitaire',h2d:'Suivez la flèche. Les couloirs de service hachurés sont des raccourcis réservés au personnel.',
+ h3t:'Réglez le problème',h3d:'Arrêtez-vous à côté du cercle rose : votre agent intervient tout seul. Trop de monde ? Il faut attendre.',
+ h4t:'Badgez la borne TaqtOne',h4d:'Placez-vous devant la borne à l’entrée et badgez pour valider. Plus vous êtes rapide, plus ça rapporte.',
+ c_touch:'Pour avancer : posez le pouce n’importe où sur l’écran et faites-le glisser dans la direction voulue.',
+ c_kb:'Pour avancer : flèches du clavier ou ZQSD, ou maintenez le clic de la souris : l’agent va vers le curseur. Badger : Espace. Plan : M.',
+ go:'C’est parti',
+ days:['Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi','Dimanche'],dshort:['Lun.','Mar.','Mer.','Jeu.','Ven.','Sam.','Dim.'],
+ sat:'Satisfaction',score:'Points',map:'Plan',mgr:'Votre manager',
+ empty:'Aucune mission. Passez en salle de pause prendre vos instructions.',
+ crowd:'Trop de monde ({n}) : patientez…',
+ fixedmsg:'Réglé ! Allez badger la borne TaqtOne à l’entrée.',prevmsg:'Bien vu ! Badgez la borne pour valider.',partmsg:'Encore {n} tache(s) à nettoyer.',
+ badgeok:'Passage validé : +{p} points',badgenone:'Rien à valider pour l’instant',routine:'Ronde enregistrée : +{p} points',
+ mgrnone:'Rien de nouveau. Fais ta ronde et surveille les bornes.',seek:'Votre manager vous cherche',
+ late:'en retard',tobadge:'à badger',validated:'validé',initiative:'initiative',
+ ty_paper:'Papier toilette',ty_soap:'Savon',ty_bin:'Poubelle pleine',ty_dirty:'Sol sale',ty_dryer:'Sèche-mains en panne',ty_leak:'Fuite d’eau',
+ g_supply:'Consommables ?',g_clean:'Nettoyage ?',g_unhappy:'Insatisfaction ?',
+ m_paper:'Plus de papier toilette aux sanitaires {wc}.',m_soap:'Plus de savon aux sanitaires {wc}.',m_bin:'La poubelle déborde aux sanitaires {wc}.',m_dirty:'Le sol est sale aux sanitaires {wc}.',m_dryer:'Sèche-mains en panne aux sanitaires {wc}.',m_leak:'Fuite d’eau aux sanitaires {wc}. C’est urgent !',
+ m_first:'Bonjour ! Le papier n’a pas été rechargé hier soir aux sanitaires {wc}. Commence par là.',
+ v_supply:'Demande « Consommables » sur la borne {wc}. Vois ce qui manque.',v_clean:'Demande « Nettoyage » sur la borne {wc}.',v_unhappy:'Les smileys rouges s’accumulent aux sanitaires {wc}. Trouve ce qui cloche.',
+ z_supply:'Il manque des consommables quelque part en {zone}. Les bornes te diront où.',z_clean:'On me demande un nettoyage en {zone}, sans plus de détail. Regarde les bornes.',z_unhappy:'Des usagers mécontents en {zone}… Fais le tour des bornes.',
+ zone_A:'Jetée A',zone_B:'Jetée B',zone_C:'zone centrale',zone_H:'hall public',pier_A:'Jetée A',pier_B:'Jetée B',pier_C:'Jetée C',
+ p_break:'Salle de pause',p_svc:'PERSONNEL',p_checkin:'Enregistrement',p_bag:'Bagages',p_sec:'Contrôle',p_exit:'Sortie',gate:'Porte',gates:'Portes',p_board:'Missions',
+ s1:'Café',s2:'Presse',s3:'Duty Free',s4:'Snack',
+ t_pending:'DEMANDES EN COURS',t_last:'DERNIERS PASSAGES',t_none:'aucune',s_supply:'Consomm.',s_clean:'Nettoy.',
+ tq:'Êtes-vous satisfait de la propreté ?',taghere:'BADGEZ ICI',tovalidate:'{n} intervention(s) à valider',nothing:'Signalez votre passage',tagdone:'Passage enregistré à {h}',kbd:'Espace',
+ lg_you:'Vous',lg_mission:'Mission',lg_svc:'Couloir de service',lg_wc:'Sanitaires',close:'Fermer',
+ sumtitle:'{day} : fin de service',peak:'Pic d’affluence du jour : vers {h}, {zone}.',
+ r_sat:'Satisfaction du jour',r_done:'Interventions validées',r_pts:'Points gagnés',r_bonus:'Bonus satisfaction',r_pen:'Missions non traitées ({n})',r_total:'Total de la semaine',
+ tiphead:'Sur le terrain, avec TaqtOne',next:'Passer à {day}',seefinal:'Voir mon résultat',
+ tips:['La borne affiche l’heure des derniers passages : les usagers voient que l’entretien est suivi.','Les boutons sont sans contact : l’usager donne son avis en approchant le doigt, sans rien toucher.','Un badge en bas de la borne suffit à tracer un passage. Plus de feuille à signer derrière la porte.','Les demandes « Consommables » et « Nettoyage » remontent en temps réel : on intervient là où il faut, quand il faut.','Les smileys révèlent une insatisfaction avant la réclamation. On agit plus tôt.','Avec les retours du terrain, le nettoyage suit l’affluence réelle plutôt qu’un planning figé.','Les usagers peuvent aussi remercier l’équipe d’un geste. Un cœur, ça compte.'],
+ weekdone:'Semaine terminée !',ptsunit:'points',finsat:'Satisfaction moyenne : {s} %',
+ rank0:'Agent débutant',rank1:'Agent confirmé',rank2:'Expert propreté',rank3:'Cleaner Hero',
+ pitchhead:'Dans la vraie vie',pitch:'Les bornes TaqtOne remontent en temps réel la satisfaction, les demandes et les passages des équipes. Vos agents vont au bon endroit, au bon moment.',
+ cta:'Découvrir TaqtOne',share:'Partager mon score',replay:'Rejouer',copied:'Texte copié !',
+ sharetxt:'J’ai fait {n} points et {s} % de satisfaction à Cleaner Hero, le serious game des bornes TaqtOne.',
+ paused:'Pause',resume:'Reprendre',quit:'Quitter',snd_on:'Son activé',snd_off:'Son coupé',
+ h_mgr:'Approchez-vous de votre manager pour recevoir vos missions.',h_go:'Suivez la flèche jusqu’au sanitaire indiqué.',h_find:'Arrêtez-vous à côté du cercle rose pour intervenir.',h_badge:'Sortez et placez-vous devant la borne TaqtOne pour badger.',h_tag:'Badgez en bas de la borne pour valider votre passage.',h_idle:'Plus de mission : passez en salle de pause prendre vos instructions.'
+},
+en:{
+ seo_title:"Cleaner Hero · Free game: become the airport’s clean-up hero",seo_desc:"Cleaner Hero, the free TaqtOne serious game: as an airport cleaner, keep the restrooms clean and travellers happy for a whole week. Play on mobile or desktop, no sign-up.",more:"About the game",about_h2:"Cleaner Hero, the free game for clean-up heroes",about_p1:"Cleaner Hero is a free serious game you play right in your browser, on mobile or desktop, with no sign-up and nothing to install. You are a cleaner in an airport: flights keep coming, passengers use the restrooms, and your mission is to keep them clean for a whole week.",about_h3a:"How the game works",about_p2:"Your manager passes on reports from the field: no toilet paper, empty soap, overflowing bin, dirty floor, broken hand dryer or a water leak. Find the right restroom, fix the problem, then tag the TaqtOne device to validate your visit. The faster you are, the more points you score. But if user satisfaction drops too low, the game is over.",about_h3b:"Why this game?",about_p3:"Cleaner Hero was created by Taqt to showcase TaqtOne, the connected device that collects restroom users’ feedback, reports requests in real time and records cleaning staff visits with a simple tag. In a few minutes, the game shows why field-driven cleaning makes the difference.",about_langs:"Available in English, French, German and Spanish.",about_link:"Discover TaqtOne on taqt.com",
+ ty_round:'Check round',m_round:'Go and check restroom {wc} and tag the device: the last visit shown is getting old.',brk_go:'Break room · instructions',
+ w_paper:'Restocking paper',w_soap:'Refilling soap',w_bin:'Emptying the bin',w_stain:'Cleaning the floor',w_dryer:'Repairing',w_leak:'Fixing the leak',over_t:'Shift cut short',over_d:'User satisfaction fell below {n}%. Your manager is taking over.',retry:'Retry the day',warn:'Satisfaction is critical! Below {n}%, the game is lost.',rule:'Careful: if satisfaction falls below {n}%, the game is lost.',
+ name:'EN',tagline:'The right restroom, at the right time.',play:'PLAY',howto:'How to play',byline:'A serious game by',best:'Best: {n}',
+ h1t:'Get your tasks',h1d:'Your manager hands them out in the break room, or comes to find you.',
+ h2t:'Rush to the right restroom',h2d:'Follow the arrow. Hatched service corridors are staff-only shortcuts.',
+ h3t:'Fix the problem',h3d:'Stop next to the pink circle: your cleaner gets to work. Too crowded? You have to wait.',
+ h4t:'Tag the TaqtOne device',h4d:'Stand in front of the device at the entrance and tag to validate. The faster you are, the more you score.',
+ c_touch:'To move: put your thumb anywhere on the screen and drag it in the direction you want.',
+ c_kb:'To move: arrow keys or WASD, or hold the mouse button: your cleaner walks towards the pointer. Tag: Space. Map: M.',
+ go:'Let’s go',
+ days:['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],dshort:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+ sat:'Satisfaction',score:'Points',map:'Map',mgr:'Your manager',
+ empty:'No task. Drop by the break room to get your instructions.',
+ crowd:'Too crowded ({n}): please wait…',
+ fixedmsg:'Fixed! Go tag the TaqtOne device at the entrance.',prevmsg:'Well spotted! Tag the device to validate.',partmsg:'{n} more stain(s) to clean.',
+ badgeok:'Visit validated: +{p} points',badgenone:'Nothing to validate yet',routine:'Round recorded: +{p} points',
+ mgrnone:'Nothing new. Do your round and keep an eye on the devices.',seek:'Your manager is looking for you',
+ late:'late',tobadge:'tag it',validated:'validated',initiative:'initiative',
+ ty_paper:'Toilet paper',ty_soap:'Soap',ty_bin:'Bin full',ty_dirty:'Dirty floor',ty_dryer:'Hand dryer broken',ty_leak:'Water leak',
+ g_supply:'Supplies?',g_clean:'Cleaning?',g_unhappy:'Unhappy users?',
+ m_paper:'No toilet paper left in restroom {wc}.',m_soap:'No soap left in restroom {wc}.',m_bin:'The bin is overflowing in restroom {wc}.',m_dirty:'The floor is dirty in restroom {wc}.',m_dryer:'Hand dryer broken in restroom {wc}.',m_leak:'Water leak in restroom {wc}. It’s urgent!',
+ m_first:'Morning! Toilet paper wasn’t restocked last night in restroom {wc}. Start there.',
+ v_supply:'“Supply” request on device {wc}. See what’s missing.',v_clean:'“Cleaning” request on device {wc}.',v_unhappy:'Red smileys are piling up at restroom {wc}. Find out what’s wrong.',
+ z_supply:'Supplies are missing somewhere in {zone}. The devices will tell you where.',z_clean:'I have a cleaning request in {zone}, no details. Check the devices.',z_unhappy:'Unhappy users in {zone}… Go round the devices.',
+ zone_A:'Pier A',zone_B:'Pier B',zone_C:'the central area',zone_H:'the public hall',pier_A:'Pier A',pier_B:'Pier B',pier_C:'Pier C',
+ p_break:'Break room',p_svc:'STAFF ONLY',p_checkin:'Check-in',p_bag:'Baggage',p_sec:'Security',p_exit:'Exit',gate:'Gate',gates:'Gates',p_board:'Tasks',
+ s1:'Café',s2:'News',s3:'Duty Free',s4:'Snack',
+ t_pending:'PENDING REQUESTS',t_last:'LAST CLEANINGS',t_none:'none',s_supply:'Supply',s_clean:'Clean.',
+ tq:'Are you satisfied with the cleanliness?',taghere:'TAG HERE',tovalidate:'{n} job(s) to validate',nothing:'Record your visit',tagdone:'Visit recorded at {h}',kbd:'Space',
+ lg_you:'You',lg_mission:'Task',lg_svc:'Service corridor',lg_wc:'Restrooms',close:'Close',
+ sumtitle:'{day}: end of shift',peak:'Busiest moment today: around {h}, {zone}.',
+ r_sat:'Satisfaction today',r_done:'Jobs validated',r_pts:'Points earned',r_bonus:'Satisfaction bonus',r_pen:'Unhandled tasks ({n})',r_total:'Week total',
+ tiphead:'In the field, with TaqtOne',next:'Go to {day}',seefinal:'See my result',
+ tips:['The device shows the time of the last cleanings: users can see the place is looked after.','Buttons are touch-free: users give feedback by bringing a finger close, without touching anything.','One tag at the bottom of the device records a visit. No more paper sheet behind the door.','“Supply” and “Cleaning” requests come in live: you act where it’s needed, when it’s needed.','Smileys reveal dissatisfaction before the complaint arrives. You act sooner.','With feedback from the field, cleaning follows real traffic instead of a fixed schedule.','Users can also thank the team with one gesture. A heart goes a long way.'],
+ weekdone:'Week complete!',ptsunit:'points',finsat:'Average satisfaction: {s}%',
+ rank0:'Rookie cleaner',rank1:'Skilled cleaner',rank2:'Cleanliness expert',rank3:'Cleaner Hero',
+ pitchhead:'In real life',pitch:'TaqtOne devices report satisfaction, requests and staff visits in real time. Your teams go to the right place at the right time.',
+ cta:'Discover TaqtOne',share:'Share my score',replay:'Play again',copied:'Text copied!',
+ sharetxt:'I scored {n} points and {s}% satisfaction on Cleaner Hero, the TaqtOne serious game.',
+ paused:'Paused',resume:'Resume',quit:'Quit',snd_on:'Sound on',snd_off:'Sound off',
+ h_mgr:'Walk up to your manager to get your tasks.',h_go:'Follow the arrow to the restroom.',h_find:'Stop next to the pink circle to fix it.',h_badge:'Go out and stand in front of the TaqtOne device to tag.',h_tag:'Tag the bottom of the device to validate your visit.',h_idle:'No task left: go to the break room for your instructions.'
+},
+de:{
+ seo_title:"Cleaner Hero · Kostenloses Spiel: Werden Sie der Sauberkeitsheld am Flughafen",seo_desc:"Cleaner Hero, das kostenlose Serious Game von TaqtOne: Halten Sie als Reinigungskraft am Flughafen eine Woche lang die Toiletten sauber und die Nutzer zufrieden. Auf Smartphone und Computer, ohne Anmeldung.",more:"Das Spiel im Überblick",about_h2:"Cleaner Hero, das kostenlose Spiel für Sauberkeitshelden",about_p1:"Cleaner Hero ist ein kostenloses Serious Game, das direkt im Browser läuft, auf dem Smartphone wie am Computer, ohne Anmeldung und ohne Installation. Sie sind Reinigungskraft an einem Flughafen: Die Flüge folgen aufeinander, die Passagiere nutzen die Toiletten, und Ihre Aufgabe ist es, sie eine ganze Woche lang sauber zu halten.",about_h3a:"So funktioniert das Spiel",about_p2:"Ihr Vorgesetzter gibt die Meldungen vom Einsatzort weiter: kein Toilettenpapier, leerer Seifenspender, voller Mülleimer, schmutziger Boden, defekter Händetrockner oder ein Wasserleck. Finden Sie die richtige Toilette, beheben Sie das Problem und badgen Sie am TaqtOne-Gerät, um Ihren Einsatz zu bestätigen. Je schneller Sie sind, desto mehr Punkte. Fällt die Zufriedenheit der Nutzer jedoch zu tief, ist das Spiel verloren.",about_h3b:"Warum dieses Spiel?",about_p3:"Cleaner Hero wurde von Taqt entwickelt, um TaqtOne vorzustellen: das vernetzte Gerät, das das Feedback der Toilettennutzer sammelt, Anfragen in Echtzeit meldet und die Einsätze des Reinigungspersonals per Badge erfasst. In wenigen Minuten zeigt das Spiel, warum eine bedarfsgesteuerte Reinigung den Unterschied macht.",about_langs:"Verfügbar auf Deutsch, Englisch, Französisch und Spanisch.",about_link:"TaqtOne auf taqt.com entdecken",
+ ty_round:'Kontrollgang',m_round:'Sieh in Toilette {wc} nach dem Rechten und badge am Gerät: Der letzte angezeigte Einsatz liegt lange zurück.',brk_go:'Pausenraum · Anweisungen',
+ w_paper:'Papier nachfüllen',w_soap:'Seife nachfüllen',w_bin:'Mülleimer leeren',w_stain:'Boden reinigen',w_dryer:'Reparatur',w_leak:'Leck abdichten',over_t:'Schicht abgebrochen',over_d:'Die Zufriedenheit der Nutzer ist unter {n} % gefallen. Ihr Vorgesetzter übernimmt.',retry:'Tag wiederholen',warn:'Zufriedenheit kritisch! Unter {n} % ist das Spiel verloren.',rule:'Achtung: Fällt die Zufriedenheit unter {n} %, ist das Spiel verloren.',
+ name:'DE',tagline:'Die richtige Toilette, zur richtigen Zeit.',play:'SPIELEN',howto:'So wird gespielt',byline:'Ein Serious Game von',best:'Rekord: {n}',
+ h1t:'Aufträge abholen',h1d:'Ihr Vorgesetzter gibt sie Ihnen im Pausenraum oder kommt Ihnen entgegen.',
+ h2t:'Zur richtigen Toilette',h2d:'Folgen Sie dem Pfeil. Schraffierte Servicegänge sind Abkürzungen nur für Personal.',
+ h3t:'Problem beheben',h3d:'Bleiben Sie neben dem rosa Kreis stehen: Ihre Reinigungskraft legt los. Zu voll? Dann heißt es warten.',
+ h4t:'Am TaqtOne-Gerät badgen',h4d:'Stellen Sie sich vor das Gerät am Eingang und badgen Sie. Je schneller, desto mehr Punkte.',
+ c_touch:'Bewegen: Daumen irgendwo auf den Bildschirm legen und in die gewünschte Richtung ziehen.',
+ c_kb:'Bewegen: Pfeiltasten oder WASD, oder Maustaste gedrückt halten: Ihre Reinigungskraft läuft zum Mauszeiger. Badgen: Leertaste. Plan: M.',
+ go:'Los geht’s',
+ days:['Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag','Sonntag'],dshort:['Mo','Di','Mi','Do','Fr','Sa','So'],
+ sat:'Zufriedenheit',score:'Punkte',map:'Plan',mgr:'Ihr Vorgesetzter',
+ empty:'Kein Auftrag. Holen Sie sich im Pausenraum Ihre Anweisungen.',
+ crowd:'Zu voll ({n}): bitte warten…',
+ fixedmsg:'Erledigt! Jetzt am TaqtOne-Gerät am Eingang badgen.',prevmsg:'Gut gesehen! Zum Bestätigen am Gerät badgen.',partmsg:'Noch {n} Fleck(en) zu reinigen.',
+ badgeok:'Einsatz bestätigt: +{p} Punkte',badgenone:'Noch nichts zu bestätigen',routine:'Rundgang erfasst: +{p} Punkte',
+ mgrnone:'Nichts Neues. Mach deine Runde und behalte die Geräte im Blick.',seek:'Ihr Vorgesetzter sucht Sie',
+ late:'verspätet',tobadge:'badgen',validated:'bestätigt',initiative:'Eigeninitiative',
+ ty_paper:'Toilettenpapier',ty_soap:'Seife',ty_bin:'Mülleimer voll',ty_dirty:'Boden schmutzig',ty_dryer:'Händetrockner defekt',ty_leak:'Wasserleck',
+ g_supply:'Material?',g_clean:'Reinigung?',g_unhappy:'Unzufriedenheit?',
+ m_paper:'Kein Toilettenpapier mehr in Toilette {wc}.',m_soap:'Keine Seife mehr in Toilette {wc}.',m_bin:'Der Mülleimer in Toilette {wc} quillt über.',m_dirty:'Der Boden in Toilette {wc} ist schmutzig.',m_dryer:'Händetrockner defekt in Toilette {wc}.',m_leak:'Wasserleck in Toilette {wc}. Dringend!',
+ m_first:'Guten Morgen! In Toilette {wc} wurde gestern Abend kein Papier nachgefüllt. Fang dort an.',
+ v_supply:'Anfrage „Verbrauchsmaterial“ am Gerät {wc}. Schau, was fehlt.',v_clean:'Anfrage „Reinigung“ am Gerät {wc}.',v_unhappy:'Bei Toilette {wc} häufen sich rote Smileys. Finde heraus, was los ist.',
+ z_supply:'Irgendwo {zone} fehlt Material. Die Geräte zeigen dir, wo.',z_clean:'Ich habe eine Reinigungsanfrage {zone}, ohne Details. Sieh an den Geräten nach.',z_unhappy:'Unzufriedene Nutzer {zone}… Geh die Geräte ab.',
+ zone_A:'in Pier A',zone_B:'in Pier B',zone_C:'im Zentralbereich',zone_H:'in der öffentlichen Halle',pier_A:'Pier A',pier_B:'Pier B',pier_C:'Pier C',
+ p_break:'Pausenraum',p_svc:'NUR PERSONAL',p_checkin:'Check-in',p_bag:'Gepäck',p_sec:'Kontrolle',p_exit:'Ausgang',gate:'Gate',gates:'Gates',p_board:'Aufträge',
+ s1:'Café',s2:'Presse',s3:'Duty Free',s4:'Snack',
+ t_pending:'OFFENE ANFRAGEN',t_last:'LETZTE EINSÄTZE',t_none:'keine',s_supply:'Material',s_clean:'Reinig.',
+ tq:'Sind Sie mit der Sauberkeit zufrieden?',taghere:'HIER BADGEN',tovalidate:'{n} Einsatz/Einsätze zu bestätigen',nothing:'Rundgang erfassen',tagdone:'Einsatz erfasst um {h}',kbd:'Leertaste',
+ lg_you:'Sie',lg_mission:'Auftrag',lg_svc:'Servicegang',lg_wc:'Toiletten',close:'Schließen',
+ sumtitle:'{day}: Schichtende',peak:'Größter Andrang heute: gegen {h}, {zone}.',
+ r_sat:'Zufriedenheit heute',r_done:'Bestätigte Einsätze',r_pts:'Erzielte Punkte',r_bonus:'Zufriedenheitsbonus',r_pen:'Unerledigte Aufträge ({n})',r_total:'Wochensumme',
+ tiphead:'Im Einsatz, mit TaqtOne',next:'Weiter zu {day}',seefinal:'Mein Ergebnis ansehen',
+ tips:['Das Gerät zeigt die Uhrzeit der letzten Reinigungen: Nutzer sehen, dass sich jemand kümmert.','Die Tasten sind berührungslos: Feedback geben, ohne etwas anzufassen.','Ein Badge unten am Gerät genügt, um einen Einsatz zu erfassen. Keine Papierliste mehr hinter der Tür.','Anfragen „Verbrauchsmaterial“ und „Reinigung“ kommen in Echtzeit an: Man handelt dort, wo es nötig ist.','Smileys zeigen Unzufriedenheit, bevor die Beschwerde kommt. Man reagiert früher.','Mit Rückmeldungen vom Ort folgt die Reinigung dem tatsächlichen Andrang statt einem starren Plan.','Nutzer können dem Team auch mit einer Geste danken. Ein Herz zählt.'],
+ weekdone:'Woche geschafft!',ptsunit:'Punkte',finsat:'Durchschnittliche Zufriedenheit: {s} %',
+ rank0:'Neuling',rank1:'Erfahrene Kraft',rank2:'Sauberkeitsprofi',rank3:'Cleaner Hero',
+ pitchhead:'Im echten Leben',pitch:'TaqtOne-Geräte melden Zufriedenheit, Anfragen und Einsätze der Teams in Echtzeit. Ihre Teams sind zur richtigen Zeit am richtigen Ort.',
+ cta:'TaqtOne entdecken',share:'Ergebnis teilen',replay:'Noch einmal',copied:'Text kopiert!',
+ sharetxt:'Ich habe {n} Punkte und {s} % Zufriedenheit bei Cleaner Hero erreicht, dem Serious Game von TaqtOne.',
+ paused:'Pause',resume:'Weiter',quit:'Beenden',snd_on:'Ton an',snd_off:'Ton aus',
+ h_mgr:'Gehen Sie zu Ihrem Vorgesetzten, um Ihre Aufträge zu erhalten.',h_go:'Folgen Sie dem Pfeil zur Toilette.',h_find:'Bleiben Sie neben dem rosa Kreis stehen.',h_badge:'Gehen Sie hinaus und stellen Sie sich vor das TaqtOne-Gerät.',h_tag:'Badgen Sie unten am Gerät, um Ihren Einsatz zu bestätigen.',h_idle:'Kein Auftrag mehr: Holen Sie sich im Pausenraum Ihre Anweisungen.'
+},
+es:{
+ seo_title:"Cleaner Hero · Juego gratis: conviértete en el héroe de la limpieza del aeropuerto",seo_desc:"Cleaner Hero, el serious game gratuito de TaqtOne: como agente de limpieza en un aeropuerto, mantén los aseos limpios y a los usuarios satisfechos durante una semana. En móvil y ordenador, sin registro.",more:"El juego en breve",about_h2:"Cleaner Hero, el juego gratuito del héroe de la limpieza",about_p1:"Cleaner Hero es un serious game gratuito que se juega directamente en el navegador, en el móvil o en el ordenador, sin registro ni instalación. Eres agente de limpieza en un aeropuerto: los vuelos se suceden, los pasajeros usan los aseos y tu misión es mantenerlos limpios durante toda una semana.",about_h3a:"Cómo se juega",about_p2:"Tu responsable te transmite los avisos del terreno: se acabó el papel, el jabón está vacío, la papelera rebosa, el suelo está sucio, el secamanos está averiado o hay una fuga de agua. Encuentra el aseo correcto, resuelve el problema y ficha en el dispositivo TaqtOne para validar tu paso. Cuanto más rápido, más puntos. Pero si la satisfacción de los usuarios cae demasiado, pierdes la partida.",about_h3b:"¿Por qué este juego?",about_p3:"Cleaner Hero ha sido creado por Taqt para dar a conocer TaqtOne, el dispositivo conectado que recoge la opinión de los usuarios de los aseos, transmite las solicitudes en tiempo real y registra el paso de los equipos de limpieza con un simple fichaje. En pocos minutos, el juego muestra por qué una limpieza guiada por el terreno marca la diferencia.",about_langs:"Disponible en español, inglés, francés y alemán.",about_link:"Descubrir TaqtOne en taqt.com",
+ ty_round:'Ronda de control',m_round:'Pasa a revisar el aseo {wc} y ficha en el dispositivo: el último paso mostrado ya es antiguo.',brk_go:'Sala de descanso · instrucciones',
+ w_paper:'Reponiendo papel',w_soap:'Reponiendo jabón',w_bin:'Vaciando la papelera',w_stain:'Limpiando el suelo',w_dryer:'Reparando',w_leak:'Reparando la fuga',over_t:'Turno interrumpido',over_d:'La satisfacción de los usuarios ha caído por debajo del {n} %. Tu responsable toma el relevo.',retry:'Repetir el día',warn:'¡Satisfacción crítica! Por debajo del {n} %, pierdes la partida.',rule:'Atención: si la satisfacción cae por debajo del {n} %, pierdes la partida.',
+ name:'ES',tagline:'El aseo correcto, en el momento justo.',play:'JUGAR',howto:'Cómo se juega',byline:'Un serious game de',best:'Récord: {n}',
+ h1t:'Recoge tus misiones',h1d:'Tu responsable te las da en la sala de descanso o sale a tu encuentro.',
+ h2t:'Corre al aseo correcto',h2d:'Sigue la flecha. Los pasillos de servicio rayados son atajos solo para el personal.',
+ h3t:'Resuelve el problema',h3d:'Detente junto al círculo rosa: tu agente se pone a trabajar. ¿Demasiada gente? Toca esperar.',
+ h4t:'Ficha en el TaqtOne',h4d:'Colócate delante del dispositivo de la entrada y ficha para validar. Cuanto más rápido, más puntos.',
+ c_touch:'Para moverte: apoya el pulgar en cualquier punto de la pantalla y deslízalo hacia donde quieras ir.',
+ c_kb:'Para moverte: flechas o WASD, o mantén pulsado el ratón: tu agente va hacia el cursor. Fichar: Espacio. Plano: M.',
+ go:'Vamos',
+ days:['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'],dshort:['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'],
+ sat:'Satisfacción',score:'Puntos',map:'Plano',mgr:'Tu responsable',
+ empty:'Ninguna misión. Pasa por la sala de descanso a por tus instrucciones.',
+ crowd:'Demasiada gente ({n}): espera…',
+ fixedmsg:'¡Resuelto! Ve a fichar en el TaqtOne de la entrada.',prevmsg:'¡Bien visto! Ficha en el dispositivo para validar.',partmsg:'Quedan {n} mancha(s) por limpiar.',
+ badgeok:'Paso validado: +{p} puntos',badgenone:'Nada que validar por ahora',routine:'Ronda registrada: +{p} puntos',
+ mgrnone:'Nada nuevo. Haz tu ronda y vigila los dispositivos.',seek:'Tu responsable te está buscando',
+ late:'con retraso',tobadge:'fichar',validated:'validado',initiative:'iniciativa',
+ ty_paper:'Papel higiénico',ty_soap:'Jabón',ty_bin:'Papelera llena',ty_dirty:'Suelo sucio',ty_dryer:'Secamanos averiado',ty_leak:'Fuga de agua',
+ g_supply:'¿Consumibles?',g_clean:'¿Limpieza?',g_unhappy:'¿Insatisfacción?',
+ m_paper:'No queda papel higiénico en el aseo {wc}.',m_soap:'No queda jabón en el aseo {wc}.',m_bin:'La papelera rebosa en el aseo {wc}.',m_dirty:'El suelo está sucio en el aseo {wc}.',m_dryer:'Secamanos averiado en el aseo {wc}.',m_leak:'Fuga de agua en el aseo {wc}. ¡Es urgente!',
+ m_first:'¡Buenos días! Anoche no se repuso el papel en el aseo {wc}. Empieza por ahí.',
+ v_supply:'Solicitud «Consumibles» en el dispositivo {wc}. Mira qué falta.',v_clean:'Solicitud «Limpieza» en el dispositivo {wc}.',v_unhappy:'Se acumulan caritas rojas en el aseo {wc}. Averigua qué pasa.',
+ z_supply:'Faltan consumibles en algún punto de {zone}. Los dispositivos te dirán dónde.',z_clean:'Me piden una limpieza en {zone}, sin más detalle. Mira los dispositivos.',z_unhappy:'Usuarios descontentos en {zone}… Revisa los dispositivos.',
+ zone_A:'el muelle A',zone_B:'el muelle B',zone_C:'la zona central',zone_H:'el vestíbulo público',pier_A:'muelle A',pier_B:'muelle B',pier_C:'muelle C',
+ p_break:'Sala de descanso',p_svc:'SOLO PERSONAL',p_checkin:'Facturación',p_bag:'Equipajes',p_sec:'Control',p_exit:'Salida',gate:'Puerta',gates:'Puertas',p_board:'Misiones',
+ s1:'Café',s2:'Prensa',s3:'Duty Free',s4:'Snack',
+ t_pending:'SOLICITUDES ABIERTAS',t_last:'ÚLTIMOS PASOS',t_none:'ninguna',s_supply:'Consum.',s_clean:'Limp.',
+ tq:'¿Está satisfecho con la limpieza?',taghere:'FICHE AQUÍ',tovalidate:'{n} intervención(es) por validar',nothing:'Registra tu paso',tagdone:'Paso registrado a las {h}',kbd:'Espacio',
+ lg_you:'Tú',lg_mission:'Misión',lg_svc:'Pasillo de servicio',lg_wc:'Aseos',close:'Cerrar',
+ sumtitle:'{day}: fin del turno',peak:'Mayor afluencia de hoy: hacia las {h}, {zone}.',
+ r_sat:'Satisfacción del día',r_done:'Intervenciones validadas',r_pts:'Puntos ganados',r_bonus:'Bonus de satisfacción',r_pen:'Misiones sin atender ({n})',r_total:'Total de la semana',
+ tiphead:'Sobre el terreno, con TaqtOne',next:'Pasar al {day}',seefinal:'Ver mi resultado',
+ tips:['El dispositivo muestra la hora de los últimos pasos: los usuarios ven que el mantenimiento se sigue.','Los botones son sin contacto: el usuario opina acercando el dedo, sin tocar nada.','Basta con fichar en la parte inferior para registrar un paso. Se acabó la hoja de firmas tras la puerta.','Las solicitudes «Consumibles» y «Limpieza» llegan en tiempo real: se actúa donde hace falta, cuando hace falta.','Las caritas revelan la insatisfacción antes de la queja. Se actúa antes.','Con los datos del terreno, la limpieza sigue la afluencia real y no un horario fijo.','Los usuarios también pueden dar las gracias al equipo con un gesto. Un corazón cuenta.'],
+ weekdone:'¡Semana terminada!',ptsunit:'puntos',finsat:'Satisfacción media: {s} %',
+ rank0:'Agente novato',rank1:'Agente experimentado',rank2:'Experto en limpieza',rank3:'Cleaner Hero',
+ pitchhead:'En la vida real',pitch:'Los dispositivos TaqtOne transmiten en tiempo real la satisfacción, las solicitudes y los pasos de los equipos. Tu personal va al lugar adecuado en el momento justo.',
+ cta:'Descubrir TaqtOne',share:'Compartir mi puntuación',replay:'Volver a jugar',copied:'¡Texto copiado!',
+ sharetxt:'He conseguido {n} puntos y un {s} % de satisfacción en Cleaner Hero, el serious game de TaqtOne.',
+ paused:'Pausa',resume:'Continuar',quit:'Salir',snd_on:'Sonido activado',snd_off:'Sonido apagado',
+ h_mgr:'Acércate a tu responsable para recibir tus misiones.',h_go:'Sigue la flecha hasta el aseo indicado.',h_find:'Detente junto al círculo rosa para intervenir.',h_badge:'Sal y colócate delante del TaqtOne para fichar.',h_tag:'Ficha en la parte inferior del dispositivo para validar tu paso.',h_idle:'Sin misiones: pasa por la sala de descanso a por tus instrucciones.'
+}};
+const QUO={fr:['« ',' »'],en:['“','”'],de:['„','“'],es:['«','»']};
+const SITE={fr:'https://www.taqt.com/fr',en:'https://www.taqt.com',de:'https://www.taqt.com/de',es:'https://www.taqt.com/es'};
+const CANON='https://agoraopinion.github.io/CleanerHero/';
+let lang='fr';const QL=(()=>{try{return new URLSearchParams(location.search).get('lang');}catch(e){return null;}})();
+if(QL&&I18N[QL])lang=QL;else try{const s=localStorage.getItem('ch_lang');if(s&&I18N[s])lang=s;else{const n=(navigator.language||'fr').slice(0,2).toLowerCase();if(I18N[n])lang=n;}}catch(e){}
+function t(k,v){let s=I18N[lang][k];if(s===undefined)s=I18N.en[k];if(s===undefined)return k;if(v)for(const a in v)s=s.split('{'+a+'}').join(v[a]);return s;}
+
+/* =====================================================================
+   Aéroport
+   ===================================================================== */
+const W=96,H=62;
+const WALL=0,PUB=1,SVC=2,WCF=3,BRK=4,SHOP=5,DOOR=6,APRON=7,GLASS=8,OBST=9,ROAD=10;
+const grid=new Uint8Array(W*H);
+const rect=(x0,y0,x1,y1,v)=>{for(let y=y0;y<=y1;y++)for(let x=x0;x<=x1;x++)grid[y*W+x]=v;};
+const tile=(x,y)=>(x<0||y<0||x>=W||y>=H)?WALL:grid[y*W+x];
+rect(0,0,95,19,APRON);rect(0,60,95,61,ROAD);
+rect(2,20,93,20,GLASS);rect(2,21,93,27,PUB);          // jetées A et B
+rect(44,8,51,20,GLASS);rect(45,9,50,20,PUB);          // jetée C
+rect(51,11,60,18,WALL);
+rect(38,28,57,41,PUB);rect(41,31,45,38,SHOP);rect(50,31,54,38,SHOP);   // zone centrale
+rect(45,42,50,47,PUB);                                 // contrôle
+rect(14,48,81,57,PUB);rect(46,58,49,59,PUB);          // hall public + entrée
+rect(17,28,18,47,SVC);rect(77,28,78,47,SVC);rect(64,38,76,39,SVC);
+rect(59,36,63,40,BRK);rect(58,37,58,38,BRK);
+const WCS=[
+ {id:'A1',zone:'A',x0:5,y0:29,x1:12,y1:34,side:'N',door:[[8,28],[9,28]]},
+ {id:'A2',zone:'A',x0:24,y0:29,x1:31,y1:34,side:'N',door:[[27,28],[28,28]]},
+ {id:'B1',zone:'B',x0:64,y0:29,x1:71,y1:34,side:'N',door:[[67,28],[68,28]]},
+ {id:'B2',zone:'B',x0:83,y0:29,x1:90,y1:34,side:'N',door:[[86,28],[87,28]]},
+ {id:'C1',zone:'C',x0:52,y0:12,x1:59,y1:17,side:'W',door:[[51,14],[51,15]]},
+ {id:'F1',zone:'C',x0:29,y0:36,x1:36,y1:41,side:'E',door:[[37,38],[37,39]]},
+ {id:'H1',zone:'H',x0:66,y0:41,x1:73,y1:46,side:'S',door:[[69,47],[70,47]]},
+ {id:'R1',zone:'H',x0:20,y0:41,x1:27,y1:46,side:'S',door:[[23,47],[24,47]]}
+];
+const OUT={N:[0,-1],S:[0,1],W:[-1,0],E:[1,0]};
+function loc(w,u,v){switch(w.side){case'N':return[w.x0+u,w.y0+v];case'S':return[w.x0+u,w.y1+1-v];case'W':return[w.x0+v,w.y0+u];default:return[w.x1+1-v,w.y0+u];}}
+WCS.forEach((w,i)=>{
+  w.i=i;rect(w.x0,w.y0,w.x1,w.y1,WCF);w.door.forEach(d=>{grid[d[1]*W+d[0]]=DOOR;});
+  const ww=w.x1-w.x0+1,hh=w.y1-w.y0+1,ns=(w.side==='N'||w.side==='S');
+  w.Wd=ns?ww:hh;w.D=ns?hh:ww;
+  w.stalls=[0,1,2,3].map(k=>loc(w,(k+.5)*w.Wd/4,w.D-.6));
+  w.sinks=[0,1,2].map(k=>loc(w,.5,1.4+k*1.15));
+  w.dryer=loc(w,w.Wd-.45,1.5);w.soap=loc(w,w.Wd-.45,2.9);w.bin=loc(w,w.Wd/2+2.1,.55);
+  const o=OUT[w.side];w.out=o;
+  w.dc=[(w.door[0][0]+w.door[1][0])/2+.5,(w.door[0][1]+w.door[1][1])/2+.5];
+  w.term=[w.dc[0]+o[0]*.62-o[1]*2.1,w.dc[1]+o[1]*.62+o[0]*2.1];
+  w.pad=[w.term[0]+o[0]*.55,w.term[1]+o[1]*.55];
+  w.dev=[w.term[0]-o[0]*.5,w.term[1]-o[1]*.5];
+  w.vd=[loc(w,0,1)[0]-loc(w,0,0)[0],loc(w,0,1)[1]-loc(w,0,0)[1]];w.so=[0,0,0,0];
+  w.st=[];w.stains=[];w.is={};w.pend=[];w.prev=0;w.occ=0;w.votes={h:0,n:0,u:0};w.last=[];w.lastPass=-99;w.soapLv=20;w.binLv=0;w.dryerOK=true;w.leak=-1;w.dirt=0;w.nextStain=8;
+});
+const GATES=[[6,21,'A'],[14,21,'A'],[22,21,'A'],[30,21,'A'],[64,21,'B'],[72,21,'B'],[80,21,'B'],[88,21,'B'],[47,9,'C'],[45,13,'C']].map((g,i)=>({n:i+1,x:g[0],y:g[1],pier:g[2]}));
+const PLANES=GATES.map((g,i)=>i<8?{x:g.x+.5,y:19.3,rot:0}:i===8?{x:48,y:7.6,rot:0}:{x:43.6,y:13.5,rot:-Math.PI/2});
+GATES.forEach((g,i)=>{g.px=i<8?g.x+1.3:i===8?49.6:44.5;g.py=i<8?20.5:i===8?8.5:12.3;});
+const SEATS=[];
+for(let x=3;x<=92;x++){if(x>=43&&x<=52)continue;if(GATES.some(g=>g.y===21&&x>=g.x-1&&x<=g.x+2))continue;if((x-3)%5===4)continue;grid[21*W+x]=OBST;SEATS.push([x,21,'N']);}
+[[50,10,'E'],[50,11,'E'],[45,16,'W'],[45,17,'W'],[45,18,'W']].forEach(s=>{grid[s[1]*W+s[0]]=OBST;SEATS.push(s);});
+const CHECKIN=[[54,51,57,54],[63,51,66,54],[72,51,75,54]],CAROU=[[18,51,26,53],[31,51,39,53]],SCAN=[[46,44,46,45],[49,44,49,45]];
+[...CHECKIN,...CAROU,...SCAN].forEach(r=>rect(r[0],r[1],r[2],r[3],OBST));
+const PLANTS=[[38.5,28.5],[57.5,28.5],[57.5,41.5],[14.6,48.6],[81.4,48.6],[14.6,57.4],[81.4,57.4],[2.6,27.4],[93.4,27.4],[45.5,47.5],[50.5,47.5]];
+const FIDS=[[33,28,4],[59,28,4],[30,47,5],[56,47,5]];
+const SHOPS=[{x0:41,y0:31,x1:45,y1:34,k:'s1',c:'#b5533c',c2:'#f1d7c8'},{x0:41,y0:35,x1:45,y1:38,k:'s2',c:'#2f7f86',c2:'#cfe9ea'},{x0:50,y0:31,x1:54,y1:34,k:'s3',c:'#3f00b3',c2:'#d9d3f5'},{x0:50,y0:35,x1:54,y1:38,k:'s4',c:'#c98f1e',c2:'#f6e6c0'}];
+const EXIT=[[47,59],[48,59]];
+const DESK=[61,38],BOARD=[61.5,36.4],SPAWN=[60.2,39.4];
+const walk=(x,y)=>{const v=tile(x|0,y|0);return v===PUB||v===SVC||v===WCF||v===BRK||v===DOOR;};
+const paxOk=v=>v===PUB||v===DOOR, allOk=v=>v===PUB||v===SVC||v===WCF||v===BRK||v===DOOR;
+const isFloor=v=>v===PUB||v===SVC||v===WCF||v===BRK||v===DOOR||v===OBST;
+function bfs(srcs,ok){
+  const d=new Int16Array(W*H).fill(-1),q=new Int32Array(W*H);let a=0,b=0;
+  for(const s of srcs){const i=s[1]*W+s[0];if(d[i]<0){d[i]=0;q[b++]=i;}}
+  while(a<b){const c=q[a++],cx=c%W,cy=(c/W)|0,nd=d[c]+1;
+    if(cx>0&&d[c-1]<0&&ok(grid[c-1])){d[c-1]=nd;q[b++]=c-1;}
+    if(cx<W-1&&d[c+1]<0&&ok(grid[c+1])){d[c+1]=nd;q[b++]=c+1;}
+    if(cy>0&&d[c-W]<0&&ok(grid[c-W])){d[c-W]=nd;q[b++]=c-W;}
+    if(cy<H-1&&d[c+W]<0&&ok(grid[c+W])){d[c+W]=nd;q[b++]=c+W;}}
+  return d;
+}
+const F={wc:WCS.map(w=>bfs(w.door,paxOk)),gate:GATES.map(g=>bfs([[g.x,g.y]],paxOk)),exit:bfs(EXIT,paxOk),desk:bfs([DESK],allOk)};
+const D8=[[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]];
+function stepToward(f,x,y,rnd,lx,ly){
+  const c=f[y*W+x];if(c<=0)return null;let best=null,bd=c,tot=0;
+  for(const d of D8){const nx=x+d[0],ny=y+d[1];if(nx<0||ny<0||nx>=W||ny>=H)continue;const v=f[ny*W+nx];if(v<0||v>c)continue;
+    const diag=d[0]&&d[1];
+    if(diag&&(f[y*W+nx]<0||f[ny*W+x]<0))continue;
+    if(v===c){if(!rnd||!diag||!(lx||ly)||d[0]*lx+d[1]*ly<=0)continue;tot+=.3;if(Math.random()<.3/tot)best=[nx,ny];continue;}
+    if(rnd){tot+=1;if(Math.random()<1/tot)best=[nx,ny];}else if(v<bd){bd=v;best=[nx,ny];}}
+  return best;
+}
+
+/* =====================================================================
+   Planning hebdomadaire (caché, identique à chaque partie)
+   ===================================================================== */
+const PLAN=[
+ [[6.4,'A','dep',3,34],[8.6,'A','arr',2,36],[11,'B','arr',1,30],[13,'C','dep',1,26],[17.5,'A','arr',2,34],[19.2,'A','dep',2,30]],
+ [[7,'A','dep',2,28],[10,'B','arr',1,28],[12.5,'C','arr',1,24],[15,'B','dep',1,28],[18,'A','arr',2,30]],
+ [[7,'A','dep',2,30],[9.5,'C','arr',2,28],[12,'B','dep',2,30],[14.5,'B','arr',1,30],[18,'A','arr',2,32],[20,'C','dep',1,24]],
+ [[6.5,'A','dep',3,32],[9,'B','arr',2,32],[12,'C','dep',1,28],[15.5,'B','dep',2,30],[17.5,'A','arr',3,32],[20,'B','arr',1,28]],
+ [[7,'A','dep',2,32],[10,'B','dep',2,32],[13,'C','arr',1,28],[16,'A','arr',3,36],[17.5,'B','dep',3,36],[19.5,'A','dep',2,34],[20.4,'C','dep',2,28]],
+ [[8,'B','dep',3,38],[10,'C','dep',2,34],[11.5,'B','dep',3,38],[14,'C','arr',2,30],[16.5,'B','arr',2,34],[19,'A','arr',1,26]],
+ [[9,'C','dep',1,28],[11,'B','arr',2,32],[14,'A','dep',1,28],[16.5,'B','arr',3,38],[18,'C','arr',3,34],[19.5,'B','arr',3,38],[20.4,'A','arr',2,32]]
+];
+const DAYF=[.6,1.05,.8,.66,.62,.64,.78];
+function mkRng(seed){let s=seed>>>0;return()=>{s=(s+0x6D2B79F5)>>>0;let r=Math.imul(s^(s>>>15),1|s);r=(r+Math.imul(r^(r>>>7),61|r))^r;return((r^(r>>>14))>>>0)/4294967296;};}
+function buildEvents(day){
+  const rng=mkRng(1000+day*77),ev=[],hist={};
+  for(const w of PLAN[day]){const gs=GATES.filter(g=>g.pier===w[1]);
+    for(let i=0;i<w[3];i++){const g=gs[(rng()*gs.length)|0],tf=w[0]+i*.35+rng()*.2;
+      for(let p=0;p<w[4];p++){
+        const tt=w[2]==='arr'?tf+rng()*.6:Math.max(6.02,tf-2+rng()*1.3);
+        ev.push({t:tt,kind:w[2],g:g.n-1});
+        const k=Math.floor(w[2]==='arr'?tf:Math.max(6,tf-1))+'|'+w[1];hist[k]=(hist[k]||0)+1;
+      }}}
+  ev.sort((a,b)=>a.t-b.t);
+  let bk=null,bv=0;for(const k in hist)if(hist[k]>bv){bv=hist[k];bk=k;}
+  const pk=bk.split('|');return{ev,peakH:+pk[0],peakPier:pk[1]};
+}
+
+/* =====================================================================
+   État et règles
+   ===================================================================== */
+const DAY_LEN=120,RATE=16/DAY_LEN,CROWD=7,CAPP=10,CAPS=26,CAPB=24,SATMIN=35,SATWARN=50,ROLLN=120;
+const TYPES={
+ paper:{grp:'supply',base:200,lim:45,imp:2,trig:w=>w.st.some(s=>s.paper<=0),clr:w=>!w.st.some(s=>s.paper<=0)},
+ soap:{grp:'supply',base:140,lim:50,imp:1,trig:w=>w.soapLv<=0,clr:w=>w.soapLv>0},
+ bin:{grp:'clean',base:120,lim:58,imp:1,trig:w=>w.binLv>=CAPB,clr:w=>w.binLv<CAPB},
+ dirty:{grp:'clean',base:220,lim:50,imp:2,trig:w=>w.stains.length>=3,clr:w=>w.stains.length===0},
+ dryer:{grp:'unhappy',base:180,lim:55,imp:1,trig:w=>!w.dryerOK,clr:w=>w.dryerOK},
+ leak:{grp:'unhappy',base:300,lim:34,imp:3,trig:w=>w.leak>=0,clr:w=>w.leak<0}
+};
+const G={state:'menu',day:0,time:6,now:0,score:0,votes:{h:0,n:0,u:0},roll:[],weekSat:[],missions:[],queue:[],pax:[],ev:[],evi:0,floats:[],fx:[],stats:null,term:null,spots:[],wait:null,dirtyUI:true,uid:1,peakH:8,peakPier:'A',trackId:0,cam:{x:48,y:24},attract:true,first:null,badT:0};
+const pl={x:SPAWN[0],y:SPAWN[1],fx:0,fy:1,busy:null,moving:false,step:0,idle:0};
+const mgr={x:DESK[0]+.5,y:DESK[1]+.5,tx:DESK[0],ty:DESK[1],state:'desk',field:null,ft:0,fx:0,fy:1,step:0};
+const keys={};let joy=null;
+
+const clockStr=tm=>{const h=Math.floor(tm),m=Math.floor((tm-h)*60);return String(h).padStart(2,'0')+':'+String(m).padStart(2,'0');};
+const wcAt=(x,y)=>{for(const w of WCS)if(x>=w.x0&&x<w.x1+1&&y>=w.y0&&y<w.y1+1)return w;return null;};
+function quality(w){
+  const e=w.st.filter(s=>s.paper<=0).length;
+  let q=.97-.16*e-(e===4?.15:0)-(w.soapLv<=0?.3:0)-(w.binLv>=CAPB?.2:0)-.1*Math.min(6,w.stains.length)-(w.dryerOK?0:.25)-(w.leak>=0?.5:0);
+  return Math.max(0,q);
+}
+function initWC(w,i){
+  const d=G.day;
+  w.st=w.stalls.map(()=>({paper:5+((Math.random()*6)|0)}));
+  w.soapLv=12+((Math.random()*15)|0);w.binLv=(Math.random()*9)|0;
+  w.stains=[];w.dirt=Math.random()*3;w.nextStain=7+Math.random()*5;w.dryerOK=true;w.leak=-1;
+  w.is={};w.pend=[];w.prev=0;w.occ=0;w.votes={h:0,n:0,u:0};w.lastPass=-99;w.so=[0,0,0,0];
+  const ds=I18N[lang].dshort[(d+6)%7];
+  w.last=[[ds,'21:'+String(10+((i*7+d*3)%45)).padStart(2,'0')],[ds,'17:'+String(5+((i*11+d*5)%50)).padStart(2,'0')]];
+}
+function mkMission(is,force){
+  const d0=G.day===0,r=Math.random();
+  const kind=force||(r<(d0?.06:.2)?'zone':r<(d0?.35:.6)?'vtype':'precise');
+  const T=TYPES[is.type];
+  return{id:G.uid++,type:is.type,wc:is.wc,kind,grp:T.grp,state:'queued',t0:0,q0:G.now,lim:T.lim,base:T.base,imp:T.imp,pts:0,doneAt:0,pro:false,first:false};
+}
+function report(is,force){
+  if(is.reported)return;is.reported=true;is.rep=clockStr(G.time);
+  const m=mkMission(is,force);is.mission=m;G.queue.push(m);
+}
+function checkIssues(w,silent){
+  for(const ty in TYPES){const T=TYPES[ty],is=w.is[ty];
+    if(!is){if(T.trig(w))w.is[ty]={type:ty,wc:w,born:G.now,reported:false,mission:null,rep:null};}
+    else if(T.clr(w)){
+      const m=is.mission;
+      if(m&&m.state==='todo'){m.state='fixed';w.pend.push({m});}
+      else{if(m&&m.state==='queued')G.queue.splice(G.queue.indexOf(m),1);w.pend.push({pts:Math.round(T.base*.8/5)*5+60,type:ty});}
+      delete w.is[ty];
+      if(!silent){toast(t('fixedmsg'),3000);sfx('done');}
+      G.dirtyUI=true;
+    }}
+}
+function missionMsg(m){
+  if(m.type==='round')return t('m_round',{wc:m.wc.id});
+  if(m.first)return t('m_first',{wc:m.wc.id});
+  if(m.kind==='precise')return t('m_'+m.type,{wc:m.wc.id});
+  if(m.kind==='vtype')return t('v_'+m.grp,{wc:m.wc.id});
+  return t('z_'+m.grp,{zone:t('zone_'+m.wc.zone)});
+}
+const active=()=>G.missions.filter(m=>m.state!=='done').length;
+const roundFor=w=>G.missions.find(m=>m.type==='round'&&m.wc===w&&m.state==='todo');
+const wcNeed=w=>w.pend.length||w.prev>0||!!roundFor(w);
+// Ronde de contrôle : le manager envoie l'agent là où le dernier passage affiché est le plus ancien
+function addRound(){
+  const busy=new Set([...G.missions.filter(m=>m.state!=='done'),...G.queue].map(m=>m.wc));
+  let best=null,bv=1e9;for(const w of WCS){if(busy.has(w))continue;const v=w.lastPass+Math.random()*4;if(v<bv){bv=v;best=w;}}
+  if(!best)return;
+  G.queue.push({id:G.uid++,type:'round',wc:best,kind:'precise',grp:'round',state:'queued',t0:0,q0:G.now,lim:55,base:90,imp:1,pts:0,doneAt:0,pro:false,first:false});
+}
+function deliver(){
+  if(!G.queue.length)return false;
+  const list=$('mgrlist');list.textContent='';
+  G.queue.sort((a,b)=>b.imp-a.imp);
+  for(const m of G.queue){m.state='todo';m.t0=G.now;G.missions.push(m);const li=document.createElement('li');li.textContent=QUO[lang][0]+missionMsg(m)+QUO[lang][1];list.appendChild(li);}
+  G.queue=[];$('mgrcard').classList.add('on');G.cardT=G.now+7;G.dirtyUI=true;sfx('mission');
+  return true;
+}
+function toast(s,ms){const e=$('toast');e.textContent=s;e.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>e.classList.remove('on'),ms||2400);}
+function ptsNow(m){const el=G.now-m.t0;return Math.round(m.base*Math.max(.25,1-.75*el/m.lim)/5)*5;}
+const satLive=()=>G.roll.length?Math.round(100*G.roll.reduce((a,b)=>a+b,0)/G.roll.length):100;
+const satPct=v=>{const n=v.h+v.n+v.u;return n?Math.round(100*(v.h+.5*v.n)/n):null;};
+
+/* ---------- Passagers ---------- */
+const PAXC=[['#3f6ea5','#2b2b33'],['#8a5a9c','#5a3b1f'],['#4f9a7a','#1f1f24'],['#c47a45','#7a5a3a'],['#6c7486','#d9b26a'],['#b0566b','#2b2b33'],['#3f8f9f','#8c8c8c'],['#a39446','#3b2a1a'],['#e6e2d8','#5a3b1f'],['#2f3b55','#c9a36a']];
+const SKIN=['#f0cfae','#e2b58e','#c68e62','#8d5a3a','#f5d9c0'];
+function spawnPax(e){
+  const g=GATES[e.g],arr=e.kind==='arr';
+  const ex=EXIT[(Math.random()*2)|0],o=arr?[g.x,g.y]:ex,dest=arr?F.exit:F.gate[e.g];
+  const p={x:o[0]+.5,y:o[1]+.5,tx:o[0],ty:o[1],ox:(Math.random()-.5)*.6,oy:(Math.random()-.5)*.6,sp:3.1+Math.random()*1.2,col:(Math.random()*PAXC.length)|0,sk:(Math.random()*SKIN.length)|0,st:'dest',f:dest,dest,wc:null,tm:0,lx:0,ly:0,dx:0,dy:1,ph:Math.random()*6,bag:Math.random()<.65?(Math.random()*5)|0:-1};
+  if(Math.random()<.56){
+    let best=null,bc=1e9;
+    for(const w of WCS){const a=F.wc[w.i][o[1]*W+o[0]],b=dest[w.door[0][1]*W+w.door[0][0]];if(a<0||b<0)continue;const c=a+b+Math.random()*26+(w.occ>CROWD+4?14:0);if(c<bc){bc=c;best=w;}}
+    if(best){p.wc=best;p.f=F.wc[best.i];p.st='wc';}
+  }
+  G.pax.push(p);
+}
+function leaveWC(p){
+  const w=p.wc;w.occ--;
+  if(!G.attract){
+    // 1. l'usager note ce qu'il a trouvé
+    if(Math.random()<.65){const q=quality(w),r=Math.random(),k=r<q?'h':r<q+(1-q)*.3?'n':'u';G.votes[k]++;w.votes[k]++;
+      G.roll.push(k==='h'?1:k==='n'?.5:0);if(G.roll.length>ROLLN)G.roll.shift();
+      G.fx.push({x:w.term[0],y:w.term[1],k,t:0});if(k==='u'&&G.now>G.badT){G.badT=G.now+2.5;sfx('bad');}G.satBump=G.now;G.dirtyUI=true;}
+    for(const ty in w.is){const is=w.is[ty];if(!is.reported&&G.now-is.born>1&&Math.random()<.7)report(is);}
+    // 2. son passage use le sanitaire : toute dégradation vient de là
+    const f=DAYF[G.day];
+    const stl=p.stall>=0?w.st[p.stall]:null;if(stl&&stl.paper>0&&Math.random()<f)stl.paper--;
+    if(w.soapLv>0&&Math.random()<f)w.soapLv--;
+    if(w.binLv<CAPB&&Math.random()<f)w.binLv++;
+    w.dirt+=f;if(w.dirt>=w.nextStain&&w.stains.length<7){const q=loc(w,1.5+Math.random()*(w.Wd-3),1.3+Math.random()*(w.D-3.3));w.stains.push({x:q[0],y:q[1],seed:Math.random()*9,born:G.now});w.dirt=0;w.nextStain=7+Math.random()*5;}
+    if(w.dryerOK&&Math.random()<.007*f)w.dryerOK=false;
+    if(w.leak<0&&Math.random()<.005*f)w.leak=(Math.random()*3)|0;
+    checkIssues(w,true);
+  }
+  const d=p.ed||w.door[0];p.x=d[0]+.5;p.y=d[1]+.5;p.tx=d[0];p.ty=d[1];p.f=p.dest;p.st='dest';
+}
+// À l'intérieur : entrée, cabine (ou file d'attente), lavabo, parfois sèche-mains, sortie
+function enterWC(p){
+  const w=p.wc;w.occ++;p.st='in';p.ip=0;p.qw=0;p.wait=0;p.stall=-1;p.inStall=false;p.wash=-1;p.dry=false;p.mv=true;
+  const e=loc(w,w.Wd/2+(Math.random()-.5)*1.3,.95);p.en=e;p.gx=e[0];p.gy=e[1];
+}
+function wcGoSink(p){const w=p.wc,k=(Math.random()*3)|0,q=loc(w,1.42,1.4+k*1.15);p.sink=k;p.gx=q[0];p.gy=q[1];p.ip=6;}
+function wcGoOut(p){p.gx=p.en[0];p.gy=p.en[1];p.ip=10;}
+function wcNext(p){
+  const w=p.wc,k=p.stall;
+  switch(p.ip){
+    case 0:case 1:{
+      let fr=[0,1,2,3].filter(i=>!w.so[i]);const wp=fr.filter(i=>w.st[i]&&w.st[i].paper>0);if(wp.length)fr=wp;
+      if(fr.length){const i=fr[(Math.random()*fr.length)|0];w.so[i]=1;p.stall=i;const q=loc(w,(i+.5)*w.Wd/4,w.D-2.25);p.gx=q[0];p.gy=q[1];p.ip=2;}
+      else if(p.qw>3){wcGoSink(p);}
+      else{if(p.ip===0){const q=loc(w,1.9+Math.random()*(w.Wd-3.8),1.5+Math.random()*(w.D-4.2));p.gx=q[0];p.gy=q[1];}p.ip=1;p.wait=.3;p.qw+=.3;p.dx=w.vd[0];p.dy=w.vd[1];}
+      break;}
+    case 2:{const q=loc(w,(k+.5)*w.Wd/4,w.D-.95);p.gx=q[0];p.gy=q[1];p.ip=3;break;}
+    case 3:p.inStall=true;p.wait=1.6+Math.random()*1.1;p.ip=4;break;
+    case 4:{p.inStall=false;const q=loc(w,(k+.5)*w.Wd/4,w.D-2.25);p.gx=q[0];p.gy=q[1];p.ip=5;break;}
+    case 5:w.so[k]=0;wcGoSink(p);break;
+    case 6:p.wash=p.sink;p.wait=.8+Math.random()*.5;p.ip=7;p.dx=w.sinks[p.sink][0]-p.x;p.dy=w.sinks[p.sink][1]-p.y;{const n=Math.hypot(p.dx,p.dy)||1;p.dx/=n;p.dy/=n;}break;
+    case 7:p.wash=-1;if(w.dryerOK&&Math.random()<.4){const q=loc(w,w.Wd-1.35,1.5);p.gx=q[0];p.gy=q[1];p.ip=8;}else wcGoOut(p);break;
+    case 8:p.dry=true;p.wait=.7;p.ip=9;p.dx=w.dryer[0]-p.x;p.dy=w.dryer[1]-p.y;{const n=Math.hypot(p.dx,p.dy)||1;p.dx/=n;p.dy/=n;}break;
+    case 9:p.dry=false;wcGoOut(p);break;
+    case 10:{const d=w.door[(Math.random()*2)|0];p.ed=d;p.gx=d[0]+.5;p.gy=d[1]+.5;p.ip=11;break;}
+    default:leaveWC(p);
+  }
+}
+function wcStep(p,dt){
+  if(p.wait>0){p.wait-=dt;p.mv=false;if(p.wait>0)return;}
+  const dx=p.gx-p.x,dy=p.gy-p.y,d=Math.hypot(dx,dy),s=2.9*dt;
+  if(d>s){const ux=dx/d,uy=dy/d;p.x+=ux*s;p.y+=uy*s;p.dx+=(ux-p.dx)*Math.min(1,dt*12);p.dy+=(uy-p.dy)*Math.min(1,dt*12);p.ph+=dt*8;p.mv=true;return;}
+  p.x=p.gx;p.y=p.gy;p.mv=false;wcNext(p);
+}
+function updPax(dt){
+  for(let i=G.pax.length-1;i>=0;i--){const p=G.pax[i];
+    if(p.st==='in'){wcStep(p,dt);continue;}
+    const gx=p.tx+.5+p.ox,gy=p.ty+.5+p.oy,dx=gx-p.x,dy=gy-p.y,d=Math.hypot(dx,dy),s=p.sp*dt;
+    if(d<=s+.02){
+      p.x=gx;p.y=gy;
+      if(p.f[p.ty*W+p.tx]===0){
+        if(p.st==='wc')enterWC(p);
+        else G.pax.splice(i,1);
+      }else{const n=stepToward(p.f,p.tx,p.ty,true,p.lx,p.ly);if(n){p.lx=n[0]-p.tx;p.ly=n[1]-p.ty;p.tx=n[0];p.ty=n[1];}else G.pax.splice(i,1);}
+    }else{const ux=dx/d,uy=dy/d;p.x+=ux*s;p.y+=uy*s;p.dx+=(ux-p.dx)*Math.min(1,dt*10);p.dy+=(uy-p.dy)*Math.min(1,dt*10);p.ph+=dt*p.sp*2.6;}
+  }
+}
+/* ---------- Manager ---------- */
+function updMgr(dt){
+  const dp=Math.hypot(mgr.x-pl.x,mgr.y-pl.y),nb=Math.hypot(BOARD[0]-pl.x,BOARD[1]+.8-pl.y)<1.7;
+  // en salle de pause (ou face au manager) sans mission : il y a toujours une instruction à prendre
+  if(!G.queue.length&&!active()&&(nb||(dp<2.4&&mgr.state!=='seek')))addRound();
+  if(G.queue.length&&dp<2.4&&(mgr.state!=='seek'||(mgr.field&&mgr.field[(mgr.y|0)*W+(mgr.x|0)]<=3))){deliver();if(mgr.state==='seek')mgr.state='return';}
+  if(G.queue.length&&nb)deliver();
+  if(mgr.state==='desk'){
+    if(G.queue.length&&dp>6){const old=G.now-Math.min(...G.queue.map(m=>m.q0));if(G.queue.length>=2||old>10||G.queue.some(m=>m.imp===3)){mgr.state='seek';mgr.ft=0;}}
+    return;
+  }
+  let f;
+  if(mgr.state==='seek'){
+    if(!G.queue.length)mgr.state='return';
+    mgr.ft-=dt;if(mgr.ft<=0||!mgr.field){mgr.field=bfs([[pl.x|0,pl.y|0]],allOk);mgr.ft=.6;}
+    f=mgr.field;
+  }
+  if(mgr.state==='return'){f=F.desk;if(G.queue.length>=2&&dp>6){mgr.state='seek';mgr.ft=0;return;}}
+  const gx=mgr.tx+.5,gy=mgr.ty+.5,dx=gx-mgr.x,dy=gy-mgr.y,d=Math.hypot(dx,dy),s=5.4*dt;
+  if(d<=s+.02){mgr.x=gx;mgr.y=gy;
+    if(f[mgr.ty*W+mgr.tx]===0){if(mgr.state==='return'){mgr.state='desk';mgr.fx=0;mgr.fy=1;}}
+    else{const n=stepToward(f,mgr.tx,mgr.ty,false);if(n){mgr.tx=n[0];mgr.ty=n[1];}}
+  }else{mgr.x+=dx/d*s;mgr.y+=dy/d*s;mgr.fx=dx/d;mgr.fy=dy/d;mgr.step+=dt*12;}
+}
+/* ---------- Joueur ---------- */
+const R=.28;
+const free=(x,y)=>walk(x-R,y-R)&&walk(x+R,y-R)&&walk(x-R,y+R)&&walk(x+R,y+R);
+function spotsOf(w){
+  const out=[];
+  w.st.forEach((s,i)=>{if(s.paper<=3)out.push({k:'paper',i,x:w.stalls[i][0],y:w.stalls[i][1],need:s.paper<=0,dur:1});});
+  if(w.soapLv<=6)out.push({k:'soap',x:w.soap[0],y:w.soap[1],need:w.soapLv<=0,dur:1});
+  if(w.binLv>=16)out.push({k:'bin',x:w.bin[0],y:w.bin[1],need:w.binLv>=CAPB,dur:1.3});
+  for(const s of w.stains)out.push({k:'stain',s,x:s.x,y:s.y,need:!!w.is.dirty,dur:.8});
+  if(!w.dryerOK)out.push({k:'dryer',x:w.dryer[0],y:w.dryer[1],need:true,dur:2.4});
+  if(w.leak>=0)out.push({k:'leak',x:w.sinks[w.leak][0],y:w.sinks[w.leak][1],need:true,dur:2.8});
+  return out;
+}
+function workDone(b){
+  const w=b.w,sp=b.sp;let prev=0;
+  if(sp.k==='paper'){if(!sp.need)prev=15;w.st[sp.i].paper=CAPP;}
+  else if(sp.k==='soap'){if(!sp.need)prev=15;w.soapLv=CAPS;}
+  else if(sp.k==='bin'){if(!sp.need)prev=15;w.binLv=0;}
+  else if(sp.k==='stain'){const i=w.stains.indexOf(sp.s);if(i>=0)w.stains.splice(i,1);if(!w.is.dirty)prev=10;else if(w.stains.length)toast(t('partmsg',{n:w.stains.length}),1400);}
+  else if(sp.k==='dryer')w.dryerOK=true;
+  else if(sp.k==='leak')w.leak=-1;
+  sfx('work');G.fx.push({x:sp.x,y:sp.y,k:'spark',t:0});
+  const before=w.pend.length;checkIssues(w);
+  if(prev&&w.pend.length===before){w.prev+=prev;G.floats.push({x:pl.x,y:pl.y-.7,s:'+'+prev,t:0,c:'#ffd23f'});if(w.prev===prev)toast(t('prevmsg'),2200);}
+}
+function updPlayer(dt){
+  let ix=0,iy=0,mag=1;
+  if(keys.ArrowLeft||keys.KeyA)ix--;if(keys.ArrowRight||keys.KeyD)ix++;
+  if(keys.ArrowUp||keys.KeyW)iy--;if(keys.ArrowDown||keys.KeyS)iy++;
+  if(!ix&&!iy&&joy){
+    if(joy.mouse){const dx=joy.x-G.psx,dy=joy.y-G.psy,d=Math.hypot(dx,dy);if(d>12){ix=dx/d;iy=dy/d;mag=Math.max(.45,Math.min(1,d/90));}}
+    else{const dx=joy.x-joy.ox,dy=joy.y-joy.oy,d=Math.hypot(dx,dy);if(d>6){ix=dx/d;iy=dy/d;mag=Math.max(.55,Math.min(1,d/30));}}
+  }
+  const l=Math.hypot(ix,iy);pl.moving=l>0;G.wait=null;
+  if(l>0){
+    pl.busy=null;pl.idle=0;
+    ix/=l;iy/=l;pl.fx+=(ix-pl.fx)*Math.min(1,dt*14);pl.fy+=(iy-pl.fy)*Math.min(1,dt*14);const s=6.9*mag*dt;
+    const nx=pl.x+ix*s;if(free(nx,pl.y))pl.x=nx;
+    const ny=pl.y+iy*s;if(free(pl.x,ny))pl.y=ny;
+    pl.step+=dt*13*mag;
+  }else pl.idle+=dt;
+  const w=wcAt(pl.x,pl.y);G.spots=w?spotsOf(w):[];G.here=w;
+  if(!pl.moving&&!pl.busy&&pl.idle>.2&&w){
+    let best=null,bd=1.35;for(const sp of G.spots){const d=Math.hypot(sp.x-pl.x,sp.y-pl.y);if(d<bd){bd=d;best=sp;}}
+    if(best){if(w.occ>CROWD){G.wait=w;if(G.now>(G.waitT||0)){G.waitT=G.now+2.5;sfx('wait');}}else pl.busy={sp:best,w,t:0,dur:best.dur};}
+  }
+  if(pl.busy){const b=pl.busy;b.t+=dt;pl.fx=b.sp.x-pl.x;pl.fy=b.sp.y-pl.y;const n=Math.hypot(pl.fx,pl.fy)||1;pl.fx/=n;pl.fy/=n;if(b.t>=b.dur){pl.busy=null;workDone(b);}}
+  // borne à portée : s'ouvre quand on s'arrête devant, se referme seule après le badge
+  let tw=null;if(!w)for(const x of WCS){if(Math.hypot(x.pad[0]-pl.x,x.pad[1]-pl.y)<1.25){tw=x;break;}}
+  if(tw!==G.near){G.near=tw;G.termClosed=false;G.tagged=false;G.termAuto=0;}
+  if(G.termAuto&&G.now>G.termAuto){G.termClosed=true;G.termAuto=0;}
+  const sh=tw&&!G.termClosed&&(G.term===tw||pl.idle>.15)?tw:null;
+  if(sh!==G.term){G.term=sh;$('tcard').classList.remove('closing');if(sh){renderTerm(sh);$('tcard').classList.add('on');$('mgrcard').classList.remove('on');}else $('tcard').classList.remove('on');G.dirtyUI=true;}
+}
+function closeTerm(){G.termClosed=true;G.termAuto=0;}
+
+/* ---------- Borne TaqtOne ---------- */
+const SMILE=(c,m)=>'<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="none" stroke="'+c+'" stroke-opacity=".25" stroke-width="2"/><circle cx="32" cy="32" r="24" fill="#fff" stroke="'+c+'" stroke-width="3"/><circle cx="24.5" cy="26" r="2.8" fill="'+c+'"/><circle cx="39.5" cy="26" r="2.8" fill="'+c+'"/><path d="'+m+'" fill="none" stroke="'+c+'" stroke-width="2.6" stroke-linecap="round"/></svg>';
+const SM={u:SMILE('#d53636','M23 42c4-6 14-6 18 0'),n:SMILE('#dfa414','M23 40h18'),h:SMILE('#2ea043','M22 37c4 8 16 8 20 0')};
+function renderTerm(w,flash){
+  const e=$('eink');e.textContent='';
+  const h=s=>{const x=document.createElement('h4');x.textContent=s;e.appendChild(x);};
+  const row=(a,b,cls)=>{const x=document.createElement('div');x.className='r'+(cls?' '+cls:'');if(cls==='none'){x.textContent=a;}else{const s1=document.createElement('span');s1.textContent=a;const s2=document.createElement('span');s2.textContent=b;x.append(s1,s2);}e.appendChild(x);};
+  h(t('t_pending'));
+  const pend=Object.values(w.is).filter(i=>i.reported&&TYPES[i.type].grp!=='unhappy');
+  if(pend.length)pend.slice(0,2).forEach(i=>row(t('s_'+TYPES[i.type].grp),t('dshort')[G.day]+' '+i.rep));else row(t('t_none'),'','none');
+  h(t('t_last'));
+  w.last.slice(0,3).forEach((l,i)=>row(l[0],l[1],flash&&i===0?'new':''));
+  const ft=document.createElement('div');ft.className='ft';ft.innerHTML='<span class="sig"><i style="height:3px"></i><i style="height:5px"></i><i style="height:7px"></i><i style="height:9px"></i></span><span class="bat"></span>';e.appendChild(ft);
+  $('tsm').innerHTML=['u','n','h'].map(k=>'<div>'+SM[k]+w.votes[k]+'</div>').join('');
+  const n=w.pend.length+(w.prev?1:0)+(roundFor(w)?1:0),b=$('tagbtn');
+  b.classList.toggle('need',!flash&&(n>0||G.now-w.lastPass>40));b.classList.toggle('okk',!!flash);
+  $('tagl').textContent=t('taghere');if(!TOUCH&&!flash){const k=document.createElement('kbd');k.textContent=t('kbd');$('tagl').appendChild(k);}
+  if(!flash)$('taginfo').textContent=n?t('tovalidate',{n}):t('nothing');
+}
+function doBadge(w){
+  if(!w)return;if(G.tagged){closeTerm();return;}
+  const rm=roundFor(w);let sum=w.prev;const had=w.pend.length||w.prev||rm;
+  if(rm){const p=ptsNow(rm);rm.state='done';rm.pts=p;rm.doneAt=G.now;sum+=p;G.stats.done++;}
+  for(const it of w.pend){const m=it.m;let p;
+    if(m){p=ptsNow(m);m.state='done';m.pts=p;m.doneAt=G.now;if(G.now-m.t0>m.lim)G.stats.late++;}
+    else{p=it.pts;G.stats.pro++;G.missions.push({id:G.uid++,type:it.type,wc:w,kind:'precise',grp:TYPES[it.type].grp,state:'done',t0:G.now,lim:1,base:p,imp:1,pts:p,doneAt:G.now,pro:true});}
+    sum+=p;G.stats.done++;}
+  const hh=clockStr(G.time);
+  if(had){
+    w.pend=[];w.prev=0;w.votes={h:0,n:0,u:0};
+  }else if(G.now-w.lastPass>40){sum=10;}
+  else{$('taginfo').textContent=t('badgenone');sfx('wait');G.termAuto=G.now+1.6;return;}
+  w.lastPass=G.now;w.last.unshift([t('dshort')[G.day],hh]);
+  G.score+=sum;G.stats.pts+=sum;G.floats.push({x:pl.x,y:pl.y-.8,s:'+'+sum,t:0,c:'#fff',big:true});
+  G.tagged=true;G.termAuto=G.now+1.8;$('tcard').classList.add('closing');renderTerm(w,true);$('taginfo').textContent=t('tagdone',{h:hh});toast(t(had?'badgeok':'routine',{p:sum}));sfx('badge');
+  G.dirtyUI=true;
+}
+
+/* ---------- Déroulé ---------- */
+function show(id){['title','how','sum','final','pause','over'].forEach(s=>$(s).classList.toggle('on',s===id));}
+function startGame(){G.day=0;G.score=0;G.weekSat=[];startDay();}
+function resetWorld(){
+  G.time=6;G.now=0;G.votes={h:0,n:0,u:0};G.roll=new Array(40).fill(1);G.warned=false;G.minSat=100;G.near=null;G.termClosed=false;G.termAuto=0;G.roundT=8;G.missions=[];G.queue=[];G.pax=[];G.floats=[];G.fx=[];G.term=null;G.spots=[];G.trackId=0;G.badT=0;G.waitT=0;G.cardT=0;
+  G.stats={done:0,pts:0,pro:0,late:0};
+  const b=buildEvents(G.day);G.ev=b.ev;G.evi=0;G.peakH=b.peakH;G.peakPier=b.peakPier;
+  WCS.forEach(initWC);
+  mgr.x=DESK[0]+.5;mgr.y=DESK[1]+.5;mgr.tx=DESK[0];mgr.ty=DESK[1];mgr.state='desk';mgr.field=null;mgr.fx=0;mgr.fy=1;
+}
+function startDay(){
+  G.attract=false;G.dayStart=G.score;resetWorld();
+  if(G.day===0){const w=WCS[5];w.st[1].paper=0;checkIssues(w,true);report(w.is.paper,'precise');w.is.paper.mission.first=true;}
+  pl.x=SPAWN[0];pl.y=SPAWN[1];pl.busy=null;pl.fx=0;pl.fy=-1;G.cam.x=pl.x;G.cam.y=pl.y;
+  $('dayname').textContent=t('days')[G.day];$('mgrcard').classList.remove('on');$('tcard').classList.remove('on');$('mapov').classList.remove('on');
+  show(null);$('hud').classList.add('on');G.state='play';G.dirtyUI=true;last=0;
+}
+function toMenu(){G.state='menu';G.attract=true;G.day=4;resetWorld();$('hud').classList.remove('on');$('tcard').classList.remove('on');show('title');applyLang();}
+function endDay(){
+  G.state='sum';$('tcard').classList.remove('on');$('mapov').classList.remove('on');$('hud').classList.remove('on');joy=null;
+  const sat=satPct(G.votes),s=sat===null?100:sat,bonus=Math.round(s*8/5)*5;
+  const left=G.missions.filter(m=>m.state==='todo'||m.state==='fixed').length+G.queue.length,pen=left*40;
+  G.score=Math.max(0,G.score+bonus-pen);G.weekSat.push(s);
+  $('sumtitle').textContent=t('sumtitle',{day:t('days')[G.day]});
+  const st=s>=82?3:s>=68?2:s>=50?1:0;$('sumstars').innerHTML='<b>'+'★'.repeat(st)+'</b>'+'★'.repeat(3-st);
+  $('sumpeak').textContent=t('peak',{h:String(G.peakH).padStart(2,'0')+':00',zone:t('pier_'+G.peakPier)});
+  const rows=[[t('r_sat'),s+' %'],[t('r_done'),G.stats.done],[t('r_pts'),'+'+G.stats.pts],[t('r_bonus'),'+'+bonus]];
+  if(left)rows.push([t('r_pen',{n:left}),'−'+pen]);
+  const box=$('sumrows');box.textContent='';
+  rows.forEach(r=>{const d=document.createElement('div'),a=document.createElement('span'),b=document.createElement('b');a.textContent=r[0];b.textContent=r[1];d.append(a,b);box.appendChild(d);});
+  const d=document.createElement('div');d.className='tot';const a=document.createElement('span'),b2=document.createElement('b');a.textContent=t('r_total');b2.textContent=G.score;d.append(a,b2);box.appendChild(d);
+  $('sumtip').textContent=t('tips')[G.day];
+  const dn=G.day<6?t('days')[G.day+1]:'';$('nextbtn').textContent=G.day<6?t('next',{day:(lang==='fr'||lang==='es')?dn.toLowerCase():dn}):t('seefinal');
+  sfx(st>=2?'win':'done');show('sum');
+}
+function showFinal(){
+  G.state='final';
+  const avg=Math.round(G.weekSat.reduce((a,b)=>a+b,0)/G.weekSat.length);
+  $('finscore').textContent=G.score;$('finsat').textContent=t('finsat',{s:avg});
+  $('finrank').textContent=t('rank'+(avg>=85?3:avg>=75?2:avg>=60?1:0));
+  const wk=$('finweek');wk.textContent='';
+  G.weekSat.forEach((s,i)=>{const d=document.createElement('div'),b=document.createElement('i');b.style.height=Math.max(4,s*.48)+'px';if(s<65)b.style.background='var(--bad)';else if(s<80)b.style.background='var(--warn)';d.append(b,document.createTextNode(t('dshort')[i]));wk.appendChild(d);});
+  try{const b=+localStorage.getItem('ch_best')||0;if(G.score>b)localStorage.setItem('ch_best',String(G.score));}catch(e){}
+  G.finAvg=avg;sfx('win');show('final');
+}
+
+/* ---------- Boucle ---------- */
+function update(dt){
+  if(G.state==='menu'){G.now+=dt;G.time+=dt*RATE*1.6;while(G.evi<G.ev.length&&G.ev[G.evi].t<=G.time)spawnPax(G.ev[G.evi++]);updPax(dt);if(G.time>=21.5){G.day=(G.day+1)%7;resetWorld();}return;}
+  if(G.state!=='play')return;
+  G.now+=dt;G.time+=dt*RATE;
+  while(G.evi<G.ev.length&&G.ev[G.evi].t<=G.time)spawnPax(G.ev[G.evi++]);
+  updPax(dt);
+  for(const w of WCS)for(const ty in w.is){const is=w.is[ty];if(!is.reported&&G.now-is.born>12)report(is);}
+  G.roundT-=dt;if(G.roundT<=0){G.roundT=5;if(active()+G.queue.length<2&&![...G.missions,...G.queue].some(m=>m.type==='round'&&m.state!=='done'))addRound();}
+  updMgr(dt);updPlayer(dt);
+  if(G.cardT&&G.now>G.cardT){$('mgrcard').classList.remove('on');G.cardT=0;}
+  for(let i=G.missions.length-1;i>=0;i--){const m=G.missions[i];if(m.state==='done'&&G.now-m.doneAt>3.5){G.missions.splice(i,1);G.dirtyUI=true;}}
+  for(let i=G.floats.length-1;i>=0;i--){G.floats[i].t+=dt;if(G.floats[i].t>1.4)G.floats.splice(i,1);}
+  for(let i=G.fx.length-1;i>=0;i--){G.fx[i].t+=dt;if(G.fx[i].t>1.5)G.fx.splice(i,1);}
+  const sl=satLive();if(sl<G.minSat)G.minSat=sl;
+  if(sl<SATWARN&&!G.warned){G.warned=true;toast(t('warn',{n:SATMIN}),4200);sfx('alarm');}else if(sl>=SATWARN+8)G.warned=false;
+  if(sl<SATMIN){gameOver();return;}
+  if(G.time>=22)endDay();
+}
+function gameOver(){
+  G.state='over';$('tcard').classList.remove('on');$('mapov').classList.remove('on');$('hud').classList.remove('on');joy=null;
+  $('overd').textContent=t('over_d',{n:SATMIN});$('overday').textContent=t('days')[G.day]+' · '+clockStr(G.time);sfx('lose');show('over');
+}
+function target(){
+  const cand=G.missions.filter(m=>m.state==='fixed'||(m.state==='todo'&&m.kind!=='zone'));
+  let m=cand.find(x=>x.id===G.trackId);
+  if(!m){cand.sort((a,b)=>(b.state==='fixed')-(a.state==='fixed')||b.imp-a.imp||a.t0-b.t0);m=cand[0];}
+  if(m){G.curTrack=m.id;return (m.state==='fixed'||m.type==='round')?{x:m.wc.pad[0],y:m.wc.pad[1],label:'TaqtOne '+m.wc.id,wc:m.wc,pad:true}:{x:m.wc.dc[0],y:m.wc.dc[1],label:'WC '+m.wc.id,wc:m.wc};}
+  G.curTrack=0;
+  const w=WCS.find(w=>w.pend.length||w.prev>=20);if(w)return{x:w.pad[0],y:w.pad[1],label:'TaqtOne '+w.id,wc:w,pad:true};
+  if(!G.missions.some(m=>m.state==='todo')&&Math.hypot(pl.x-61.5,pl.y-38.5)>9)return{x:61.5,y:38.3,label:t('brk_go'),brk:true};
+  return null;
+}
+
+/* ---------- Son ---------- */
+let AC=null,muted=false;try{muted=localStorage.getItem('ch_mute')==='1';}catch(e){}
+function beep(f,d,type,vol,when,f2){const o=AC.createOscillator(),g=AC.createGain(),t0=AC.currentTime+(when||0);o.type=type;o.frequency.setValueAtTime(f,t0);if(f2)o.frequency.exponentialRampToValueAtTime(f2,t0+d);g.gain.setValueAtTime(vol,t0);g.gain.exponentialRampToValueAtTime(.0001,t0+d);o.connect(g);g.connect(AC.destination);o.start(t0);o.stop(t0+d+.02);}
+function sfx(n){
+  if(muted||G.attract&&n!=='ui')return;
+  try{if(!AC){const A=window.AudioContext||window.webkitAudioContext;if(!A)return;AC=new A();}if(AC.state==='suspended')AC.resume();
+    if(n==='badge'){beep(988,.09,'sine',.2,0);beep(1319,.09,'sine',.2,.09);beep(1976,.22,'sine',.18,.18);}
+    else if(n==='done'){beep(660,.1,'triangle',.18,0);beep(880,.16,'triangle',.18,.1);}
+    else if(n==='work')beep(520,.08,'triangle',.12,0,760);
+    else if(n==='mission'){beep(587,.08,'square',.06,0);beep(784,.12,'square',.06,.1);}
+    else if(n==='bad')beep(196,.22,'sawtooth',.045,0,130);
+    else if(n==='wait')beep(300,.09,'square',.04,0);
+    else if(n==='win'){[523,659,784,1047].forEach((f,i)=>beep(f,.16,'triangle',.16,i*.11));}
+    else if(n==='ui')beep(700,.05,'sine',.1,0);
+    else if(n==='alarm'){beep(440,.14,'square',.07,0);beep(440,.14,'square',.07,.22);beep(440,.14,'square',.07,.44);}
+    else if(n==='lose'){[392,330,262,196].forEach((f,i)=>beep(f,.22,'triangle',.16,i*.18));}
+  }catch(e){}
+}
+
+/* =====================================================================
+   Rendu
+   ===================================================================== */
+const cv=$('cv'),ctx=cv.getContext('2d');let dpr=1,cw=0,ch=0,ts=32;
+const CH=10;let chunks=new Map();
+const FONT='Outfit,"Avenir Next",Avenir,system-ui,sans-serif';
+function resize(){dpr=Math.min(2,window.devicePixelRatio||1);cw=cv.clientWidth;ch=cv.clientHeight;cv.width=Math.round(cw*dpr);cv.height=Math.round(ch*dpr);
+  const n=Math.round(Math.max(26,Math.min(46,Math.min(cw,ch)/13.5)));if(n!==ts){ts=n;}chunks.clear();}
+const hsh=(x,y)=>(((x*73856093)^(y*19349663))>>>0)%1000/1000;
+function rrect(c,x,y,w,h,r){c.beginPath();if(c.roundRect)c.roundRect(x,y,w,h,r);else c.rect(x,y,w,h);}
+
+function drawPlane(c,p){
+  const u=ts;c.save();c.translate(p.x*u,p.y*u);c.rotate(p.rot);c.scale(u,u);
+  c.strokeStyle='#f2c200';c.lineWidth=.1;c.beginPath();c.moveTo(0,-12.5);c.lineTo(0,-.1);c.stroke();
+  c.strokeStyle='rgba(255,255,255,.5)';c.lineWidth=.07;c.strokeRect(-3.95,-9.3,7.9,9.9);
+  const wings=()=>{c.beginPath();c.moveTo(.45,-2.9);c.lineTo(3.55,-5.0);c.lineTo(3.55,-5.6);c.lineTo(.45,-4.65);c.closePath();c.moveTo(-.45,-2.9);c.lineTo(-3.55,-5.0);c.lineTo(-3.55,-5.6);c.lineTo(-.45,-4.65);c.closePath();
+    c.moveTo(.35,-7.3);c.lineTo(1.6,-8.15);c.lineTo(1.6,-8.5);c.lineTo(.35,-8.05);c.closePath();c.moveTo(-.35,-7.3);c.lineTo(-1.6,-8.15);c.lineTo(-1.6,-8.5);c.lineTo(-.35,-8.05);c.closePath();};
+  const body=()=>{c.beginPath();c.moveTo(0,0);c.bezierCurveTo(.5,-.25,.58,-.9,.58,-1.6);c.lineTo(.58,-7.0);c.quadraticCurveTo(.5,-8.2,0,-8.75);c.quadraticCurveTo(-.5,-8.2,-.58,-7.0);c.lineTo(-.58,-1.6);c.bezierCurveTo(-.58,-.9,-.5,-.25,0,0);c.closePath();};
+  c.save();c.translate(.35,.3);c.fillStyle='rgba(10,14,30,.28)';wings();c.fill();body();c.fill();c.restore();
+  // passerelle
+  c.fillStyle='#aab3c0';c.fillRect(.5,-1.95,.8,3.1);c.fillStyle='#8f99a8';for(let k=0;k<6;k++)c.fillRect(.5,-1.8+k*.5,.8,.08);c.fillStyle='#7b8594';c.fillRect(.3,-2.0,1.05,.55);
+  c.fillStyle='#e3e8ee';c.strokeStyle='#b6bfcb';c.lineWidth=.05;wings();c.fill();c.stroke();
+  for(const sx of[1,-1]){c.fillStyle='#cfd6de';rrect(c,sx*1.6-.26,-4.35,.52,1.05,.2);c.fill();c.stroke();c.fillStyle='#59647a';c.fillRect(sx*1.6-.2,-3.42,.4,.1);}
+  c.fillStyle='#f6f8fb';body();c.fill();c.stroke();
+  c.save();body();c.clip();const g=c.createLinearGradient(0,-8.8,0,-5.6);g.addColorStop(0,'#3f00b3');g.addColorStop(1,'#ec006e');c.fillStyle=g;c.beginPath();c.moveTo(-.7,-8.9);c.lineTo(.7,-8.9);c.lineTo(.7,-6.6);c.lineTo(-.7,-5.7);c.closePath();c.fill();
+  c.fillStyle='#ec006e';c.fillRect(-.7,-5.35,1.4,.12);c.restore();
+  c.fillStyle='#fff';c.fillRect(-.07,-8.6,.14,1.7);
+  c.fillStyle='#27324a';c.beginPath();c.moveTo(-.33,-.6);c.quadraticCurveTo(0,-.22,.33,-.6);c.lineTo(.28,-.86);c.lineTo(-.28,-.86);c.closePath();c.fill();
+  c.strokeStyle='rgba(60,80,115,.55)';c.lineWidth=.07;c.setLineDash([.09,.15]);c.beginPath();c.moveTo(.44,-1.5);c.lineTo(.44,-5.2);c.moveTo(-.44,-1.5);c.lineTo(-.44,-5.2);c.stroke();c.setLineDash([]);
+  c.restore();
+}
+function drawStatic(c,X0,Y0,X1,Y1){
+  const u=ts,fr=(x,y,w,h,col)=>{c.fillStyle=col;c.fillRect(x*u,y*u,w*u+.7,h*u+.7);};
+  const inR=(a,b,cc,d)=>!(cc<X0||a>X1+1||d<Y0||b>Y1+1);
+  // 1. tarmac et route
+  for(let y=Math.max(0,Y0);y<=Math.min(H-1,Y1);y++)for(let x=Math.max(0,X0);x<=Math.min(W-1,X1);x++){const v=grid[y*W+x];
+    if(v===APRON){fr(x,y,1,1,((x>>2)+(y>>2))&1?'#6a717e':'#666d7a');if(hsh(x,y)>.9){c.fillStyle='rgba(0,0,0,.07)';c.beginPath();c.arc((x+.5)*u,(y+.5)*u,u*.3,0,7);c.fill();}}
+    else if(v===ROAD)fr(x,y,1,1,'#3f434d');}
+  if(Y0<=20){
+    c.strokeStyle='#f2c200';c.lineWidth=u*.1;c.beginPath();c.moveTo(0,6.6*u);c.lineTo(39*u,6.6*u);c.moveTo(57*u,6.6*u);c.lineTo(96*u,6.6*u);c.stroke();
+    c.strokeStyle='rgba(255,255,255,.35)';c.lineWidth=u*.06;c.setLineDash([u*.5,u*.5]);c.beginPath();c.moveTo(0,2.2*u);c.lineTo(96*u,2.2*u);c.stroke();c.setLineDash([]);
+    for(const p of PLANES)if(inR(p.x-13,p.y-13,p.x+5,p.y+5))drawPlane(c,p);
+    for(const v of[[10.4,15.5,'#f2c200'],[26.3,16,'#e8eaee'],[68.4,15.8,'#f2c200'],[84.2,16.2,'#e8eaee'],[58,4,'#f2c200']])if(inR(v[0]-1,v[1]-1,v[0]+4,v[1]+2)){
+      c.fillStyle='rgba(0,0,0,.2)';c.fillRect((v[0]+.1)*u,(v[1]+.12)*u,u*.9,u*.55);c.fillStyle=v[2];rrect(c,v[0]*u,v[1]*u,u*.9,u*.55,u*.1);c.fill();c.fillStyle='#2c3344';c.fillRect((v[0]+.55)*u,(v[1]+.08)*u,u*.25,u*.38);
+      for(let k=1;k<3;k++){c.fillStyle='#8b93a1';rrect(c,(v[0]+k*1.05)*u,(v[1]+.03)*u,u*.85,u*.5,u*.06);c.fill();c.fillStyle=['#b0566b','#3f6ea5','#c47a45'][k%3];c.fillRect((v[0]+k*1.05+.12)*u,(v[1]+.12)*u,u*.3,u*.28);c.fillStyle='#4f9a7a';c.fillRect((v[0]+k*1.05+.47)*u,(v[1]+.1)*u,u*.28,u*.3);}}
+  }
+  if(Y1>=59){c.strokeStyle='rgba(255,255,255,.6)';c.lineWidth=u*.07;c.setLineDash([u*.7,u*.6]);c.beginPath();c.moveTo(0,61*u);c.lineTo(96*u,61*u);c.stroke();c.setLineDash([]);
+    for(const v of[[28,60.15,'#f2c200'],[33,60.15,'#f2c200'],[40.5,60.15,'#f2c200'],[58,60.15,'#e8eaee'],[70,61.2,'#3f6ea5'],[12,61.2,'#b0566b']]){c.fillStyle='rgba(0,0,0,.25)';c.fillRect((v[0]+.08)*u,(v[1]+.1)*u,u*1.9,u*.72);c.fillStyle=v[2];rrect(c,v[0]*u,v[1]*u,u*1.9,u*.72,u*.2);c.fill();c.fillStyle='#27324a';rrect(c,(v[0]+.5)*u,(v[1]+.1)*u,u*.85,u*.52,u*.1);c.fill();}}
+  // 2. sols
+  for(let y=Math.max(0,Y0);y<=Math.min(H-1,Y1);y++)for(let x=Math.max(0,X0);x<=Math.min(W-1,X1);x++){
+    const v=grid[y*W+x],px=x*u,py=y*u;
+    if(v===PUB||v===OBST){fr(x,y,1,1,((x>>1)+(y>>1))&1?'#efeadf':'#e9e4d8');c.fillStyle='rgba(120,105,80,.09)';if(!(x&1))c.fillRect(px,py,1,u);if(!(y&1))c.fillRect(px,py,u,1);
+      const hh=hsh(x,y);if(hh>.55){c.fillStyle='rgba(150,130,95,.16)';c.fillRect(px+hh*u*.8,py+((hh*7)%1)*u*.8,u*.06,u*.06);}
+      if(y>=23&&y<=24&&x>=2&&x<=93){c.fillStyle='rgba(58,42,140,.055)';c.fillRect(px,py,u+.7,u+.7);}}
+    else if(v===SVC){fr(x,y,1,1,'#c4c8d0');c.strokeStyle='rgba(214,150,0,.5)';c.lineWidth=u*.11;c.beginPath();c.moveTo(px,py+u);c.lineTo(px+u,py);c.moveTo(px,py+u*.5);c.lineTo(px+u*.5,py);c.moveTo(px+u*.5,py+u);c.lineTo(px+u,py+u*.5);c.stroke();}
+    else if(v===WCF||v===DOOR){fr(x,y,1,1,'#f4fafb');for(let j=0;j<2;j++)for(let i=0;i<2;i++){const hh=hsh(x*2+i,y*2+j);c.fillStyle=((x*2+i+y*2+j)&1)?(hh>.5?'#dcedf0':'#d6e9ed'):(hh>.5?'#e7f3f5':'#e2f0f3');c.fillRect(px+i*u*.5+1,py+j*u*.5+1,u*.5-1.2,u*.5-1.2);if(hh>.8){c.fillStyle='rgba(255,255,255,.55)';c.fillRect(px+i*u*.5+u*.08,py+j*u*.5+u*.08,u*.14,u*.05);}}}
+    else if(v===BRK){fr(x,y,1,1,'#dfc59b');c.fillStyle='rgba(120,80,30,.14)';c.fillRect(px,py,u,1);c.fillRect(px,py+u*.5,u,1);c.fillRect(px+((y*3+x)%2?u*.3:u*.7),py,1,u*.5);}
+    else if(v===SHOP){const s=SHOPS.find(s=>x>=s.x0&&x<=s.x1&&y>=s.y0&&y<=s.y1);fr(x,y,1,1,s?s.c:'#444');}
+    else if(v===WALL){fr(x,y,1,1,'#333950');}
+    else if(v===GLASS){fr(x,y,1,1,'#4d5870');const g=c.createLinearGradient(px,py,px+u,py+u);g.addColorStop(0,'#c9ecfa');g.addColorStop(.5,'#8fcbe8');g.addColorStop(1,'#b9e3f5');c.fillStyle=g;c.fillRect(px+u*.08,py+u*.14,u*.84,u*.72);c.fillStyle='rgba(255,255,255,.55)';c.beginPath();c.moveTo(px+u*.2,py+u*.86);c.lineTo(px+u*.5,py+u*.14);c.lineTo(px+u*.62,py+u*.14);c.lineTo(px+u*.32,py+u*.86);c.fill();}
+  }
+  // 3. volumes : faces de murs, ombres, auvents
+  for(let y=Math.max(0,Y0);y<=Math.min(H-1,Y1);y++)for(let x=Math.max(0,X0);x<=Math.min(W-1,X1);x++){
+    const v=grid[y*W+x],px=x*u,py=y*u,up=tile(x,y-1),dn=tile(x,y+1);
+    if(v===WALL&&isFloor(dn)){if(dn===WCF){c.fillStyle='#9fd0d9';c.fillRect(px,py+u*.5,u+.7,u*.5+.7);c.fillStyle='rgba(255,255,255,.65)';c.fillRect(px,py+u*.74,u+.7,1.2);for(let k=0;k<2;k++){c.fillRect(px+u*(.25+k*.5),py+u*.5,1.2,u*.25);c.fillRect(px+u*k*.5,py+u*.75,1.2,u*.25);}c.fillStyle='#3f00b3';c.fillRect(px,py+u*.5,u+.7,u*.06);}
+      else{c.fillStyle='#565d7a';c.fillRect(px,py+u*.5,u+.7,u*.5+.7);c.fillStyle='#6b7391';c.fillRect(px,py+u*.5,u+.7,u*.07);}}
+    if(isFloor(v)&&(up===WALL||up===SHOP||up===GLASS)){const g=c.createLinearGradient(0,py,0,py+u*.45);g.addColorStop(0,'rgba(20,20,50,.22)');g.addColorStop(1,'rgba(20,20,50,0)');c.fillStyle=g;c.fillRect(px,py,u+.7,u*.45);}
+    if(isFloor(v)&&(tile(x-1,y)===WALL||tile(x-1,y)===SHOP)){const g=c.createLinearGradient(px,0,px+u*.3,0);g.addColorStop(0,'rgba(20,20,50,.14)');g.addColorStop(1,'rgba(20,20,50,0)');c.fillStyle=g;c.fillRect(px,py,u*.3,u+.7);}
+    if(v===SHOP){const s=SHOPS.find(s=>x>=s.x0&&x<=s.x1&&y>=s.y0&&y<=s.y1);if(!s)continue;
+      const aw=(ax,ay,aw_,ah,vert)=>{for(let k=0;k<4;k++){c.fillStyle=k&1?s.c2:'#fff';if(vert)c.fillRect(ax,ay+k*ah/4,aw_,ah/4+.5);else c.fillRect(ax+k*aw_/4,ay,aw_/4+.5,ah);}};
+      if(tile(x,y+1)===PUB){aw(px,py+u*.62,u,u*.38,false);c.fillStyle='rgba(0,0,0,.18)';c.fillRect(px,py+u*.56,u+.7,u*.06);}
+      if(tile(x,y-1)===PUB)aw(px,py,u,u*.3,false);
+      if(tile(x-1,y)===PUB)aw(px,py,u*.3,u,true);
+      if(tile(x+1,y)===PUB)aw(px+u*.7,py,u*.3,u,true);}
+  }
+  // 4. mobilier
+  for(const s of SEATS)if(inR(s[0],s[1],s[0]+1,s[1]+1)){const px=s[0]*u,py=s[1]*u;
+    if(s[2]==='N'){c.fillStyle='#22345a';c.fillRect(px+u*.04,py+u*.08,u*.92,u*.2);for(let k=0;k<2;k++){c.fillStyle='#3f62a0';rrect(c,px+u*(.06+k*.47),py+u*.26,u*.41,u*.52,u*.1);c.fill();c.fillStyle='rgba(255,255,255,.16)';c.fillRect(px+u*(.1+k*.47),py+u*.3,u*.33,u*.1);}}
+    else{const fx=s[2]==='E';c.fillStyle='#22345a';c.fillRect(px+(fx?u*.72:u*.08),py+u*.04,u*.2,u*.92);for(let k=0;k<2;k++){c.fillStyle='#3f62a0';rrect(c,px+(fx?u*.22:u*.26),py+u*(.06+k*.47),u*.52,u*.41,u*.1);c.fill();}}}
+  for(const r of CHECKIN)if(inR(r[0],r[1],r[2]+1,r[3]+1)){const x=r[0]*u,y=r[1]*u,w=(r[2]-r[0]+1)*u,h=(r[3]-r[1]+1)*u;
+    c.fillStyle='rgba(20,20,50,.18)';c.fillRect(x+u*.12,y+u*.16,w,h);c.fillStyle='#f6f3ec';rrect(c,x,y,w,h,u*.25);c.fill();c.fillStyle='#3f00b3';rrect(c,x,y,w,u*.5,[u*.25,u*.25,0,0]);c.fill();
+    c.fillStyle='#2b2f3a';c.fillRect(x+w*.42,y+u*.5,w*.16,h-u*.5);c.fillStyle='#4a5060';for(let k=0;k<7;k++)c.fillRect(x+w*.42,y+u*(.7+k*.5),w*.16,u*.06);
+    for(const sx of[.12,.68]){for(let k=0;k<3;k++){c.fillStyle='#27324a';rrect(c,x+w*sx,y+u*(.9+k*1.05),w*.2,u*.5,u*.08);c.fill();c.fillStyle='#62c3e6';c.fillRect(x+w*sx+u*.07,y+u*(.97+k*1.05),w*.2-u*.14,u*.2);}}}
+  for(const r of CAROU)if(inR(r[0],r[1],r[2]+1,r[3]+1)){const x=r[0]*u,y=r[1]*u,w=(r[2]-r[0]+1)*u,h=(r[3]-r[1]+1)*u;
+    c.fillStyle='rgba(20,20,50,.18)';rrect(c,x+u*.12,y+u*.16,w,h,h/2);c.fill();c.fillStyle='#3b3f49';rrect(c,x,y,w,h,h/2);c.fill();c.fillStyle='#8b919d';rrect(c,x+u*.8,y+u*.8,w-u*1.6,h-u*1.6,(h-u*1.6)/2);c.fill();
+    c.strokeStyle='rgba(255,255,255,.12)';c.lineWidth=1;for(let k=1;k<(r[2]-r[0])*2+1;k++){c.beginPath();c.moveTo(x+k*u*.5+u*.3,y+u*.06);c.lineTo(x+k*u*.5+u*.3,y+u*.76);c.stroke();}
+    const cols=['#b0566b','#3f6ea5','#c47a45','#4f9a7a','#2b2b33','#8a5a9c'];for(let k=0;k<9;k++){const hh=hsh(r[0]+k,r[1]);c.fillStyle=cols[k%6];const bx=x+u*(.9+k*((r[2]-r[0]-1)/9)),by=k&1?y+u*.14:y+h-u*.66;rrect(c,bx,by,u*(.5+hh*.25),u*.5,u*.08);c.fill();}}
+  for(const r of SCAN)if(inR(r[0],r[1],r[2]+1,r[3]+1)){const x=r[0]*u,y=r[1]*u;c.fillStyle='rgba(20,20,50,.18)';c.fillRect(x+u*.2,y+u*.2,u*.8,u*2);c.fillStyle='#2b2f3a';c.fillRect(x+u*.3,y,u*.4,u*2);c.fillStyle='#8f97a6';rrect(c,x+u*.1,y+u*.5,u*.8,u*.95,u*.12);c.fill();c.fillStyle='#62c3e6';c.fillRect(x+u*.22,y+u*.62,u*.56,u*.2);}
+  for(const p of PLANTS)if(inR(p[0]-1,p[1]-1,p[0]+1,p[1]+1)){const x=p[0]*u,y=p[1]*u;c.fillStyle='rgba(20,20,50,.2)';c.beginPath();c.arc(x+u*.06,y+u*.08,u*.4,0,7);c.fill();c.fillStyle='#9a6a44';c.beginPath();c.arc(x,y,u*.3,0,7);c.fill();for(let k=0;k<6;k++){c.fillStyle=k&1?'#3f9a5a':'#2f7f48';c.beginPath();c.ellipse(x+Math.cos(k*1.05)*u*.22,y+Math.sin(k*1.05)*u*.22,u*.26,u*.13,k*1.05,0,7);c.fill();}}
+  for(const f of FIDS)if(inR(f[0],f[1],f[0]+f[2],f[1]+1)){const x=f[0]*u,y=f[1]*u+u*.5,w=f[2]*u,hh=u*.5;c.fillStyle='#0d0f16';rrect(c,x+u*.1,y-u*.34,w-u*.2,hh+u*.26,u*.08);c.fill();for(let k=0;k<3;k++){c.fillStyle=k===0?'#ffd23f':'#f0a81f';for(let j=0;j<4;j++)c.fillRect(x+u*.25+j*(w-u*.5)/4,y-u*.24+k*u*.2,(w-u*.5)/4*(.5+hsh(f[0]+j,k)*.4),u*.09);}}
+  // salle de pause
+  if(inR(58,35,64,41)){c.fillStyle='#20315c';rrect(c,60.3*u,35.42*u,2.4*u,u*.5,u*.08);c.fill();c.fillStyle='#fff';for(let k=0;k<4;k++)c.fillRect((60.45+k*.56)*u,35.5*u,u*.44,u*.34);
+    c.fillStyle='rgba(20,20,50,.2)';c.fillRect(61.05*u,38.75*u,1.7*u,u*.8);c.fillStyle='#a57c4e';rrect(c,60.95*u,38.6*u,1.7*u,u*.8,u*.1);c.fill();c.fillStyle='#f6f3ec';c.fillRect(61.2*u,38.75*u,u*.5,u*.36);c.fillStyle='#ec006e';c.beginPath();c.arc(62.25*u,38.98*u,u*.14,0,7);c.fill();
+    for(let k=0;k<4;k++){c.fillStyle=k&1?'#7d8597':'#6c7486';c.fillRect((63.02)*u,(36.2+k*.62)*u,u*.82,u*.56);c.fillStyle='#2b2f3a';c.fillRect(63.1*u,(36.42+k*.62)*u,u*.1,u*.1);}}
+  // sanitaires : décor fixe, dessiné dans le repère de la pièce (porte en haut, cabines au fond)
+  for(const w of WCS)if(inR(w.x0-1,w.y0-1,w.x1+2,w.y1+2)){
+    for(const d of w.door){c.fillStyle='rgba(63,0,179,.2)';c.fillRect(d[0]*u,d[1]*u,u+.7,u+.7);}
+    c.save();wcT(c,w,u);drawWCStatic(c,w);c.restore();
+  }
+}
+function wcT(c,w,u){
+  const o=w.side==='N'?[w.x0,w.y0]:w.side==='S'?[w.x0,w.y1+1]:w.side==='W'?[w.x0,w.y0]:[w.x1+1,w.y0];
+  c.translate(o[0]*u,o[1]*u);
+  if(w.side==='S')c.transform(1,0,0,-1,0,0);else if(w.side==='W')c.transform(0,1,1,0,0,0);else if(w.side==='E')c.transform(0,1,-1,0,0,0);
+  c.scale(u,u);
+}
+function drawWCStatic(c,w){
+  const Wd=w.Wd,D=w.D,sw=Wd/4,s0=D-1.85,el=(x,y,rx,ry,col)=>{c.fillStyle=col;c.beginPath();c.ellipse(x,y,rx,ry,0,0,7);c.fill();};
+  // plinthe et tapis d'entrée
+  c.strokeStyle='rgba(40,95,115,.3)';c.lineWidth=.07;c.strokeRect(.035,.035,Wd-.07,D-.07);
+  c.fillStyle='#4d5866';rrect(c,Wd/2-1,.05,2,.46,.08);c.fill();c.fillStyle='rgba(255,255,255,.13)';for(let k=0;k<9;k++)c.fillRect(Wd/2-.9+k*.21,.11,.09,.34);
+  // cabines : sol, cuvettes, réservoirs
+  c.fillStyle='rgba(95,150,168,.2)';c.fillRect(0,s0,Wd,D-s0);
+  for(let k=0;k<4;k++){const uc=(k+.5)*sw;
+    c.fillStyle='rgba(30,60,80,.2)';rrect(c,uc-.38,D-.42,.76,.4,.08);c.fill();
+    c.fillStyle='#f7fafb';c.strokeStyle='#9db1ba';c.lineWidth=.035;rrect(c,uc-.34,D-.4,.68,.32,.08);c.fill();c.stroke();
+    c.fillStyle='#dfe7ea';rrect(c,uc-.28,D-.36,.56,.1,.04);c.fill();el(uc,D-.2,.07,.07,'#aebcc4');el(uc,D-.2,.035,.035,'#e9eef1');
+    el(uc,D-.9,.35,.45,'rgba(30,60,80,.18)');
+    c.fillStyle='#fdfefe';c.beginPath();c.ellipse(uc,D-.92,.31,.41,0,0,7);c.fill();c.stroke();
+    el(uc,D-.94,.23,.32,'#e6eff3');el(uc,D-.97,.14,.2,'#a5dbee');el(uc-.045,D-1.03,.04,.06,'rgba(255,255,255,.85)');
+    c.fillStyle='#cfd9de';rrect(c,uc-.2,D-.56,.4,.07,.03);c.fill();
+    // dérouleur fixé à la cloison
+    c.fillStyle='#8fa5af';rrect(c,uc+sw/2-.3,D-1.22,.2,.34,.05);c.fill();
+  }
+  for(let k=0;k<=4;k++){const uu=Math.max(.045,Math.min(Wd-.045,k*sw));c.fillStyle='#6b8894';c.fillRect(uu-.045,s0,.09,D-s0);c.fillStyle='#48606b';rrect(c,uu-.08,s0-.05,.16,.12,.04);c.fill();}
+  // plan vasque, miroir, lavabos, robinets
+  c.fillStyle='rgba(30,60,80,.22)';rrect(c,.02,.76,1.1,3.7,.12);c.fill();
+  const g=c.createLinearGradient(0,0,1.05,0);g.addColorStop(0,'#d9e0e5');g.addColorStop(1,'#f5f7f8');c.fillStyle=g;rrect(c,.02,.72,1.03,3.66,.12);c.fill();
+  for(let i=0;i<22;i++){c.fillStyle=i&1?'rgba(110,128,140,.35)':'rgba(255,255,255,.7)';c.fillRect(.12+hsh(i+w.i*31,7)*.85,.8+hsh(i,w.i+3)*3.45,.035,.035);}
+  c.fillStyle='#a3b3bb';c.fillRect(1.0,.82,.05,3.46);
+  c.fillStyle='#6f8491';c.fillRect(0,.8,.11,3.5);c.fillStyle='#bfe9f9';c.fillRect(.02,.84,.07,3.42);c.fillStyle='rgba(255,255,255,.85)';c.fillRect(.02,1.1,.07,.3);c.fillRect(.02,2.3,.07,.5);c.fillRect(.02,3.5,.07,.22);
+  for(let k=0;k<3;k++){const v=1.4+k*1.15;
+    el(.57,v,.36,.42,'#c3ced4');el(.57,v,.32,.38,'#fbfdfe');el(.59,v,.24,.29,'#e1edf1');el(.61,v,.17,.21,'#eef6f8');el(.63,v,.045,.045,'#7f939d');
+    c.fillStyle='#7f8c97';rrect(c,.12,v-.1,.15,.2,.05);c.fill();c.fillStyle='#b6c1c9';rrect(c,.2,v-.05,.3,.1,.05);c.fill();c.fillStyle='rgba(255,255,255,.75)';c.fillRect(.23,v-.035,.22,.025);el(.19,v,.05,.05,'#dfe6ea');
+    if(k<2){el(.3,v+.575,.085,.085,'#3f00b3');el(.3,v+.575,.04,.04,'#fff');}
+  }
+  // sèche-mains, distributeur de savon
+  c.fillStyle='rgba(30,60,80,.22)';rrect(c,Wd-.8,1.08,.78,.86,.14);c.fill();
+  const g2=c.createLinearGradient(Wd-.8,0,Wd,0);g2.addColorStop(0,'#eef2f5');g2.addColorStop(.5,'#c2cbd3');g2.addColorStop(1,'#e3e8ec');c.fillStyle=g2;rrect(c,Wd-.78,1.1,.72,.8,.16);c.fill();
+  c.fillStyle='#343c48';rrect(c,Wd-.66,1.22,.14,.56,.06);c.fill();c.fillStyle='rgba(255,255,255,.7)';c.fillRect(Wd-.44,1.2,.05,.6);
+  c.fillStyle='rgba(30,60,80,.22)';rrect(c,Wd-.68,2.56,.64,.7,.1);c.fill();
+  c.fillStyle='#fdfefe';c.strokeStyle='#a9b6bf';c.lineWidth=.03;rrect(c,Wd-.66,2.58,.6,.64,.12);c.fill();c.stroke();c.fillStyle='#6f7c88';rrect(c,Wd-.74,2.84,.12,.12,.03);c.fill();
+  // poubelle inox, plante
+  const bu=Wd/2+2.1;el(bu+.03,.59,.4,.4,'rgba(30,60,80,.22)');el(bu,.55,.37,.37,'#aab3bb');el(bu,.55,.31,.31,'#e9edf0');el(bu,.55,.23,.23,'#262b34');
+  c.strokeStyle='rgba(255,255,255,.8)';c.lineWidth=.04;c.beginPath();c.arc(bu,.55,.34,3.6,4.7);c.stroke();
+  const pu=.4,pv=.38;el(pu+.02,pv+.03,.26,.26,'rgba(30,60,80,.2)');el(pu,pv,.2,.2,'#e7e2d8');el(pu,pv,.15,.15,'#6b4a2f');for(let k=0;k<7;k++){c.fillStyle=k&1?'#3fa35e':'#2c8147';c.beginPath();c.ellipse(pu+Math.cos(k*.9)*.14,pv+Math.sin(k*.9)*.14,.18,.075,k*.9,0,7);c.fill();}
+}
+function drawWCDyn(w,tm,inside){
+  const c=ctx,Wd=w.Wd,D=w.D,sw=Wd/4,s0=D-1.85,el=(x,y,rx,ry,col)=>{c.fillStyle=col;c.beginPath();c.ellipse(x,y,rx,ry,0,0,7);c.fill();};
+  for(let k=0;k<4;k++){const uc=(k+.5)*sw,pa=w.st[k]?w.st[k].paper:CAPP;
+    // rouleau : il fond à vue d'œil
+    const rx=uc+sw/2-.2,ry=D-1.05;
+    if(pa>0){el(rx,ry,.07+.085*pa/CAPP,.07+.085*pa/CAPP,'#ffffff');c.strokeStyle='#b9c6cd';c.lineWidth=.025;c.stroke();el(rx,ry,.04,.04,'#b58a5a');}
+    else{el(rx,ry,.06,.06,'#b58a5a');el(rx,ry,.03,.03,'#7a5632');}
+    if(w.so[k]){c.fillStyle='rgba(202,222,230,.94)';rrect(c,k*sw+.07,s0+.04,sw-.14,D-s0-.1,.08);c.fill();el(uc,D-.95,.3,.3,'rgba(60,95,115,.22)');
+      c.fillStyle='#55707c';rrect(c,k*sw+.07,s0-.06,sw-.14,.13,.04);c.fill();el(uc,s0,.11,.11,'#fff');el(uc,s0,.075,.075,'#d53636');}
+    else{c.fillStyle='#8fb0bc';rrect(c,k*sw+.08,s0,.08,Math.min(sw-.3,1.15),.03);c.fill();el(k*sw+.12,s0-.01,.07,.07,'#fff');el(k*sw+.12,s0-.01,.045,.045,'#2ea043');}
+  }
+  // niveau de savon, voyant du sèche-mains
+  const lv=Math.max(0,w.soapLv/CAPS);c.fillStyle='#e8edf0';rrect(c,Wd-.56,2.68,.34,.44,.05);c.fill();c.fillStyle=lv>.25?'#ff5fae':'#ff9d3c';if(lv>0){rrect(c,Wd-.56,2.68,.34*lv,.44,.05);c.fill();}
+  el(Wd-.3,1.72,.045,.045,w.dryerOK?'#2ea043':(Math.sin(tm*10)>0?'#ff3b3b':'#7a1414'));
+}
+function getChunk(cx,cy){
+  const k=cx+'_'+cy;let c=chunks.get(k);
+  if(!c){c=document.createElement('canvas');const px=Math.ceil((CH*ts+1)*dpr);c.width=c.height=px;const g=c.getContext('2d');
+    if(g){g.setTransform(dpr,0,0,dpr,-cx*CH*ts*dpr,-cy*CH*ts*dpr);drawStatic(g,cx*CH-1,cy*CH-1,cx*CH+CH,cy*CH+CH);}
+    chunks.set(k,c);if(chunks.size>70)chunks.delete(chunks.keys().next().value);}
+  return c;
+}
+function person(x,y,dx,dy,ph,body,hair,skin,r,moving){
+  const u=ts,a=Math.atan2(dy,dx),s=moving?Math.sin(ph):0;
+  ctx.save();ctx.translate(x,y);
+  ctx.fillStyle='rgba(15,15,40,.2)';ctx.beginPath();ctx.ellipse(u*.05,u*.09,r*1.05,r*.85,0,0,7);ctx.fill();
+  ctx.rotate(a);
+  ctx.fillStyle='#2b2f3a';ctx.beginPath();ctx.ellipse(s*r*.5,-r*.38,r*.34,r*.2,0,0,7);ctx.ellipse(-s*r*.5,r*.38,r*.34,r*.2,0,0,7);ctx.fill();
+  ctx.fillStyle=body;ctx.beginPath();ctx.ellipse(0,0,r*.62,r*1.02,0,0,7);ctx.fill();
+  ctx.fillStyle=skin;ctx.beginPath();ctx.arc(s*r*.35,-r*.98,r*.2,0,7);ctx.arc(-s*r*.35,r*.98,r*.2,0,7);ctx.fill();
+  ctx.fillStyle=skin;ctx.beginPath();ctx.arc(r*.08,0,r*.5,0,7);ctx.fill();
+  ctx.fillStyle=hair;ctx.beginPath();ctx.arc(r*.02,0,r*.5,Math.PI*.5,Math.PI*1.5);ctx.fill();
+  ctx.restore();
+}
+function plate(x,y,txt,bg,fg,fs,arrow){
+  ctx.font='700 '+fs+'px '+FONT;const w=ctx.measureText(txt).width+fs*1.1,h=fs*1.7;
+  ctx.fillStyle='rgba(15,15,40,.25)';rrect(ctx,x-w/2+2,y-h/2+3,w,h,h*.3);ctx.fill();
+  ctx.fillStyle=bg;rrect(ctx,x-w/2,y-h/2,w,h,h*.3);ctx.fill();
+  ctx.fillStyle=fg;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(txt,x,y+fs*.06);
+  if(arrow){ctx.fillStyle=bg;ctx.beginPath();ctx.moveTo(x-fs*.4,y+h/2-1);ctx.lineTo(x+fs*.4,y+h/2-1);ctx.lineTo(x,y+h/2+fs*.5);ctx.fill();}
+  return w;
+}
+const termCol=w=>{const v=w.votes,n=v.h+v.n+v.u,r=n?v.u/n:0;return n>=2&&r>.34?'#d53636':n>=2&&r>.14?'#e0a21b':'#2ea043';};
+const SPOTC={paper:'roll',soap:'soap',bin:'bin',stain:'spray',dryer:'bolt',leak:'drop'};
+function glyph(k,x,y,s,col){
+  ctx.save();ctx.translate(x,y);ctx.strokeStyle=col;ctx.fillStyle=col;ctx.lineWidth=s*.13;ctx.lineCap='round';ctx.lineJoin='round';
+  if(k==='roll'){ctx.beginPath();ctx.ellipse(-s*.12,-s*.2,s*.36,s*.2,0,0,7);ctx.stroke();ctx.beginPath();ctx.moveTo(-s*.48,-s*.2);ctx.lineTo(-s*.48,s*.3);ctx.lineTo(s*.5,s*.3);ctx.lineTo(s*.5,-s*.05);ctx.lineTo(s*.24,-s*.05);ctx.stroke();}
+  else if(k==='soap'){ctx.beginPath();ctx.moveTo(0,-s*.5);ctx.bezierCurveTo(s*.45,0,s*.4,s*.5,0,s*.5);ctx.bezierCurveTo(-s*.4,s*.5,-s*.45,0,0,-s*.5);ctx.stroke();}
+  else if(k==='drop'){ctx.beginPath();ctx.moveTo(0,-s*.5);ctx.bezierCurveTo(s*.45,0,s*.4,s*.5,0,s*.5);ctx.bezierCurveTo(-s*.4,s*.5,-s*.45,0,0,-s*.5);ctx.fill();}
+  else if(k==='bin'){ctx.beginPath();ctx.moveTo(-s*.42,-s*.3);ctx.lineTo(s*.42,-s*.3);ctx.moveTo(-s*.3,-s*.3);ctx.lineTo(-s*.22,s*.45);ctx.lineTo(s*.22,s*.45);ctx.lineTo(s*.3,-s*.3);ctx.moveTo(-s*.12,-s*.3);ctx.lineTo(-s*.12,-s*.48);ctx.lineTo(s*.12,-s*.48);ctx.lineTo(s*.12,-s*.3);ctx.stroke();}
+  else if(k==='bolt'){ctx.beginPath();ctx.moveTo(s*.1,-s*.55);ctx.lineTo(-s*.32,s*.06);ctx.lineTo(0,s*.06);ctx.lineTo(-s*.1,s*.55);ctx.lineTo(s*.32,-s*.08);ctx.lineTo(0,-s*.08);ctx.closePath();ctx.fill();}
+  else{ctx.beginPath();ctx.moveTo(-s*.2,-s*.1);ctx.lineTo(s*.12,-s*.1);ctx.lineTo(s*.2,s*.1);ctx.lineTo(s*.2,s*.5);ctx.lineTo(-s*.28,s*.5);ctx.lineTo(-s*.28,s*.1);ctx.closePath();ctx.moveTo(-s*.2,-s*.1);ctx.lineTo(-s*.2,-s*.42);ctx.lineTo(s*.18,-s*.42);ctx.moveTo(s*.34,-s*.5);ctx.lineTo(s*.5,-s*.58);ctx.moveTo(s*.36,-s*.36);ctx.lineTo(s*.54,-s*.36);ctx.stroke();}
+  ctx.restore();
+}
+function draw(tm){
+  const u=ts;
+  ctx.setTransform(dpr,0,0,dpr,0,0);ctx.fillStyle='#333950';ctx.fillRect(0,0,cw,ch);
+  // caméra
+  let tx,ty;
+  if(G.state==='menu'){tx=48+Math.sin(tm*.07)*36;ty=22.5+Math.sin(tm*.11)*2;}else{tx=pl.x;ty=pl.y+(cw<760?-1.2:0);}
+  G.cam.x+=(tx-G.cam.x)*.14;G.cam.y+=(ty-G.cam.y)*.14;
+  const ww=W*u,wh=H*u;
+  let cx=ww<=cw?(ww-cw)/2:Math.max(0,Math.min(ww-cw,G.cam.x*u-cw/2)),cy=wh<=ch?(wh-ch)/2:Math.max(0,Math.min(wh-ch,G.cam.y*u-ch/2));
+  cx=Math.round(cx);cy=Math.round(cy);G.psx=pl.x*u-cx;G.psy=pl.y*u-cy;G.cx=cx;G.cy=cy;
+  ctx.translate(-cx,-cy);
+  const x0=Math.floor(cx/u),x1=Math.floor((cx+cw)/u),y0=Math.floor(cy/u),y1=Math.floor((cy+ch)/u);
+  for(let gy=Math.max(0,Math.floor(y0/CH));gy<=Math.floor(Math.min(H-1,y1)/CH);gy++)for(let gx=Math.max(0,Math.floor(x0/CH));gx<=Math.floor(Math.min(W-1,x1)/CH);gx++){
+    const c=getChunk(gx,gy);ctx.drawImage(c,gx*CH*u,gy*CH*u,c.width/dpr,c.height/dpr);}
+  const vis=(x,y,m)=>x>x0-m&&x<x1+1+m&&y>y0-m&&y<y1+1+m;
+  // textes au sol
+  ctx.textAlign='center';ctx.textBaseline='middle';
+  ctx.font='800 '+(u*.42)+'px '+FONT;ctx.fillStyle='rgba(120,80,0,.7)';
+  for(const s of[[18,37.5],[78,33]])if(vis(s[0],s[1],4)){ctx.save();ctx.translate(s[0]*u,s[1]*u);ctx.rotate(-Math.PI/2);ctx.fillText(t('p_svc'),0,0);ctx.restore();}
+  if(vis(70,39,6))ctx.fillText(t('p_svc'),70*u,39*u);
+  ctx.font='900 '+(u*.7)+'px '+FONT;ctx.fillStyle='rgba(255,255,255,.9)';
+  for(const s of SHOPS)if(vis((s.x0+s.x1+1)/2,(s.y0+s.y1+1)/2,3))ctx.fillText(t(s.k).toUpperCase(),(s.x0+s.x1+1)/2*u,(s.y0+s.y1+1)/2*u);
+  // sanitaires : état dynamique
+  const here=G.state==='play'?G.here:null;
+  for(const w of WCS){if(!vis((w.x0+w.x1)/2,(w.y0+w.y1)/2,7))continue;
+    ctx.save();wcT(ctx,w,u);drawWCDyn(w,tm,here===w);ctx.restore();
+    for(const p of G.pax)if(p.wc===w&&p.st==='in'){if(p.wash>=0){const sk=w.sinks[p.wash];ctx.fillStyle='rgba(60,170,225,.55)';ctx.beginPath();ctx.arc(sk[0]*u,sk[1]*u,u*(.2+.03*Math.sin(tm*20)),0,7);ctx.fill();}
+      if(p.dry){ctx.strokeStyle='rgba(255,255,255,.9)';ctx.lineWidth=2;for(let k=-1;k<2;k++){ctx.beginPath();ctx.moveTo(w.dryer[0]*u+(p.x-w.dryer[0])*u*.35,w.dryer[1]*u+k*u*.14+(p.y-w.dryer[1])*u*.35);ctx.lineTo(w.dryer[0]*u+(p.x-w.dryer[0])*u*(.6+.1*Math.sin(tm*25+k)),w.dryer[1]*u+k*u*.2+(p.y-w.dryer[1])*u*.6);ctx.stroke();}}}
+    for(const s of w.stains){const ag=s.born===undefined?9:G.now-s.born,sc=Math.min(1,ag/.4);ctx.fillStyle='rgba(112,80,42,.66)';for(let k=0;k<4;k++){ctx.beginPath();ctx.arc(s.x*u+Math.cos(s.seed+k*1.7)*u*.26*sc,s.y*u+Math.sin(s.seed*2+k*2.1)*u*.22*sc,u*(.15+.07*(k%2))*sc,0,7);ctx.fill();}
+      if(ag<1.2){ctx.strokeStyle='rgba(112,80,42,'+(1-ag/1.2)+')';ctx.lineWidth=3;ctx.beginPath();ctx.arc(s.x*u,s.y*u,u*(.3+ag*.7),0,7);ctx.stroke();}}
+    if(w.leak>=0){const s=w.sinks[w.leak],p=1+Math.sin(tm*3)*.06;ctx.fillStyle='rgba(47,143,214,.5)';ctx.beginPath();ctx.ellipse(s[0]*u+w.out[0]*-u*.2+u*.25,s[1]*u+u*.2,u*.75*p,u*.5*p,.3,0,7);ctx.fill();ctx.beginPath();ctx.ellipse(s[0]*u+u*.9,s[1]*u+u*.75,u*.26,u*.17,0,0,7);ctx.fill();}
+    if(!w.dryerOK){ctx.strokeStyle='#f0b400';ctx.lineWidth=2.5;const o=u*.3,x=w.dryer[0]*u,y=w.dryer[1]*u;ctx.beginPath();ctx.moveTo(x-o,y-o);ctx.lineTo(x-o*.2,y-o*.1);ctx.lineTo(x-o*.7,y+o*.2);ctx.lineTo(x+o*.3,y+o);ctx.stroke();}
+    if(w.binLv>=16){ctx.fillStyle=w.binLv>=CAPB?'#d9d2bc':'#a9a392';const n=w.binLv>=CAPB?6:3;for(let k=0;k<n;k++)ctx.fillRect(w.bin[0]*u+Math.cos(k*1.9+w.i)*u*(k<3?.12:.45)-u*.08,w.bin[1]*u+Math.sin(k*2.3+w.i)*u*(k<3?.12:.4)-u*.06,u*.18,u*.14);}
+    // borne : pastille au sol + boîtier au mur
+    const px=w.pad[0]*u,py=w.pad[1]*u,need=wcNeed(w),pp=.5+.5*Math.sin(tm*5);
+    const gr=ctx.createLinearGradient(px-u,py-u,px+u,py+u);gr.addColorStop(0,'#ec006e');gr.addColorStop(1,'#3f00b3');
+    ctx.globalAlpha=need?.28+.2*pp:.13;ctx.fillStyle=gr;ctx.beginPath();ctx.arc(px,py,u*(need?.95+.08*pp:.85),0,7);ctx.fill();ctx.globalAlpha=1;
+    ctx.strokeStyle=gr;ctx.lineWidth=need?3.5:2;ctx.setLineDash(need?[]:[u*.25,u*.18]);ctx.beginPath();ctx.arc(px,py,u*(need?.95+.08*pp:.85),0,7);ctx.stroke();ctx.setLineDash([]);
+    const dx=w.dev[0]*u,dy=w.dev[1]*u,bw=u*.62,bh=u*.84;
+    ctx.fillStyle='rgba(15,15,40,.3)';rrect(ctx,dx-bw/2+2,dy-bh/2+3,bw,bh,u*.13);ctx.fill();
+    ctx.fillStyle='#fff';rrect(ctx,dx-bw/2,dy-bh/2,bw,bh,u*.13);ctx.fill();
+    ctx.fillStyle='#111';rrect(ctx,dx-bw/2,dy-bh/2,bw,bh*.46,[u*.13,u*.13,0,0]);ctx.fill();
+    ctx.fillStyle='#cfcfcc';ctx.fillRect(dx-bw*.3,dy-bh*.36,bw*.6,bh*.22);
+    for(let k=0;k<3;k++){ctx.fillStyle=['#d53636','#e0a21b','#2ea043'][k];ctx.beginPath();ctx.arc(dx+(k-1)*bw*.27,dy+bh*.16,u*.07,0,7);ctx.fill();}
+    // affluence à la porte
+    if(w.occ>0&&G.state==='play'){const ox=(w.dc[0]-w.out[0]*1.2)*u,oy=(w.dc[1]-w.out[1]*1.2)*u;plate(ox,oy,'×'+w.occ,w.occ>CROWD?'#d53636':'rgba(21,24,42,.6)','#fff',u*.4);}
+  }
+  // passagers
+  const pr=u*.3;
+  for(const p of G.pax){if(!vis(p.x,p.y,1))continue;const px=p.x*u,py=p.y*u,c=PAXC[p.col];
+    if(p.st==='in'){if(!p.inStall)person(px,py,p.dx,p.dy,p.ph,c[0],c[1],SKIN[p.sk],pr,p.mv);continue;}
+    if(p.bag>=0){ctx.fillStyle='rgba(15,15,40,.2)';ctx.fillRect(px-p.dx*u*.5-u*.13,py-p.dy*u*.5-u*.1,u*.3,u*.3);ctx.fillStyle=['#27324a','#b0566b','#3f6ea5','#c47a45','#4f9a7a'][p.bag];rrect(ctx,px-p.dx*u*.5-u*.15,py-p.dy*u*.5-u*.15,u*.3,u*.3,u*.06);ctx.fill();}
+    person(px,py,p.dx,p.dy,p.ph,c[0],c[1],SKIN[p.sk],pr,true);}
+  if(G.state!=='menu'){
+    // manager
+    person(mgr.x*u,mgr.y*u,mgr.fx,mgr.fy,mgr.step,'#20315c','#3b2a1a','#e9c9a8',u*.36,mgr.state!=='desk');
+    if(G.queue.length){const bx=mgr.x*u,by=(mgr.y-1)*u-Math.abs(Math.sin(tm*4))*u*.14;ctx.fillStyle='#ec006e';ctx.beginPath();ctx.arc(bx,by,u*.32,0,7);ctx.fill();ctx.fillStyle='#fff';ctx.font='900 '+(u*.46)+'px '+FONT;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('!',bx,by+1);}
+    // joueur + chariot
+    const px=pl.x*u,py=pl.y*u;
+    ctx.fillStyle='rgba(255,79,174,.22)';ctx.beginPath();ctx.arc(px,py,u*.62,0,7);ctx.fill();
+    ctx.save();ctx.translate(px+pl.fx*u*.58,py+pl.fy*u*.58);ctx.rotate(Math.atan2(pl.fy,pl.fx));
+    ctx.fillStyle='rgba(15,15,40,.22)';ctx.fillRect(-u*.2,-u*.22,u*.5,u*.52);ctx.fillStyle='#ffd23f';rrect(ctx,-u*.24,-u*.27,u*.5,u*.54,u*.08);ctx.fill();ctx.fillStyle='#2f8fd6';ctx.beginPath();ctx.arc(u*.02,-u*.08,u*.12,0,7);ctx.fill();ctx.fillStyle='#fff';ctx.fillRect(-u*.16,u*.08,u*.3,u*.1);ctx.strokeStyle='#7a5a3a';ctx.lineWidth=u*.06;ctx.beginPath();ctx.moveTo(-u*.2,u*.2);ctx.lineTo(u*.34,-u*.3);ctx.stroke();ctx.restore();
+    person(px,py,pl.fx,pl.fy,pl.step,'#ec006e','#3f00b3','#f0cfae',u*.4,pl.moving);
+    // points d'intervention
+    if(here)for(const sp of G.spots){const x=sp.x*u,y=sp.y*u,pp=1+Math.sin(tm*6+sp.x)*.1;
+      if(sp.need){ctx.fillStyle='rgba(236,0,110,.16)';ctx.beginPath();ctx.arc(x,y,u*.7*pp,0,7);ctx.fill();ctx.strokeStyle='#ec006e';ctx.lineWidth=3;ctx.beginPath();ctx.arc(x,y,u*.7*pp,0,7);ctx.stroke();
+        const by=y-u*1.05-Math.abs(Math.sin(tm*4+sp.x))*u*.12;ctx.fillStyle='#fff';ctx.strokeStyle='#ec006e';ctx.lineWidth=2.5;ctx.beginPath();ctx.arc(x,by,u*.36,0,7);ctx.fill();ctx.stroke();glyph(SPOTC[sp.k],x,by,u*.36,'#3f00b3');}
+      else{ctx.strokeStyle='rgba(224,162,27,.95)';ctx.lineWidth=2.5;ctx.setLineDash([u*.16,u*.12]);ctx.beginPath();ctx.arc(x,y,u*.52,0,7);ctx.stroke();ctx.setLineDash([]);
+        const by=y-u*.86;ctx.fillStyle='#fff8e6';ctx.strokeStyle='#e0a21b';ctx.lineWidth=2;ctx.beginPath();ctx.arc(x,by,u*.26,0,7);ctx.fill();ctx.stroke();glyph(SPOTC[sp.k],x,by,u*.26,'#8a5a00');}}
+    if(pl.busy){const a=Math.PI*2*pl.busy.t/pl.busy.dur;ctx.strokeStyle='rgba(255,255,255,.9)';ctx.lineWidth=u*.2;ctx.beginPath();ctx.arc(px,py,u*.78,-Math.PI/2,-Math.PI/2+a);ctx.stroke();ctx.strokeStyle='#ec006e';ctx.lineWidth=u*.12;ctx.beginPath();ctx.arc(px,py,u*.78,-Math.PI/2,-Math.PI/2+a);ctx.stroke();}
+    if(pl.busy&&(pl.busy.sp.k==='stain'||pl.busy.sp.k==='leak')){const wx=pl.busy.sp.x*u+u*.75,wy=pl.busy.sp.y*u-u*.55;ctx.fillStyle='rgba(15,15,40,.2)';ctx.beginPath();ctx.ellipse(wx+2,wy+u*.3,u*.3,u*.1,0,0,7);ctx.fill();ctx.fillStyle='#ffd23f';ctx.strokeStyle='#b98600';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(wx,wy-u*.38);ctx.lineTo(wx+u*.3,wy+u*.3);ctx.lineTo(wx-u*.3,wy+u*.3);ctx.closePath();ctx.fill();ctx.stroke();ctx.fillStyle='#1a1a1a';ctx.font='900 '+(u*.36)+'px '+FONT;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('!',wx,wy+u*.08);}
+    if(pl.busy)plate(px,py-u*1.4,t('w_'+pl.busy.sp.k),'#1b1446','#fff',Math.max(12,u*.34),true);
+    if(G.wait)plate(px,py-u*1.25,t('crowd',{n:G.wait.occ}),'#d53636','#fff',Math.max(12,u*.36),true);
+  }
+  // signalétique suspendue
+  for(const g of GATES)if(vis(g.px,g.py,3))plate(g.px*u,g.py*u,t('gate')+' '+g.n,'#ffd23f','#1a1a1a',u*.4);
+  for(const w of WCS)if(vis(w.dc[0],w.dc[1],3)){const sx=(w.dc[0]-w.out[0]*.05)*u,sy=(w.dc[1]-w.out[1]*.05)*u;{const fs=u*.46,pw=plate(sx,sy,'       WC '+w.id,'#3f00b3','#fff',fs),bx=sx-pw/2+fs*.72;ctx.fillStyle='#fff';
+      ctx.beginPath();ctx.arc(bx,sy-fs*.4,fs*.15,0,7);ctx.fill();ctx.fillRect(bx-fs*.17,sy-fs*.2,fs*.34,fs*.62);
+      ctx.beginPath();ctx.arc(bx+fs*.72,sy-fs*.4,fs*.15,0,7);ctx.fill();ctx.beginPath();ctx.moveTo(bx+fs*.72,sy-fs*.26);ctx.lineTo(bx+fs*1.0,sy+fs*.42);ctx.lineTo(bx+fs*.44,sy+fs*.42);ctx.closePath();ctx.fill();}
+    if(G.state==='play'){const col=termCol(w);ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(w.dev[0]*u,w.dev[1]*u-u*.78,u*.25,0,7);ctx.fill();ctx.fillStyle=col;ctx.beginPath();ctx.arc(w.dev[0]*u,w.dev[1]*u-u*.78,u*.19,0,7);ctx.fill();
+      if(Object.values(w.is).some(i=>i.reported&&TYPES[i.type].grp!=='unhappy')){ctx.fillStyle='#ec006e';ctx.beginPath();ctx.arc(w.dev[0]*u+u*.3,w.dev[1]*u-u*.98,u*.13,0,7);ctx.fill();}
+      if(G.missions.some(m=>m.state==='todo'&&m.kind==='zone'&&m.wc.zone===w.zone)){const by=w.dev[1]*u-u*1.5-Math.abs(Math.sin(tm*3+w.i))*u*.15;ctx.fillStyle='#ffd23f';ctx.beginPath();ctx.arc(w.dev[0]*u,by,u*.3,0,7);ctx.fill();ctx.fillStyle='#1a1a1a';ctx.font='900 '+(u*.42)+'px '+FONT;ctx.fillText('?',w.dev[0]*u,by+1);}}}
+  const signs=[[48,29.3,'← '+t('gates')+' 1–4    ↑ 9–10    5–8 →'],[48,41.4,'↓ '+t('p_sec')+' · '+t('p_exit')],[48,48.7,'↑ '+t('p_sec')+' · '+t('gates')],[30,49.2,t('p_bag')],[65,49.2,t('p_checkin')],[60.3,36.9,t('p_break')],[48,58.4,t('p_exit')]];
+  for(const s of signs)if(vis(s[0],s[1],8))plate(s[0]*u,s[1]*u,s[2],s[0]===60.3?'#20315c':'#ffd23f',s[0]===60.3?'#fff':'#1a1a1a',u*.36);
+  // avis des usagers, points
+  for(const f of G.fx){if(f.k==='spark'){const a=1-f.t/.9;if(a<=0)continue;ctx.globalAlpha=a;ctx.fillStyle='#fff';ctx.strokeStyle='#ffd23f';ctx.lineWidth=2;for(let k=0;k<5;k++){const an=k*1.26+f.x,rr=u*(.25+f.t*1.1),sx=f.x*u+Math.cos(an)*rr,sy=f.y*u+Math.sin(an)*rr,z=u*.16*a+2;ctx.beginPath();ctx.moveTo(sx,sy-z);ctx.lineTo(sx+z*.3,sy-z*.3);ctx.lineTo(sx+z,sy);ctx.lineTo(sx+z*.3,sy+z*.3);ctx.lineTo(sx,sy+z);ctx.lineTo(sx-z*.3,sy+z*.3);ctx.lineTo(sx-z,sy);ctx.lineTo(sx-z*.3,sy-z*.3);ctx.closePath();ctx.fill();ctx.stroke();}ctx.globalAlpha=1;continue;}
+    const a=1-f.t/1.5,x=f.x*u,y=(f.y-.6-f.t*1.3)*u,col=f.k==='h'?'#2ea043':f.k==='n'?'#dfa414':'#d53636',r=u*.34;ctx.globalAlpha=Math.min(1,a*1.6);
+    ctx.fillStyle='#fff';ctx.strokeStyle=col;ctx.lineWidth=u*.07;ctx.beginPath();ctx.arc(x,y,r,0,7);ctx.fill();ctx.stroke();ctx.fillStyle=col;ctx.beginPath();ctx.arc(x-r*.35,y-r*.2,r*.12,0,7);ctx.arc(x+r*.35,y-r*.2,r*.12,0,7);ctx.fill();
+    ctx.beginPath();if(f.k==='h')ctx.arc(x,y+r*.05,r*.45,.15*Math.PI,.85*Math.PI);else if(f.k==='u')ctx.arc(x,y+r*.62,r*.42,1.2*Math.PI,1.8*Math.PI);else{ctx.moveTo(x-r*.4,y+r*.3);ctx.lineTo(x+r*.4,y+r*.3);}ctx.stroke();ctx.globalAlpha=1;}
+  for(const f of G.floats){ctx.globalAlpha=Math.max(0,1-f.t/1.4);ctx.font='900 '+(u*(f.big?.95:.6))+'px '+FONT;ctx.textAlign='center';ctx.lineWidth=5;ctx.strokeStyle='#1b1446';ctx.strokeText(f.s,f.x*u,(f.y-f.t*1.3)*u);ctx.fillStyle=f.c||'#fff';ctx.fillText(f.s,f.x*u,(f.y-f.t*1.3)*u);ctx.globalAlpha=1;}
+  // repère de mission à l'écran
+  const tg=G.state==='play'?target():null;G.tg=tg;
+  if(tg){const sx=tg.x*u-cx,sy=tg.y*u-cy,on=sx>30&&sx<cw-30&&sy>110&&sy<ch-60;
+    if(on&&!(here&&tg.wc===here)){const by=tg.y*u-u*(tg.pad?1.6:1.3)-Math.abs(Math.sin(tm*5))*u*.3;ctx.fillStyle='#ec006e';ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(tg.x*u,by+u*.5);ctx.lineTo(tg.x*u-u*.38,by-u*.1);ctx.lineTo(tg.x*u+u*.38,by-u*.1);ctx.closePath();ctx.fill();ctx.stroke();}}
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  // nuit tombante
+  const na=G.time<7?(7-G.time)*.16:G.time>19?Math.min(.34,(G.time-19)*.12):0;if(na>0){ctx.fillStyle='rgba(22,16,70,'+na+')';ctx.fillRect(0,0,cw,ch);}
+  if(G.state!=='play')return;
+  // flèches en bord d'écran
+  const edge=(wx,wy,label,bg,fg)=>{const mx=wx*u-cx,my=wy*u-cy;if(mx>24&&mx<cw-24&&my>100&&my<ch-50)return;
+    const a=Math.atan2(my-G.psy,mx-G.psx),kx=Math.max(40,Math.min(cw-40,mx)),ky=Math.max(cw<760?132:96,Math.min(ch-70,my));
+    ctx.fillStyle='rgba(15,15,40,.3)';ctx.beginPath();ctx.arc(kx+2,ky+3,25,0,7);ctx.fill();ctx.fillStyle=bg;ctx.beginPath();ctx.arc(kx,ky,25,0,7);ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.stroke();
+    ctx.save();ctx.translate(kx,ky);ctx.rotate(a);ctx.fillStyle=fg;ctx.beginPath();ctx.moveTo(14,0);ctx.lineTo(-6,-10);ctx.lineTo(-2,0);ctx.lineTo(-6,10);ctx.fill();ctx.restore();
+    const dist=Math.round(Math.hypot(wx-pl.x,wy-pl.y)*2);ctx.font='700 13px '+FONT;const lw=ctx.measureText(label+' · '+dist+' m').width+18;
+    plate(Math.max(lw/2+6,Math.min(cw-lw/2-6,kx)),ky+(ky>ch/2?-42:42),label+' · '+dist+' m',bg,fg,13);};
+  if(tg)edge(tg.x,tg.y,tg.label,'#ec006e','#fff');
+  if(mgr.state==='seek')edge(mgr.x,mgr.y,t('seek'),'#20315c','#fff');
+  // commande : joystick au doigt, cible à la souris
+  if(joy&&joy.mouse){const d=Math.hypot(joy.x-G.psx,joy.y-G.psy);if(d>12){ctx.strokeStyle='rgba(255,255,255,.9)';ctx.lineWidth=3;ctx.setLineDash([6,7]);ctx.beginPath();ctx.moveTo(G.psx+(joy.x-G.psx)/d*26,G.psy+(joy.y-G.psy)/d*26);ctx.lineTo(joy.x,joy.y);ctx.stroke();ctx.setLineDash([]);}
+    ctx.fillStyle='rgba(236,0,110,.9)';ctx.beginPath();ctx.arc(joy.x,joy.y,9,0,7);ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.beginPath();ctx.arc(joy.x,joy.y,9,0,7);ctx.stroke();ctx.beginPath();ctx.arc(joy.x,joy.y,17+Math.sin(tm*8)*2,0,7);ctx.stroke();}
+  else if(joy){const dx=joy.x-joy.ox,dy=joy.y-joy.oy,d=Math.hypot(dx,dy),k=d>42?42/d:1;
+    ctx.fillStyle='rgba(27,20,70,.28)';ctx.strokeStyle='rgba(255,255,255,.75)';ctx.lineWidth=3;ctx.beginPath();ctx.arc(joy.ox,joy.oy,54,0,7);ctx.fill();ctx.stroke();
+    const g=ctx.createLinearGradient(joy.ox-26,joy.oy-26,joy.ox+26,joy.oy+26);g.addColorStop(0,'#ff0066');g.addColorStop(1,'#3f00b3');ctx.fillStyle=g;ctx.beginPath();ctx.arc(joy.ox+dx*k,joy.oy+dy*k,27,0,7);ctx.fill();ctx.strokeStyle='#fff';ctx.lineWidth=3;ctx.stroke();}
+}
+
+/* ---------- Interface ---------- */
+const IC={
+ roll:'<ellipse cx="8" cy="7" rx="5" ry="3"/><path d="M3 7v9c0 1.700 2.200 3 5 3h12V10h-7"/><path d="M13 7.500V19"/>',
+ spray:'<path d="M9 10h5l1.500 3v7.500h-8V13z"/><path d="M9 10V5.500h6L14 8h-2v2"/><path d="M18 4.500l2-1M18.500 6.500H21M18 8.500l2 1"/>',
+ frown:'<circle cx="12" cy="12" r="8.500"/><path d="M8.500 16c1-1.600 6-1.600 7 0"/><path d="M9 9.500v.600M15 9.500v.600"/>',
+ drop:'<path d="M12 3.500c3 4 5.500 6.800 5.500 10a5.500 5.500 0 0 1-11 0c0-3.200 2.500-6 5.500-10z"/>',
+ bolt:'<path d="M13 3 6 13.500h5l-1 7.500 7-10.500h-5z"/>',
+ bin:'<path d="M5 7h14M9 7V4.500h6V7M7 7l1 13h8l1-13"/>',
+ soap:'<rect x="7" y="9.500" width="10" height="10.500" rx="2"/><path d="M10 9.500V6h4M14 6h3v2"/>',
+ chat:'<path d="M4 5h16v11H10l-5 4v-4H4z"/>',arrow:'<path d="M12 21s7-6.200 7-11.500A7 7 0 0 0 5 9.500C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.500" r="2.500"/>',
+ tag:'<rect x="6" y="3" width="12" height="18" rx="3"/><path d="M6 11h12M10 16h4"/>'
+};
+const TIC={round:'tag',paper:'roll',soap:'soap',bin:'bin',dirty:'spray',dryer:'bolt',leak:'drop'},GIC={supply:'roll',clean:'spray',unhappy:'frown'};
+const svg=k=>'<svg viewBox="0 0 24 24">'+IC[k]+'</svg>';
+let uiT=0,lastSat=-1;
+function renderUI(){
+  $('clock').textContent=clockStr(Math.min(22,G.time));$('scorev').textContent=G.score;
+  const s=satLive(),col=s>=80?'#2c9a43':s>=60?'#d99a12':'#d53636';
+  $('satv').textContent=s+' %';
+  const bar=$('satbar').firstElementChild;bar.style.width=s+'%';bar.style.background=col;
+  if(s!==lastSat){lastSat=s;const mth=s>=80?'M10 19c2.500 4 9.500 4 12 0':s>=60?'M10.500 20.500h11':'M10 22c2.500-4 9.500-4 12 0';
+    $('satface').innerHTML='<circle cx="16" cy="16" r="13.500" fill="#fff" stroke="'+col+'" stroke-width="2.500"/><circle cx="11.500" cy="13" r="1.700" fill="'+col+'"/><circle cx="20.500" cy="13" r="1.700" fill="'+col+'"/><path d="'+mth+'" fill="none" stroke="'+col+'" stroke-width="2.200" stroke-linecap="round"/>';}
+  $('satchip').classList.toggle('danger',s<SATWARN);
+  $('satface').classList.toggle('bump',G.now-(G.satBump||-9)<.25);
+  const ul=$('missions');
+  const ms=G.missions.slice().sort((a,b)=>(a.state==='done')-(b.state==='done')||(b.state==='fixed')-(a.state==='fixed')||b.imp-a.imp||a.t0-b.t0);
+  if(!ms.length){ul.innerHTML='<li class="empty"></li>';ul.firstChild.textContent=t('empty');}
+  else{ul.textContent='';
+    for(const m of ms){
+      const known=m.kind==='precise'||m.state!=='todo',locKnown=m.kind!=='zone'||m.state!=='todo';
+      const li=document.createElement('li'),el=G.now-m.t0,late=m.state!=='done'&&el>m.lim;
+      li.className=(m.state==='todo'?'':m.state)+(late?' late':'')+(m.imp===3&&m.state==='todo'?' u3':'')+(m.id===G.curTrack?' trk':'');
+      const title=known?t('ty_'+m.type):t('g_'+m.grp),ic=known?TIC[m.type]:GIC[m.grp];
+      const pts=m.state==='done'?m.pts:ptsNow(m);
+      const sub=m.state==='done'?(m.pro?t('initiative'):t('validated')):m.state==='fixed'?t('tobadge'):late?t('late'):'';
+      li.innerHTML='<span class="mi">'+svg(ic)+'</span><span><span class="tt"></span><span class="loc"></span></span><span class="pts"></span>'+(m.state==='done'?'':'<span class="bar"><i style="width:'+Math.max(0,100-100*el/m.lim).toFixed(0)+'%"></i></span>');
+      li.querySelector('.tt').textContent=title;
+      const lc=li.querySelector('.loc');
+      if(locKnown){const b=document.createElement('b');b.textContent='WC '+m.wc.id;lc.appendChild(b);}else lc.textContent=t('zone_'+m.wc.zone)+' ?';
+      const pe=li.querySelector('.pts');pe.textContent='+'+pts;if(sub){const sm=document.createElement('small');sm.textContent=sub;pe.appendChild(sm);}
+      li.addEventListener('click',()=>{G.trackId=m.id;G.dirtyUI=true;sfx('ui');});
+      ul.appendChild(li);
+    }}
+  const h=$('hint');let ht=null;
+  if(G.day===0){
+    const todo=G.missions.filter(m=>m.state==='todo'),fx=G.missions.some(m=>m.state==='fixed');
+    if(G.term&&!G.tagged&&wcNeed(G.term))ht=t('h_tag');
+    else if(fx)ht=t('h_badge');
+    else if(todo.length){ht=(G.here&&todo.some(m=>m.wc===G.here&&m.type!=='round'))?t('h_find'):t('h_go');}
+    else if(G.queue.length&&G.now<5)ht=t('h_mgr');else if(!G.missions.length&&G.now>8)ht=t('h_idle');
+  }
+  if(ht){h.textContent=ht;h.style.display='block';}else h.style.display='none';
+}
+function sndLabel(){const ic=muted?'<svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M17 9l4 6M21 9l-4 6"/></svg>':'<svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.500 8.500a5 5 0 0 1 0 7M19 6a8.500 8.500 0 0 1 0 12"/></svg>';$('sndbtn').innerHTML=ic;$('sndbtn2').textContent=t(muted?'snd_off':'snd_on');}
+function applyLang(){
+  document.documentElement.lang=lang;
+  document.title=t('seo_title');{const m=document.querySelector('meta[name="description"]');if(m)m.setAttribute('content',t('seo_desc'));}
+  if(QL&&I18N[QL]){const c=$('canon');if(c)c.href=CANON+'?lang='+QL;}
+  $('aboutlink').href=SITE[lang];
+  document.querySelectorAll('[data-i]').forEach(e=>{e.textContent=t(e.dataset.i);});
+  $('trow').querySelectorAll('button[data-l]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===lang?'true':'false'));
+  $('ctalink').href=SITE[lang];
+  let best=0;try{best=+localStorage.getItem('ch_best')||0;}catch(e){}
+  $('best').textContent=best?t('best',{n:best}):'';$('best').style.display=best?'':'none';
+  const hs=$('hsteps');hs.textContent='';
+  [['chat','h1'],['arrow','h2'],['spray','h3'],['tag','h4']].forEach(s=>{const li=document.createElement('li');li.innerHTML='<span class="mi">'+svg(s[0])+'</span><span><b></b><span></span></span>';li.querySelector('b').textContent=t(s[1]+'t');li.querySelector('span span').textContent=t(s[1]+'d');hs.appendChild(li);});
+  $('ctrltxt').textContent=$('ctrltxt2').textContent=t(TOUCH?'c_touch':'c_kb');$('ruletxt').textContent=t('rule',{n:SATMIN});
+  $('howgo').textContent=t(G.howPlay?'go':'close');
+  sndLabel();
+  if(G.state!=='menu'){$('dayname').textContent=t('days')[G.day];G.dirtyUI=true;}
+  mapDirty=true;
+}
+
+/* ---------- Plan ---------- */
+const mapc=$('mapc'),MS=10;let mapBase=null,mapDirty=true;
+function drawMap(tm){
+  if(mapDirty||!mapBase){mapBase=document.createElement('canvas');mapBase.width=W*MS;mapBase.height=H*MS;const m=mapBase.getContext('2d');if(!m)return;
+    m.fillStyle='#141032';m.fillRect(0,0,W*MS,H*MS);
+    for(let y=0;y<H;y++)for(let x=0;x<W;x++){const v=grid[y*W+x];if(v===WALL)continue;m.fillStyle=v===PUB||v===OBST?'#e6e1d6':v===SVC?'#e0a21b':v===WCF||v===DOOR?'#57b6c9':v===BRK?'#c9a36a':v===APRON?'#4a5060':v===GLASS?'#9fd3ea':v===ROAD?'#2f323b':'#5a4fa8';m.fillRect(x*MS,y*MS,MS,MS);}
+    m.fillStyle='#f4f6f9';for(const p of PLANES){m.save();m.translate(p.x*MS,p.y*MS);m.rotate(p.rot);m.fillRect(-5,-86,10,86);m.fillRect(-35,-56,70,12);m.fillRect(-15,-86,30,7);m.restore();}
+    m.textAlign='center';m.textBaseline='middle';
+    for(const w of WCS){m.font='800 19px '+FONT;m.fillStyle='#0d2a33';m.fillText(w.id,(w.x0+w.x1+1)/2*MS,(w.y0+w.y1+1)/2*MS+1);}
+    m.font='800 12px '+FONT;m.fillStyle='#fff';m.fillText(t('p_break').toUpperCase(),61.5*MS,34.9*MS);
+    m.fillStyle='rgba(20,24,40,.6)';m.font='800 15px '+FONT;
+    for(const l of[[23,25,'pier_A'],[72,25,'pier_B'],[30,53,'p_bag'],[66,56,'p_checkin']])m.fillText(t(l[2]).toUpperCase(),l[0]*MS,l[1]*MS);
+    m.font='800 11px '+FONT;for(const g of GATES){m.fillStyle='#ffd23f';m.beginPath();m.arc(g.px*MS,g.py*MS,8,0,7);m.fill();m.fillStyle='#1a1a1a';m.fillText(g.n,g.px*MS,g.py*MS+1);}
+    mapDirty=false;}
+  if(mapc.width!==W*MS){mapc.width=W*MS;mapc.height=H*MS;}
+  const m=mapc.getContext('2d');m.drawImage(mapBase,0,0);
+  const pp=1+Math.sin(tm*5)*.15;
+  for(const x of G.missions){if(x.state==='done'||(x.kind==='zone'&&x.state==='todo'))continue;const w=x.wc;m.strokeStyle='#ffd23f';m.lineWidth=5;m.strokeRect(w.x0*MS-3,w.y0*MS-3,(w.x1-w.x0+1)*MS+6,(w.y1-w.y0+1)*MS+6);m.fillStyle='#ffd23f';m.beginPath();m.arc((w.x1+1)*MS,w.y0*MS,11*pp,0,7);m.fill();m.fillStyle='#1a1a1a';m.font='900 15px '+FONT;m.textAlign='center';m.textBaseline='middle';m.fillText('!',(w.x1+1)*MS,w.y0*MS+1);}
+  m.fillStyle='#20315c';m.beginPath();m.arc(mgr.x*MS,mgr.y*MS,7,0,7);m.fill();m.strokeStyle='#fff';m.lineWidth=2;m.stroke();
+  m.fillStyle='#ec006e';m.beginPath();m.arc(pl.x*MS,pl.y*MS,10*pp,0,7);m.fill();m.strokeStyle='#fff';m.lineWidth=3;m.stroke();
+}
+
+let last=0;
+function frame(ts_){
+  requestAnimationFrame(frame);
+  const tm=ts_/1000;let dt=last?Math.min(.05,tm-last):0;last=tm;
+  if(cv.clientWidth!==cw||cv.clientHeight!==ch)resize();
+  update(dt);
+  if(G.state==='play'){uiT-=dt;if(uiT<=0||G.dirtyUI){renderUI();uiT=.2;G.dirtyUI=false;}}
+  draw(tm);
+  if($('mapov').classList.contains('on'))drawMap(tm);
+}
+
+/* ---------- Entrées ---------- */
+function pause(on){if(on&&G.state==='play'){G.state='pause';joy=null;show('pause');}else if(!on&&G.state==='pause'){G.state='play';show(null);last=0;}}
+function toggleMap(){if(G.state!=='play'&&!$('mapov').classList.contains('on'))return;joy=null;$('mapov').classList.toggle('on');}
+addEventListener('keydown',e=>{
+  const c=e.code,k=(e.key||'').toLowerCase();
+  if(G.state==='play'&&(c.startsWith('Arrow')||c==='Space'))e.preventDefault();
+  keys[c]=true;if(e.repeat)return;
+  if(G.state!=='play'){if(c==='Escape'&&G.state==='pause')pause(false);return;}
+  const ae=document.activeElement;if(ae&&ae.tagName==='BUTTON')ae.blur();
+  const mapOn=$('mapov').classList.contains('on');
+  if(c==='Space'||c==='Enter'||c==='KeyE'){e.preventDefault();if(mapOn)toggleMap();else if(G.term)doBadge(G.term);}
+  else if(k==='m')toggleMap();
+  else if(c==='Escape'||k==='p'){if(mapOn)toggleMap();else pause(true);}
+});
+addEventListener('keyup',e=>{keys[e.code]=false;});
+addEventListener('blur',()=>{for(const k in keys)keys[k]=false;joy=null;});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)pause(true);});
+const ppos=e=>{const r=cv.getBoundingClientRect();return[e.clientX-r.left,e.clientY-r.top];};
+cv.addEventListener('pointerdown',e=>{if(G.state!=='play')return;e.preventDefault();if(G.term)closeTerm();const p=ppos(e);joy={id:e.pointerId,ox:p[0],oy:p[1],x:p[0],y:p[1],mouse:e.pointerType==='mouse'};try{cv.setPointerCapture(e.pointerId);}catch(x){}});
+cv.addEventListener('pointermove',e=>{if(joy&&e.pointerId===joy.id){const p=ppos(e);joy.x=p[0];joy.y=p[1];if(!joy.mouse){const dx=joy.x-joy.ox,dy=joy.y-joy.oy,d=Math.hypot(dx,dy);if(d>52){joy.ox+=dx/d*(d-52);joy.oy+=dy/d*(d-52);}}}});
+['pointerup','pointercancel','lostpointercapture'].forEach(n=>cv.addEventListener(n,e=>{if(joy&&e.pointerId===joy.id)joy=null;}));
+cv.addEventListener('contextmenu',e=>e.preventDefault());
+cv.addEventListener('touchmove',e=>{e.preventDefault();},{passive:false});
+$('tagbtn').addEventListener('click',()=>{doBadge(G.term);});
+$('tx').addEventListener('click',closeTerm);
+$('mapbtn').addEventListener('click',()=>{toggleMap();$('mapbtn').blur();});
+$('mapclose').addEventListener('click',toggleMap);
+$('mapov').addEventListener('click',e=>{if(e.target===$('mapov'))toggleMap();});
+$('pausebtn').addEventListener('click',()=>pause(true));
+$('resumebtn').addEventListener('click',()=>pause(false));
+$('quitbtn').addEventListener('click',toMenu);
+$('mgrcard').addEventListener('click',()=>{$('mgrcard').classList.remove('on');});
+function toggleSnd(){muted=!muted;try{localStorage.setItem('ch_mute',muted?'1':'0');}catch(e){}sndLabel();sfx('ui');}
+$('sndbtn').addEventListener('click',toggleSnd);$('sndbtn2').addEventListener('click',toggleSnd);
+$('playbtn').addEventListener('click',()=>{sfx('ui');let seen=false;try{seen=localStorage.getItem('ch_seen')==='1';}catch(e){}
+  if(seen)startGame();else{G.howPlay=true;applyLang();show('how');}});
+$('playbtn2').addEventListener('click',()=>$('playbtn').click());
+$('howbtn').addEventListener('click',()=>{G.howPlay=false;applyLang();show('how');});
+$('howgo').addEventListener('click',()=>{if(G.howPlay){try{localStorage.setItem('ch_seen','1');}catch(e){}startGame();}else show('title');});
+$('nextbtn').addEventListener('click',()=>{$('nextbtn').blur();if(G.day<6){G.day++;startDay();}else showFinal();});
+$('replaybtn').addEventListener('click',toMenu);
+$('overquit').addEventListener('click',toMenu);
+$('retrybtn').addEventListener('click',()=>{G.score=G.dayStart;startDay();});
+$('sharebtn').addEventListener('click',async()=>{
+  const txt=t('sharetxt',{n:G.score,s:G.finAvg})+' '+CANON+(lang==='fr'?'':'?lang='+lang);
+  try{if(navigator.share){await navigator.share({text:txt});return;}}catch(e){}
+  try{await navigator.clipboard.writeText(txt);$('sharebtn').textContent=t('copied');}
+  catch(e){const ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');$('sharebtn').textContent=t('copied');}catch(x){}ta.remove();}
+  setTimeout(()=>{$('sharebtn').textContent=t('share');},2200);
+});
+Object.keys(I18N).forEach(l=>{const b=document.createElement('button');b.type='button';b.dataset.l=l;b.textContent=I18N[l].name;b.addEventListener('click',()=>{lang=l;try{localStorage.setItem('ch_lang',l);}catch(e){}applyLang();});$('trow').insertBefore(b,$('sndbtn'));});
+addEventListener('resize',resize);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{chunks.clear();});
+G.day=4;resetWorld();G.time=7.2;applyLang();resize();requestAnimationFrame(frame);
+window.__CH={roundFor,satLive,gameOver,G,pl,mgr,WCS,F,GATES,update,startGame,startDay,endDay,showFinal,doBadge,grid,W,H,walk,deliver,renderUI,draw,drawMap,I18N,TYPES,spotsOf,quality,target,toMenu};
+})();
+</script>
+</body>
+</html>

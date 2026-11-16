@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://agoraopinion.github.io/CleanerHero/sitemap.xml

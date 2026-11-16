@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://agoraopinion.github.io/CleanerHero/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://agoraopinion.github.io/CleanerHero/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agoraopinion.github.io/CleanerHero/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://agoraopinion.github.io/CleanerHero/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://agoraopinion.github.io/CleanerHero/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agoraopinion.github.io/CleanerHero/"/>
+  </url>
+  <url><loc>https://agoraopinion.github.io/CleanerHero/?lang=en</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://agoraopinion.github.io/CleanerHero/?lang=de</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://agoraopinion.github.io/CleanerHero/?lang=es</loc><lastmod>2026-11-12</lastmod></url>
+</urlset>
